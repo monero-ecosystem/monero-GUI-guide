@@ -12,6 +12,11 @@ On this page you can choose between three options:
 4. check *testnet* if you are going to make tests and not using the main net
 
 ### 1. Create new wallet
+![new](/media/create_new.png)
+Now give a name to your wallet (in this example is *testname*), write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recovery your funds.
+
+![add password](/media/password.png)
+Add a strong password to protect your wallet
 
 ### 2. Restore Wallet from keys
 
