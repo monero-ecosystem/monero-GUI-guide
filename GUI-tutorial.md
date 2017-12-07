@@ -1,8 +1,8 @@
-# Choose a language
+# I. Choose a language
 ![Language](/media/language.png)
 After extracting the package click on `monero-wallet-gui.exe` you'll see a list of available languages, click on the one of your choice, then go to the next step.
 
-# Create a Wallet
+# II. Create a Wallet
 ![welcome](/media/welcome.png)
 On this page you can choose between three options:
 
@@ -32,6 +32,19 @@ Check the summary to be sure everything went alright
 *Daemon address* - The address of the daemon. Default is `localhost:18081`. We will talk about this later.    
 *testnet* - if *disabled* you are on the main net
 
-### 2. Restore Wallet from keys
+Make sure that al the infos are corrects and go to the next step
 
-### 3. Open a wallet from file
+### Connect to local/remote daemon
+When the windows closes you will be prompted to the settings menu, but first, you will see a window like this popping up
+![sync](/media/sync.png)
+At the end of the countdown the blockchain will start syncing locally. This is ok if you want to run a full node, storing the blockchain locally. You also have the choice to run your wallet using a 'remote node' (similar to 'light wallets' in bitcoin). If you prefer using a remote node, click on *Use custom settings* before the countdown ends.
+A remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon. This is explained in the section: 'settings' (-add link to next step skipping 2 and 3)
+(link to differences full node - remote node)
+
+
+## 2. Restore Wallet from keys
+
+## 3. Open a wallet from file
+
+# III. Settings / Connect to a remote node
+![settings](/media/settings.png)
