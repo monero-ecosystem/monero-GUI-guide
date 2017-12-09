@@ -32,19 +32,30 @@ Check the summary to be sure everything went alright
 *Daemon address* - The address of the daemon. Default is `localhost:18081`. We will talk about this later.    
 *testnet* - if *disabled* you are on the main net
 
-Make sure that al the infos are corrects and go to the next step
-
-### Connect to local/remote daemon
+### Run a full node
 When the windows closes you will be prompted to the settings menu, but first, you will see a window like this popping up
 ![sync](/media/sync.png)
-At the end of the countdown the blockchain will start syncing locally. This is ok if you want to run a full node, storing the blockchain locally. You also have the choice to run your wallet using a 'remote node' (similar to 'light wallets' in bitcoin). If you prefer using a remote node, click on *Use custom settings* before the countdown ends.
-A remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon. This is explained in the section: 'settings' (-add link to next step skipping 2 and 3)
-(link to differences full node - remote node)
+If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then Wait untill your node is fully synced.
+
+if you need some special settings like running a remote node, set up a view-only wallet or add manually the blockchain, go to section III: "Settings"
 
 
 ## 2. Restore Wallet from keys
 
 ## 3. Open a wallet from file
 
-# III. Settings / Connect to a remote node
+# III. Settings
+
 ![settings](/media/settings.png)
+After creating/recovering your wallet, you will be prompted to the "settings page". From here you have the possibility tu personalize your configurations according to your personal use.
+
+## Run a remote node
+A remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon
+
+To run a remote node you need to use somebody else's daemon, this means you need to communicate with it. Add the remote daemon address and port (10) and click connect (e.g many use the remote nodes available at [moneroworld.com](https://moneroworld.com/#nodes). in this case the configuration would be `node.moneroworld.com` `18089`). Click on "connect" and your wallet will start syncing, this takes some minutes. To check the progresses click on "Show status"(7). 
+
+## Create a view-only wallet
+Click on (2) the following page will open
+## Add manually the blockchain
+
+## other options
