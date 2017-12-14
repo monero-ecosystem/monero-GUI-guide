@@ -1,3 +1,7 @@
+// TODO: add suggestions about permissions
+// TODO: add binaries verification (sha256)
+// TODO: add warning for antivirus (it might mess everything)
+
 # I. Choose a language
 ![Language](/media/language.png)
 After extracting the package click on `monero-wallet-gui.exe` you'll see a list of available languages, click on the one of your choice, then go to the next step.
