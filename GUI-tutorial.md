@@ -1,29 +1,30 @@
 // TODO: add suggestions about permissions    
-// TODO: add binaries verification (sha256)     
-// TODO: add warning for antivirus (it might mess everything)    
 
-# I. Choose a language
+# Preparation
+When launching `monero-wallet-gui` on Windows, make sure your antivirus doens't block the program and remember to give the wallet permissions to connect to the network (a window asking for permissions will popup the first time you start the wallet)
+
+# 1. Choose a language
 ![Language](/media/language.png)
 After extracting the package click on `monero-wallet-gui.exe` you'll see a list of available languages, click on the one of your choice, then go to the next step.
 
-# II. Create a Wallet
+# 2. Create a Wallet
 ![welcome](/media/welcome.png)
 On this page you can choose between three options:
 
-1. **Create a new wallet:** Start the procedure to make a new [wallet](https://getmonero.org/resources/moneropedia/wallet.html) from scratch. Choose this option if it's the first time you are creating a wallet.
-2. **Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existent wallet using the mnemonic seed or the keys (This is also the option for creating a 'watch-only wallet')
-3. **Open a wallet from file:** Choosing this option you will have to select the file in the ".keys" format from a previus wallet
-4. check *testnet* if you are going to make tests and not using the main net
+**Create a new wallet:** Start the procedure to make a new [wallet](https://getmonero.org/resources/moneropedia/wallet.html) from scratch. Choose this option if it's the first time you are creating a wallet.
+**Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existent wallet using the mnemonic seed or the keys (This is also the option for creating a 'watch-only wallet')
+**Open a wallet from file:** Choosing this option you will have to select the file in the ".keys" format from a previus wallet
+check *testnet* if you are going to make tests and not using the main net
 
-## 1. Create new wallet
+## 2.1. Create new wallet
 ![new](/media/create_new.png)
 Now give a name to your wallet (in this example is *testname*), write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recovery your funds.
 
-### Add a password
+### 2.1.1 Add a password
 ![add password](/media/password.png)
 Add a strong password to protect your wallet
 
-### Summary
+### 2.1.2 Summary
 ![summary](/media/summary.png)
 Your wallet is created and almost ready to be used!
 Check the summary to be sure everything went alright
@@ -36,26 +37,35 @@ Check the summary to be sure everything went alright
 *Daemon address* - The address of the daemon. Default is `localhost:18081`. We will talk about this later.    
 *testnet* - if *disabled* you are on the main net
 
-### Run a full node
+### 2.1.3 Run a full node
 When the windows closes you will be prompted to the settings menu, but first, you will see a window like this popping up
-![sync](/media/sync.png)
+![sync](/media/sync.png)    
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then Wait untill your node is fully synced.
 
 if you need some special settings like running a remote node, set up a view-only wallet or add manually the blockchain, go to section III: "Settings"
 
 
-## 2. Restore Wallet from keys or mnemonic seed
-![restore from key](/media/restore_key.png)
+## 2.2 Restore Wallet from keys or mnemonic seed
 
-### Restoring from seed
+
+### 2.2.1 Restoring from seed
 ![restore from seed](/media/restore_seed.png)
 This is the easiest way to recover your wallet, you only need to put a name for it [1], paste your seed made of 25 words in the correct field [2] and select the destination folder of the wallet [3].
 
-### Restoring from keys (or create a view only wallet)
+### 2.2.2 Restoring from keys
+![restore from key](/media/restore_key.png)
+Restoring from keys is quite easy and can be extremely useful, especially if you are moving your wallet from online services like MyMonero. you need:
++ *Account Address* - The address of the wallet you are recovering
++ *View key* - Your private view key (needed to be able to check your funds)
++ *Spend key* - your private spend key (needed to spend your funds)
++ *Restore height* - This field is optional and let you specify a block height, so the wallet wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block 1350000, insert in this field a sligtly lower height (like 1330000) so the wallet will start scanning from there, saving you some time.    
+When everything is ready click the right arrow and then the "Use Monero" button.
 
-## 3. Open a wallet from file
 
-# III. Settings
+## 2.3. Open a wallet from file
+After clicking this option a window will popup. Just navigate to your file with the extension *.keys*, load it then click the right arrow.
+
+# 3. Settings
 
 ![settings](/media/settings.png)
 After creating/recovering your wallet, you will be prompted to the "settings page". From here you have the possibility tu personalize your configurations according to your personal use.
@@ -66,15 +76,16 @@ A remote node is the fastest way to start a wallet, but you won't have all the b
 To run a remote node you need to use somebody else's daemon, this means you need to communicate with it. Add the remote daemon address and port (10) and click connect (e.g many use the remote nodes available at [moneroworld.com](https://moneroworld.com/#nodes). in this case the configuration would be `node.moneroworld.com` `18089`). Click on "connect" and your wallet will start syncing, this takes some minutes. To check the progresses click on "Show status"(7). 
 
 ## Create a view-only wallet
-Click on (2) the following page will open
-## Add manually the blockchain
+Click on (2), you will be asked to give a name and a location for your view-only wallet. Proceed setting a strong password then click the right arrow. A "Success" message will signal the correct creation of the view-only wallet.
+
+## Add the blockchain manually
 
 ## Other settings
 Close Wallet: This closes your wallet.
 
 ### Show seed & keys
 
-This shows your wallets mnemonic seed (explained earlier) as well as your secret view key, public view key, secret spend key and public spend key. These are outlined below.
+This shows your wallets mnemonic seed as well as your secret view key, public view key, secret spend key and public spend key. These are outlined below.
 
 ### Public / Secret view key
 These keys allow you and others to view your Monero wallet incoming transactions (not outgoing). Only give your public view key NOT your private view key to others. This is useful for auditing purposes. Your private view key is also used to ‘scan’ the blockchain to find funds sent to your address. Learn more.
@@ -86,7 +97,7 @@ These keys allow you to participate in ring signatures. The private key is used 
 This scans the Monero blockchain for any funds that belong to you.
 
 
-# IV. Send some Moneroj
+# 4. Send some Moneroj
 ![send](https://cdn-images-1.medium.com/max/800/1*hB-YNycALp2uwLLZ6geoZw.png)
 After clicking on *Send*, on the left menu, you need to specify
 
@@ -111,7 +122,7 @@ After clicking on *Send*, on the left menu, you need to specify
 ### Address Book
 This section lets you save users you frequently transact with. Addresses you put in your address book can be easily copied over when sending a transaction.
 
-# V. Receive Moneroj
+# 5. Receive Moneroj
 ![receive](https://cdn-images-1.medium.com/max/800/1*6Mq_O3aptEo1n8PfeQMMcg.png)
 To receive Moneroj, you need to give at least your address, but you can also specify
 
@@ -125,11 +136,14 @@ To receive Moneroj, you need to give at least your address, but you can also spe
 
 # Advanced features
 
+## Binaries verification
+
 ## Solo mining
 ![mining](https://cdn-images-1.medium.com/max/800/1*DLTdjQ4Bb9G-46KwdbYMSg.png)
 This is a one click CPU miner that is embedded into the GUI. Having this on helps secure the Monero network. The more people that mine, the harder it is for the network to be attacked.
 
 It is very unlikely that you will receive awards from doing this, but it is not outside the realm of possibility.
+
 ## Check payment
 ![Check payment](https://cdn-images-1.medium.com/max/800/1*5Xy_ZWSdR5PJqUjg9MVrkA.png)
 When you send money to a party who then disputes the payment was made, you need to be able to prove the payment was made.
