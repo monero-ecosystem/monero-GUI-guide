@@ -1,6 +1,6 @@
-// TODO: add suggestions about permissions
-// TODO: add binaries verification (sha256)
-// TODO: add warning for antivirus (it might mess everything)
+// TODO: add suggestions about permissions    
+// TODO: add binaries verification (sha256)     
+// TODO: add warning for antivirus (it might mess everything)    
 
 # I. Choose a language
 ![Language](/media/language.png)
@@ -44,7 +44,14 @@ If you want to create a normal wallet using your personal full node, you don't n
 if you need some special settings like running a remote node, set up a view-only wallet or add manually the blockchain, go to section III: "Settings"
 
 
-## 2. Restore Wallet from keys
+## 2. Restore Wallet from keys or mnemonic seed
+![restore from key](/media/restore_key.png)
+
+### Restoring from seed
+![restore from seed](/media/restore_seed.png)
+This is the easiest way to recover your wallet, you only need to put a name for it [1], paste your seed made of 25 words in the correct field [2] and select the destination folder of the wallet [3].
+
+### Restoring from keys (or create a view only wallet)
 
 ## 3. Open a wallet from file
 
