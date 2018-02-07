@@ -1,5 +1,3 @@
-// TODO: add suggestions about permissions    
-
 # Preparation
 When launching `monero-wallet-gui` on Windows, make sure your antivirus doens't block the program and remember to give the wallet permissions to connect to the network (a window asking for permissions will popup the first time you start the wallet)
 
@@ -24,7 +22,11 @@ Now give a name to your wallet (in this example is *testname*), write down your 
 ![add password](/media/password.png)
 Add a strong password to protect your wallet
 
-### 2.1.2 Summary
+### 2.1.2 Daemon Settings
+![daemon settings](/media/daemon_settings.png)
+Here you can choose if you are going to run a Full node or use a remote one. if you want to use a remote node you need to put the hostname or IP address of the node and its port. Choosing a remote node you have the optional possibility to add a personalized path for your blockchain.
+
+### 2.1.3 Summary
 ![summary](/media/summary.png)
 Your wallet is created and almost ready to be used!
 Check the summary to be sure everything went alright
@@ -37,12 +39,12 @@ Check the summary to be sure everything went alright
 *Daemon address* - The address of the daemon. Default is `localhost:18081`. We will talk about this later.    
 *testnet* - if *disabled* you are on the main net
 
-### 2.1.3 Run a full node
+### 2.1.4 Run a full node
 When the windows closes you will be prompted to the settings menu, but first, you will see a window like this popping up
 ![sync](/media/sync.png)    
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then Wait untill your node is fully synced.
 
-if you need some special settings like running a remote node, set up a view-only wallet or add manually the blockchain, go to section III: "Settings"
+if you need some special settings like set up a view-only wallet or add manually the blockchain, go to section III: "Settings"
 
 
 ## 2.2 Restore Wallet from keys or mnemonic seed
@@ -69,6 +71,16 @@ After clicking this option a window will popup. Just navigate to your file with 
 
 ![settings](/media/settings.png)
 After creating/recovering your wallet, you will be prompted to the "settings page". From here you have the possibility tu personalize your configurations according to your personal use.
+
+**(1)** Close your wallet (gives the possibility to choose another language)    
+**(2)** Insert a name and a passowrd if you want to create a view-only wallet    
+**(3)** Make a complete rescan of your spent outputs    
+**(4)** Change the password of your wallet    
+**(5)** Manage settings for your local node    
+**(6)** Manage settings for your remote node    
+**(7)** Show advanced options ('Local daemon startup flags' and 'node login', in case the remote node requires autentication)    
+**(8)** Start your local node    
+**(9)** Show daemon status    
 
 ## Run a remote node
 A remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon
