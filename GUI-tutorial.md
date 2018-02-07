@@ -26,19 +26,6 @@ Add a strong password to protect your wallet
 ![daemon settings](/media/daemon_settings.png)
 Here you can choose if you are going to run a Full node or use a remote one. if you want to use a remote node you need to put the hostname or IP address of the node and its port. Choosing a remote node you have the optional possibility to add a personalized path for your blockchain.
 
-### 2.1.3 Summary
-![summary](/media/summary.png)
-Your wallet is created and almost ready to be used!
-Check the summary to be sure everything went alright
-&nbsp;
-
-*Language* - The language you have chosen for your wallet    
-*Wallet name* - The name of your wallet (and its file)    
-*Backup Seed* - master key of your wallet, you can use it to recovery your funds. More info on the [Moneropedia](https://getmonero.org/resources/moneropedia/mnemonicseed.html)    
-*Wallet path* - The path where your wallet is saved    
-*Daemon address* - The address of the daemon. Default is `localhost:18081`. We will talk about this later.    
-*testnet* - if *disabled* you are on the main net
-
 ### 2.1.4 Run a full node
 When the windows closes you will be prompted to the settings menu, but first, you will see a window like this popping up
 ![sync](/media/sync.png)    
