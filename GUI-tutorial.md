@@ -3,7 +3,7 @@ When launching `monero-wallet-gui` on Windows, make sure your antivirus doesn't 
 
 ![win firewall check](/media/win-firewall-check.png)
 
-# 1. Choose a language
+# 1. Choose a Language
 ![Language](/media/language_new.png)
 
 After extracting the package click on `monero-wallet-gui` you'll see a list of available languages, click on the one of your choice and go to the next step.
@@ -21,14 +21,14 @@ On this page you can choose between three options:
 ## 2.1. Create new wallet
 ![new](/media/create_new.png)
 
-Now give a name to your wallet (in this example `testname` is used). **Write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recovery your funds.**
+Now give a name to your wallet (in this example `testname` is used). **Write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recover your funds.**
 
 ### 2.1.1 Add a password
 ![add password](/media/password.png)
 
-Add a strong password to protect your wallet.
+Add a strong password to protect your wallet. If you lose your password, then only your mnemonic seed can recover your wallet history and funds.
 
-### 2.1.2 Daemon Settings
+### 2.1.2 Daemon settings
 ![daemon settings](/media/daemon_settings.png)
 
 Here you can choose if you are going to run a full node or use a remote one. If you want to use a remote node you need to put the hostname or IP address of the node and its port. Choosing a remote node, you have the optional possibility to add a personalized path for your blockchain.
@@ -43,7 +43,7 @@ If you want to create a normal wallet using your personal full node, you don't n
 If you need some special settings like set up a view-only wallet or add the blockchain manually, go to section *3: Settings* in this guide.
 
 
-## 2.2 Restore Wallet from keys or mnemonic seed
+## 2.2 Restore wallet from keys or mnemonic seed
 
 
 ### 2.2.1 Restoring from seed
@@ -102,17 +102,17 @@ This shows your wallets mnemonic seed as well as your secret view key, public vi
 ## 3.4.1. Mnemonic seed
 **DO NOT share your mnemonic seed with anyone. Store a copy securely.** The mnemonic seed is a 25 word phrase that contains all the information needed to view and spend funds. Learn more about [mnemonic seeds](https://getmonero.org/resources/moneropedia/mnemonicseed.html).
 
-### 3.4.2. Public / Secret view key
+### 3.4.2. Public/secret view key
 Secret view keys allow you and others to view your Monero wallets incoming transactions (not outgoing). It is sometimes useful for auditing purposes to give your secret view key to a third party. The public spend key is used for stealth address creation. Learn more about [view keys](https://getmonero.org/resources/moneropedia/viewkey.html).
 
-### 3.4.3. Public / Secret spend key
+### 3.4.3. Public/secret spend key
 **DO NOT share your secret spend key with anyone. The secret spend key is used to sign transactions and should be regarded with the same security as your mnemonic seed.** The public spend key is used by the network to verify the signature of the key image you generated. This is what prevents double-spends as the network enforces the rule that a key image can be spent only once. Learn more about [spend keys](https://getmonero.org/resources/moneropedia/spendkey.html).
 
 ### 3.4.4. Re-scan wallet balance
 This scans the Monero blockchain for any funds that belong to you.
 
 
-# 4. Send some Moneroj
+# 4. Send Some Moneroj
 ![send](/media/send.png)
 
 After clicking the "Send" tab on the left menu, you need to specify the following:
@@ -147,35 +147,48 @@ To receive Moneroj you need to give your address. Best practice is to create a n
 
 **QR code:** This is a QR code that has your selected address, and optionally the amount, embedded into it. It can be used as a way to give others your Monero address by simply scanning the code.
 
-# 6. Advanced features
+# 6. Advanced Features
 
 ## 6.1. Solo mining
 ![mining](/media/mining.png)
 
 This is a one click CPU miner that is embedded into the GUI. Having this on helps secure the Monero network. The more people that mine, the harder it is for the network to be attacked.
 
-It is very unlikely that you will receive Moneroj from doing this, but it is not outside the realm of possibility.
+It is very unlikely that you will receive rewards from doing this, but it is not outside the realm of possibility.
 
-## 6.2. Check payment
+## 6.2. Prove/check
 ![Check payment](/media/prove-check.png)
 
-When you send money to a party who then disputes the payment was made, you need to be able to prove the payment was made.
+When you send or receive monero you will sometimes find the need to be able to prove or verify that the payment was made.
 
 With Bitcoin this is typically done by looking up the transaction ID where the origin addresses, destination addresses, and the amount transacted transacted are all visible.
 
-Monero, however, is private: that information is not available publicly on the blockchain. The steps are therefore a bit more involved.
+Monero, however, is private and that information is not available publicly on the blockchain. The steps are therefore a bit more involved.
 
-**Address:** This is the wallet address of the recipient. This can be found by clicking on the details button next to the transaction in your history tab.
+### 6.2.1. Generate proof of payment
+This will generate a proof that you made a payment to a certain address. You need to put the following information:
 
-**Transaction ID:** This is the ID of the payment and can be found in the history tab and by clicking on details button next to the transaction (see below).
+**Transaction ID:** This is the ID of the payment you are creating proof for. You can find the transaction details by selecting the "History" tab from the left menu.    
+**Address:** This is the address you are proving payment to.    
+**Message:** This an optional message that will be signed with the transaction details. If you choose to include a message then the other party must also include the exact same message in order to verify your proof.    
 
-**Transaction Key:** When a transaction is made a one time key is automatically generated just for that transaction. This can also be found by clicking on details in the history tab.
+After clicking the "Generate" button, you will receive the proof which can then be used to verify a payment was made. The screen will look like this:
 
-Below is what should appear once entering the valid payment details.
+![pay prove](/media/pay-prove.png)
 
-![payment details](https://cdn-images-1.medium.com/max/800/1*3Y1cYmbjwZeJjhADBstANw.png)
+### 6.2.2. Check proof of payment
+This will verify that a payment was made. You need to put the following information:
 
-## 6.3. Sign/Verify
+**Transaction ID:** This is the ID of the payment you are attempting to verify.    
+**Address:** This is the receiving address of the payment you are attempting to verify.    
+**Message:** This is the optional message that may have been included with the proof.    
+**Signature:** This is the signature generated to prove payment.    
+
+This is what should appear after entering the valid payment details and clicking the "Check" button:
+
+![pay verify](/media/pay-verify.png)
+
+## 6.3. Sign/verify
 ![sign/verify](/media/sign-verify.png)
 
 In this section you can sign a message or file with your private key. The signed message or file can be used to prove you have ownership of your Monero public key. This is a way to prove accountability without having to sacrifice anonymity.
@@ -186,7 +199,7 @@ This is also where you can verify a signed message or file.
 
 **Message or file:** This is where you will write your message (top box) or attach a file (second box). Upon clicking on "sign" you will generate a signature.
 
-**Signature:** This is where your unique signature will appear once you click "sign". This is linked to your private key and the message or file you entered. It will be given as proof along with the message or file which was signed.
+**Signature:** This is where your unique signature will appear once you click the "Sign" button. This is linked to your private key and the message or file you entered. It will be given as proof along with the message or file which was signed.
 
 ### 6.3.2. Verify a message or file signature from an address:
 
@@ -196,6 +209,6 @@ This is also where you can verify a signed message or file.
 
 **Signature:** This is where you will put the signature.
 
-Once all the required information has been inputted click "verify". You should get a notification like this if the signature is good:
+Once all the required information has been entered click the "Verify" button. You should get a notification like this if the signature is good:
 
 ![good signature](/media/good-sig.png)
