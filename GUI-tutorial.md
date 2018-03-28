@@ -4,12 +4,12 @@ When launching `monero-wallet-gui` on Windows, make sure your antivirus doesn't 
 ![win firewall check](/media/win-firewall-check.png)
 
 # 1. Choose a Language
-![Language](/media/language_new.png)
+![Language](/media/wizard_1-lang.png)
 
 After extracting the package click on `monero-wallet-gui` you'll see a list of available languages, click on the one of your choice and go to the next step.
 
 # 2. Create a Wallet
-![welcome](/media/welcome.png)
+![welcome](/media/wizard_2-options.png)
 
 On this page you can choose between three options:
 
@@ -19,24 +19,24 @@ On this page you can choose between three options:
 **(4) Testnet:** Check *testnet* if you are going make tests not using the main network.    
 
 ## 2.1. Create new wallet
-![new](/media/create_new.png)
+![new](/media/wizard_3-create.png)
 
 Now give a name to your wallet (in this example `testname` is used). **Write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recover your funds.**
 
 ### 2.1.1 Add a password
-![add password](/media/password.png)
+![add password](/media/wizard_4-pass.png)
 
 Add a strong password to protect your wallet. If you lose your password, then only your mnemonic seed can recover your wallet history and funds.
 
 ### 2.1.2 Daemon settings
-![daemon settings](/media/daemon_settings.png)
+![daemon settings](/media/wizard_5-daemon-settings.png)
 
 Here you can choose if you are going to run a full node or use a remote one. If you want to use a remote node you need to put the hostname or IP address of the node and its port. Choosing a remote node, you have the optional possibility to add a personalized path for your blockchain.
 
 ### 2.1.4 Run a full node
 Upon completion of the setup you will be prompted to the settings menu, but first you will see a window like this popping up:
 
-![sync](/media/starting-local-node.png)
+![sync](/media/daemon-launch.png)
 
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then wait until your node is fully synced.
 
@@ -47,7 +47,7 @@ If you need some special settings like set up a view-only wallet or add the bloc
 
 
 ### 2.2.1 Restoring from seed
-![restore from seed](/media/restore_seed.png)
+![restore from seed](/media/wizard_6-restore-seed.png)
 
 This is the easiest way to recover your wallet. You only need to put the following information:
 
@@ -56,7 +56,7 @@ This is the easiest way to recover your wallet. You only need to put the followi
 **(3)** Select the destination folder of the wallet.    
 
 ### 2.2.2 Restoring from keys
-![restore from key](/media/restore_key.png)
+![restore from key](/media/wizard_7-restore-keys.png)
 
 Restoring from keys is quite easy and can be extremely useful, especially if you are moving your wallet from online services like MyMonero. you need:
 
@@ -68,7 +68,7 @@ Restoring from keys is quite easy and can be extremely useful, especially if you
 When everything is ready click the right arrow and then the "Use Monero" button.
 
 ## 2.3. Open a wallet from file
-After clicking this option a window will pop up. Just navigate to your file with the extension *.keys*, select it and click the right arrow.
+After clicking this option a window will pop up. Just navigate to your file with the extension `.keys`, select it and click the right arrow.
 
 # 3. Settings
 ![settings](/media/settings.png)
