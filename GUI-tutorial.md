@@ -90,16 +90,16 @@ After clicking this option a window will pop up. Just navigate to your file with
 
 After creating/recovering your wallet, you will be prompted to the "Settings" page. From here you have the possibility to personalize your configurations.
 
-**(1)** Close your wallet (gives the possibility to choose another language).    
-**(2)** Insert a name and a password if you want to create a view-only wallet.    
-**(3)** Make a complete rescan of your spent outputs.    
-**(4)** Change the password of your wallet.    
-**(5)** Manage settings for your local node.    
-**(6)** Manage settings for your remote node.    
-**(7)** Show advanced options ('Local daemon startup flags' and 'node login', in case the remote node requires authentication).    
-**(8)** Start your local node.    
-**(9)** Show daemon status.    
-**(10)** Remote node address and port.    
+**(1) Close wallet:** Close your wallet (gives the possibility to choose another language).    
+**(2) Create viw only wallet:** Insert a name and a password if you want to create a view-only wallet.    
+**(3) Rescan wallet balance:** Make a complete rescan of your spent outputs.    
+**(4) Change password:** Change the password of your wallet.    
+**(5) Local node:** Manage settings for your local node.    
+**(6) Remote node:** Manage settings for your remote node.    
+**(7) Show advanced:** Show advanced options, like 'Local daemon startup flags' and 'node login', in case the remote node requires authentication.    
+**(8) Start local node:** Start your local node.    
+**(9) Show status** Show daemon status.    
+**(10) Remote node:** Remote node address and port.    
 
 ## 3.1. Use a remote node
 Using a remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon.
@@ -132,23 +132,23 @@ This scans the Monero blockchain for any funds that belong to you.
 
 After clicking the "Send" tab on the left menu, you need to specify the following:
 
-**Amount:** This is how much Monero you want to send.
+**(1) Amount:** This is how much Monero you want to send.
 
-**Transaction priority:** This is the priority your transaction will get in the mempool of transactions waiting to be into a block on the Monero blockchain. The more you pay the more likely you will get included in the next block. Which means that your transaction will verify faster. Currently just staying with the default or even using the slow option is likely to get you into the next block.
+**(2) Transaction priority:** This is the priority your transaction will get in the mempool of transactions waiting to be into a block on the Monero blockchain. The more you pay the more likely you will get included in the next block. Which means that your transaction will verify faster. Currently just staying with the default or even using the slow option is likely to get you into the next block.
 
-**Address:** This is where you put the Monero address you are sending to. The best practice is to copy and paste addresses to prevent errors, but visually double check the pasted address is correct.
+**(3) Address:** This is where you put the Monero address you are sending to. The best practice is to copy and paste addresses to prevent errors, but visually double check the pasted address is correct.
 
-**Payment ID:** The payment ID is an identity attached to the transaction you are about to send. Often when sending to an exchange they will give you a payment ID that you must include here. This is so they know which incoming transaction is from you.
+**(4) Payment ID:** The payment ID is an identity attached to the transaction you are about to send. Often when sending to an exchange they will give you a payment ID that you must include here. This is so they know which incoming transaction is from you.
 
 *If you forget to add your payment ID you should still be able to recover your funds by contacting the party you sent Monero to.*
 
-**Description:** This is for your record keeping. You can add some information regarding your transaction for future reference.
+**(5) Description:** This is for your record keeping. You can add some information regarding your transaction for future reference.
 
-**Privacy level (ringsize):** This setting increases the size of the ring signatures in your transaction. Higher ring sizes *may* increase privacy of the transaction but it also increases the fees. I would recommend leaving this as the default 5. Learn more about [ring signatures](https://getmonero.org/resources/moneropedia/ringsignatures.html).
+**(6) Privacy level (ringsize):** This setting increases the size of the ring signatures in your transaction. Higher ring sizes *may* increase privacy of the transaction but it also increases the fees. I would recommend leaving this as the default 5. Learn more about [ring signatures](https://getmonero.org/resources/moneropedia/ringsignatures.html).
 
-**Sweep unmixable:** This allows you to get rid of outputs in your wallet which have strange amounts like `0.000006839355` which are unmovable without combining them with another output. You will more than likely never need to use this feature.
+**(7) Sweep unmixable:** This allows you to get rid of outputs in your wallet which have strange amounts like `0.000006839355` which are unmovable without combining them with another output. You will more than likely never need to use this feature.
 
-**Sign tx file:** This button allows you to cryptographically sign a file with your private key. This is useful if you want to verify a transaction on an offline wallet.
+**(8) Sign tx file:** This button allows you to cryptographically sign a file with your private key. This is useful if you want to verify a transaction on an offline wallet.
 
 ## 4.1. Address Book
 This section lets you save users you frequently transact with. Addresses you put in your address book can be easily copied over when sending a transaction.
