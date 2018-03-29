@@ -1,46 +1,58 @@
-# Preparation
-When launching `monero-wallet-gui` on Windows, make sure your antivirus doesn't block the program and remember to give the wallet permissions to connect to the network (a window asking for permissions will popup the first time you start the wallet).
+# Windows Preparation
++ Be sure that your antivirus does not block the program.
+
++ The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
 
 ![win firewall check](/media/win-firewall-check.png)
 
 # 1. Choose a Language
 ![Language](/media/wizard_1-lang.png)
 
-After extracting the package click on `monero-wallet-gui` you'll see a list of available languages, click on the one of your choice and go to the next step.
+Extract the package and click on `monero-wallet-gui`. You'll see a list of available languages, click on the one of your choice and go to the next step.
 
 # 2. Create a Wallet
 ![welcome](/media/wizard_2-options.png)
 
-On this page you can choose between three options:
+On this page you can choose between three methods for accessing a wallet, and two options for connecting to the network:
 
-**(1) Create a new wallet:** Start the procedure to make a new [wallet](https://getmonero.org/resources/moneropedia/wallet.html) from scratch. Choose this option if it's the first time you are creating a wallet.    
-**(2) Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existing wallet using the mnemonic seed or the keys (this is also the option for creating a view-only wallet).    
-**(3) Open a wallet from file:** Choosing this option you will have to select the file in the ".keys" format from a previous wallet.    
-**(4) Testnet:** Check *testnet* if you are going make tests not using the main network.    
+**(1) Create a new wallet:** Start the procedure to make a new wallet. Choose this option if this is your first time using Monero.    
+**(2) Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existing wallet using the mnemonic seed or the keys.    
+**(3) Open a wallet from file:** Choose this option to select a pre-existing wallet from your files with the extension `.keys`.    
+**(4) Testnet:** Check this box if you would like to use a developers network instead of the main network. Testnet is designed to let developers test new features that are not available on Mainnet or Stagenet.    
+**(5) Stagenet:** Check this box if you would like to use a network for staging instead of the main network. Stagenet mimics the features of Mainnet and is designed to let end users test Monero without the risk of losing funds.    
 
 ## 2.1. Create new wallet
 ![new](/media/wizard_3-create.png)
 
-Now give a name to your wallet (in this example `testname` is used). **Write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recover your funds.**
+Here you can create a new wallet:
+
+**(1) Wallet name:** Give a name for your wallet (in this example `testname` is used).    
+**(2) Mnemonic seed: Write down your [mnemonic seed](https://getmonero.org/resources/moneropedia/mnemonicseed.html) and keep it safe. Your seed is the master key of your wallet, you can use it to recover your funds.**    
+**(3) Wallet location:** Select the destination folder of the wallet.    
 
 ### 2.1.1 Add a password
 ![add password](/media/wizard_4-pass.png)
 
-Add a strong password to protect your wallet. If you lose your password, then only your mnemonic seed can recover your wallet history and funds.
+Add a strong password to protect your wallet. If you lose your password, then only your mnemonic seed can recover your wallet.
 
 ### 2.1.2 Daemon settings
 ![daemon settings](/media/wizard_5-daemon-settings.png)
 
-Here you can choose if you are going to run a full node or use a remote one. If you want to use a remote node you need to put the hostname or IP address of the node and its port. Choosing a remote node, you have the optional possibility to add a personalized path for your blockchain.
+Here you can choose if you are going to run a full node or use a remote one:
 
-### 2.1.4 Run a full node
-Upon completion of the setup you will be prompted to the settings menu, but first you will see a window like this popping up:
+**(1) Start node in background:** Check this box to run a full node and begin blockchain sync.    
+**(2) Blockchain location (optional):** To store the blockchain somewhere other than default, enter that location here.    
+**(3) Bootstrap node:** To use a bootstrap node enter the host and port. A bootstrap node allows you to use your wallet while you are downloading the blockchain by connecting to a remote node. You can find available remote nodes at [MoneroWorld](https://moneroworld.com/).    
+**(4) Connect to a remote node:** Check this box if you want to use only a remote node without downloading the blockchain. You will need to put the host and port of the remote node after checking the box.
+
+### 2.1.3 Run a full node
+Upon completion of the setup you will be prompted to the settings menu, but first you will see a window like this pop up:
 
 ![sync](/media/daemon-launch.png)
 
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then wait until your node is fully synced.
 
-If you need some special settings like set up a view-only wallet or add the blockchain manually, go to section *3: Settings* in this guide.
+If you need some special settings, like setting up a view-only wallet or adding the blockchain manually, go to [section 3](#3-settings).
 
 
 ## 2.2 Restore wallet from keys or mnemonic seed
@@ -49,23 +61,26 @@ If you need some special settings like set up a view-only wallet or add the bloc
 ### 2.2.1 Restoring from seed
 ![restore from seed](/media/wizard_6-restore-seed.png)
 
-This is the easiest way to recover your wallet. You only need to put the following information:
+Restoring from your mnemonic seed is the easiest way to recover your wallet. You need to put the following information:
 
-**(1)** A name for it.    
-**(2)** Paste your seed made of 25 words.    
-**(3)** Select the destination folder of the wallet.    
+**(1) Wallet name:** Give a name for your wallet (in this example `testname` is used).    
+**(2) Mnemonic seed:** Paste your seed made of 25 (or 24) words.    
+**(3) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (eg. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(4) Wallet location:** Select the destination folder of the wallet.    
 
 ### 2.2.2 Restoring from keys
 ![restore from key](/media/wizard_7-restore-keys.png)
 
-Restoring from keys is quite easy and can be extremely useful, especially if you are moving your wallet from online services like MyMonero. you need:
+Restoring from keys is quite easy and can be extremely useful, especially if you are moving your wallet from an online service like MyMonero. You need to put the following information:
 
-**Account address:** The address of the wallet you are recovering.    
-**View key:** Your private view key (needed to be able to check your funds).    
-**Spend key:** Your private spend key (needed to spend your funds).    
-**Restore height:** This field is optional, it lets you specify a block height so the wallet wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, insert in this field a slightly lower height (eg. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(1) Wallet name:** Give a name for your wallet (in this example `testname` is used).    
+**(2) Account address:** The address of the wallet you are recovering.    
+**(3) View key:** Your private view key (needed to be able to check your funds).    
+**(4) Spend key:** Your private spend key (needed to spend your funds).    
+**(5) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (eg. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(6) Wallet location:** Select the destination folder of the wallet.    
 
-When everything is ready click the right arrow and then the "Use Monero" button.
+When everything is ready click the right arrow and then the `Use Monero` button.
 
 ## 2.3. Open a wallet from file
 After clicking this option a window will pop up. Just navigate to your file with the extension `.keys`, select it and click the right arrow.
