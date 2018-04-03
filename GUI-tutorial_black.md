@@ -1,3 +1,4 @@
+
 # Windows Preparation
 + Be sure that your antivirus does not block the program.
 
@@ -83,150 +84,139 @@ Restoring from keys is quite easy and can be extremely useful, especially if you
 When everything is ready click the right arrow and then the `Use Monero` button.
 
 ## 2.3. Open a wallet from file
-After clicking this option a window will pop up. Just navigate to your file with the extension `.keys`, select it and click the right arrow.
+After clicking this option a window will pop up. Navigate to your file with the extension `.keys`, select it and click the right arrow.
 
-# 3. Settings
-![settings](/media/black_settings.png)
+# 3. Send Monero
 
-After creating/recovering your wallet, you will be prompted to the "Settings" page. From here you have the possibility to personalize your configurations.
-
-**(1)** Close your wallet (gives the possibility to choose another language).    
-**(2)** Insert a name and a password if you want to create a view-only wallet.    
-**(3)** Make a complete rescan of your spent outputs.    
-**(4)** Change the password of your wallet.    
-**(5)** Manage settings for your local node.    
-**(6)** Manage settings for your remote node.    
-**(7)** Show advanced options ('Local daemon startup flags' and 'node login', in case the remote node requires authentication).    
-**(8)** Start your local node.    
-**(9)** Show daemon status.    
-**(10)** Remote node address and port.    
-
-## 3.1. Use a remote node
-Using a remote node is the fastest way to start a wallet, but you won't have all the benefits of running a full local node. You also need to specify the address of the remote daemon.
-
-To use a remote node you need to use somebody else's daemon, this means you need to communicate with it. Add the remote daemon address and port (10) and click connect. A collection of remote nodes is available at [moneroworld.com](https://moneroworld.com/#nodes) (in this example address `node.moneroworld.com` and port `18089` are used). Click on "connect" and your wallet will start syncing, this takes some minutes. To check the progresses click on "Show status" (9) or check in the lower left corner.
-
-## 3.2. Create a view-only wallet
-Click on (2), you will be asked to give a name and a location for your view-only wallet. Proceed setting a strong password then click the right arrow. A "Success" message will signal the correct creation of the view-only wallet.
-
-## 3.3. Add the blockchain manually
-
-## 3.4. Show seed & keys
-This shows your wallets mnemonic seed as well as your secret view key, public view key, secret spend key and public spend key. These are outlined below.
-
-## 3.4.1. Mnemonic seed
-**DO NOT share your mnemonic seed with anyone. Store a copy securely.** The mnemonic seed is a 25 word phrase that contains all the information needed to view and spend funds. Learn more about [mnemonic seeds](https://getmonero.org/resources/moneropedia/mnemonicseed.html).
-
-### 3.4.2. Public/secret view key
-Secret view keys allow you and others to view your Monero wallets incoming transactions (not outgoing). It is sometimes useful for auditing purposes to give your secret view key to a third party. The public spend key is used for stealth address creation. Learn more about [view keys](https://getmonero.org/resources/moneropedia/viewkey.html).
-
-### 3.4.3. Public/secret spend key
-**DO NOT share your secret spend key with anyone. The secret spend key is used to sign transactions and should be regarded with the same security as your mnemonic seed.** The public spend key is used by the network to verify the signature of the key image you generated. This is what prevents double-spends as the network enforces the rule that a key image can be spent only once. Learn more about [spend keys](https://getmonero.org/resources/moneropedia/spendkey.html).
-
-### 3.4.4. Re-scan wallet balance
-This scans the Monero blockchain for any funds that belong to you.
-
-
-# 4. Send Some Moneroj
 ![send](/media/black_send.png)
 
-After clicking the "Send" tab on the left menu, you need to specify the following:
+The `Send` tab provides tools for creating outgoing transactions.
 
-**Amount:** This is how much Monero you want to send.
+**(1) Amount:** This is how much Monero you want to send.    
+**(2) Transaction priority:** This is the priority level your transaction will receive in the pool of transactions waiting to be confirmed. The more you pay, the higher your transactions priority for inclusion in a block.    
+*Currently staying with the default or the slow option is likely to get you into the next block.*    
+**(3) Address:** This is where you put the Monero address that you are sending to. Best practice is to copy and paste the address to prevent errors, accompanied with visually checking that the pasted address is correct.    
+**(4) Payment ID (optional):** The payment ID is an identifier attached to the transaction you are about to send. Often when sending to an exchange they will give you a payment ID that you must include here. This is so they know which incoming transaction is from you.    
+*If you forget to add your payment ID you should still be able to recover your funds by contacting the party you sent Monero to.*    
+**(5) Description (optional):** This is for your record keeping. You can add some information regarding your transaction for future reference.    
+**(6) Privacy level (ringsize):** This slider increases the size of the ring signatures in your transaction. Higher ring sizes may increase privacy of the transaction but it also increases the fees. It is recommended to leave the ring size at the default.    
+*Learn more about ring signatures.*    
+**(7) Sweep unmixable:** This allows you to get rid of outputs in your wallet which have strange amounts like `0.000006839355`. These are unmovable without combining them with another output.    
+*Most users will never need to use this feature.*    
+**(8) Sign tx file:** This button allows you to sign a transaction file that was created on a view-only wallet.    
 
-**Transaction priority:** This is the priority your transaction will get in the mempool of transactions waiting to be into a block on the Monero blockchain. The more you pay the more likely you will get included in the next block. Which means that your transaction will verify faster. Currently just staying with the default or even using the slow option is likely to get you into the next block.
+## 3.1. Address Book
 
-**Address:** This is where you put the Monero address you are sending to. The best practice is to copy and paste addresses to prevent errors, but visually double check the pasted address is correct.
+The `Address Book` tab lets you save addresses that you frequently transact with. This is a convenient place to copy addresses from when creating transactions.
 
-**Payment ID:** The payment ID is an identity attached to the transaction you are about to send. Often when sending to an exchange they will give you a payment ID that you must include here. This is so they know which incoming transaction is from you.
+# 4. Receive Monero
 
-*If you forget to add your payment ID you should still be able to recover your funds by contacting the party you sent Monero to.*
-
-**Description:** This is for your record keeping. You can add some information regarding your transaction for future reference.
-
-**Privacy level (ringsize):** This setting increases the size of the ring signatures in your transaction. Higher ring sizes *may* increase privacy of the transaction but it also increases the fees. I would recommend leaving this as the default 5. Learn more about [ring signatures](https://getmonero.org/resources/moneropedia/ringsignatures.html).
-
-**Sweep unmixable:** This allows you to get rid of outputs in your wallet which have strange amounts like `0.000006839355` which are unmovable without combining them with another output. You will more than likely never need to use this feature.
-
-**Sign tx file:** This button allows you to cryptographically sign a file with your private key. This is useful if you want to verify a transaction on an offline wallet.
-
-## 4.1. Address Book
-This section lets you save users you frequently transact with. Addresses you put in your address book can be easily copied over when sending a transaction.
-
-# 5. Receive Moneroj
 ![receive](/media/black_receive.png)
 
-To receive Moneroj you need to give your address. Best practice is to create a new address each time you receive. Once you click 'Create new address' you will be prompted to enter an optional label for your records. You may also specify:
+The `Receive` tab provides tools for generating subaddresses, crafting payment requests, and monitoring incoming transactions.
 
-**Amount:** The amount of Monero you would like to receive.
+**(1) Addresses:** This is a list of your primary address and subaddresses.    
+**(2) Create new address:** This button allows you to create new subaddresses. You can create as many as you would like. *Learn more about [subaddresses](https://monero.stackexchange.com/questions/3673/what-is-a-sub-address).*    
+**(3) Rename:** This button allows you to change the label of a subaddress.    
+**(4) Amount:** This is for creating a payment request, enter the amount of Monero you would like to receive.    
+**(5) Tracking:** This is a list of incoming transactions.    
+**(6) QR code:** This is a QR code that has your selected address, and optionally the amount, embedded into it. It can be used as a way to give others your Monero address by scanning the code.    
 
-**QR code:** This is a QR code that has your selected address, and optionally the amount, embedded into it. It can be used as a way to give others your Monero address by simply scanning the code.
+# 5. Advanced Features
 
-# 6. Advanced Features
+## 5.1. Solo mining
 
-## 6.1. Solo mining
 ![mining](/media/black_mining.png)
 
-This is a one click CPU miner that is embedded into the GUI. Having this on helps secure the Monero network. The more people that mine, the harder it is for the network to be attacked.
+The Mining tab provides a one click CPU miner that is embedded into the GUI.
 
-It is very unlikely that you will receive rewards from doing this, but it is not outside the realm of possibility.
+**(1) CPU threads:** Number of CPU threads to use for mining.    
+**(2) Background mining:** Check this box to enable experimental background mining. This should allow you to use your computer normally while mining.    
+**(3) Start mining:** Start the miner.    
+**(4) Stop mining:** Stop the miner.    
 
-## 6.2. Prove/check
+## 5.2. Prove/check
+
 ![Check payment](/media/black_prove-check.png)
 
-When you send or receive monero you will sometimes find the need to be able to prove or verify that the payment was made.
+The `Prove/check` tab provides tools for proving a payment or validating proof of a payment. This is necessary with Monero because these details are not available on the blockchain.
 
-With Bitcoin this is typically done by looking up the transaction ID where the origin addresses, destination addresses, and the amount transacted transacted are all visible.
+### 5.2.1. Prove Transaction
 
-Monero, however, is private and that information is not available publicly on the blockchain. The steps are therefore a bit more involved.
-
-### 6.2.1. Generate proof of payment
 This will generate a proof that you made a payment to a certain address. You need to put the following information:
 
-**Transaction ID:** This is the ID of the payment you are creating proof for. You can find the transaction details by selecting the "History" tab from the left menu.    
-**Address:** This is the address you are proving payment to.    
-**Message:** This an optional message that will be signed with the transaction details. If you choose to include a message then the other party must also include the exact same message in order to verify your proof.    
+**(1) Transaction ID:** This is the ID of the payment you are creating proof for. You can find the transaction details by selecting the History tab from the left menu.    
+**(2) Address:** This is the address you are proving payment to.    
+**(3) Message (optional):** This an optional message that will be signed with the transaction details. If you choose to include a message then the other party must also include the exact same message in order to verify your proof.    
+**(4) Generate:** Click here once you've entered all the details to generate your proof.    
 
-After clicking the "Generate" button, you will receive the proof which can then be used to verify a payment was made. The screen will look like this:
+### 5.2.2. Check Transaction
 
-![pay prove](/media/black_pay-prove.png)
-
-### 6.2.2. Check proof of payment
 This will verify that a payment was made. You need to put the following information:
 
-**Transaction ID:** This is the ID of the payment you are attempting to verify.    
-**Address:** This is the receiving address of the payment you are attempting to verify.    
-**Message:** This is the optional message that may have been included with the proof.    
-**Signature:** This is the signature generated to prove payment.    
+**(5) Transaction ID:** This is the ID of the payment you are attempting to verify.    
+**(6) Address:** This is the receiving address of the payment you are attempting to verify.    
+**(7) Message (optional):** This is the optional message that may have been included with the proof.    
+**(8) Signature:** This is the signature generated to prove payment.    
+**(9) Check:** Click here once you've entered all the details to check that the transaction proof is valid.    
 
-This is what should appear after entering the valid payment details and clicking the "Check" button:
+## 5.3. Sign/verify
 
-![pay verify](/media/black_pay-verify.png)
-
-## 6.3. Sign/verify
 ![sign/verify](/media/black_sign-verify.png)
 
-In this section you can sign a message or file with your private key. The signed message or file can be used to prove you have ownership of your Monero public key. This is a way to prove accountability without having to sacrifice anonymity.
+The `Sign/verify` tab provides tools for signing a message or file with your private key or verifying the authenticity of a singed message or file.
 
-This is also where you can verify a signed message or file.
+### 5.3.1. Sign
 
-### 6.3.1. Sign a message or file contents with your address
+**(1) Message:** This is where you can enter a message to be signed.    
+**(2) Message from file:** This is where you can choose a file to be signed. Click Browse to navigate the file system.    
+**(3) Signature:** This is where your unique signature will appear once you click the Sign button. This is linked to your private key and the message or file you entered. It will be given as proof along with the message or file which was signed.    
 
-**Message or file:** This is where you will write your message (top box) or attach a file (second box). Upon clicking on "sign" you will generate a signature.
+### 5.3.2. Verify
 
-**Signature:** This is where your unique signature will appear once you click the "Sign" button. This is linked to your private key and the message or file you entered. It will be given as proof along with the message or file which was signed.
+**(4) Verify message:** This is where you will put a message that has been signed.    
+**(5) Verify file:** This is where you enter the path to a file that has been signed. Click Browse to navigate the file system.    
+**(6) Address:** This is where you will enter the public Monero address of the signer.    
+**(7) Signature:** This is where you will enter the signature you are verifying. Once all the required information has been entered click the Verify button. A pop-up will tell you if the signature is valid.    
 
-### 6.3.2. Verify a message or file signature from an address:
+# 6. Settings
 
-**Message or file:** This is where you will put a message or file that has been signed.
+![settings](/media/black_settings.png)
 
-**Signing address:** This is where you will put the public Monero address you are wanting to verify.
+The `Settings` tab provides tools for customizing configuration options.
 
-**Signature:** This is where you will put the signature.
+**(1) Close wallet:** Close your wallet and restart wallet creation wizard.    
+**(2) Create view only wallet:** Create a view-only version of the current wallet. You will be prompted for a file name and password for encryption.    
+**(3) Rescan wallet balance:** Make a complete rescan of your spent outputs.    
+**(4) Change password:** Change the password of your wallet.    
+**(5) Local Node:** Use a local node, download the blockchain. You may use a bootstrap node until your blockchain syncs.    
+**(6) Remote Node:** Use a remote node, do not download the blockchain.    
+**(7) Bootstrap/Remote Node Address:** Enter the hostname or IP address of the remote node.    
+**(8) Bootstrap/Remote Node Port:** Enter the port of the remote node.    
+**(9) Start/Stop Local Node:** Depending on its current state, either start or stop the local node.    
+**(10) Show status:** Shows the current status of your node.    
+**(11) Blockchain location:** Manually enter a non-default path to the blockchain.    
+**(12) Change location:** Use a GUI to enter a non-default path to the blockchain.    
+**(13) Show advanced:** Check this box to show advanced options (Startup flags or Node login).    
+**(14) Startup flags/Node login:** When using a local node this will be where you enter additional command line options. When using a remote node this will be where you can enter a username and password in case authentication is required.    
+**(15) Custom decorations:** Check this box to show the Monero custom decorations.    
+**(16) Log level:** Change the verbosity of the debug logs.    
+**(17) Log categories:** Add specific categories to the debug logs.    
+**(18) Wallet creation height:** Change the block height that a wallet rescan will go back to. Click `Save` for changes to take effect.    
 
-Once all the required information has been entered click the "Verify" button. You should get a notification like this if the signature is good:
+## 6.1. Seed & keys
 
-![good signature](/media/black_good-sig.png)
+![seed-keys](/media/black_seed-keys.png)
+
+The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secret view key, public view key, secret spend key, and public spend key.
+
+**(1) Mnemonic seed: DO NOT share your mnemonic seed with anyone. Store a copy securely.** The mnemonic seed is a 25 word phrase that contains all the information needed to view and spend funds. *Learn more about [mnemonic seeds](https://getmonero.org/resources/moneropedia/mnemonicseed.html).*    
+**(2) Secret view key:** Secret view keys allows the holder to view your wallets incoming transactions, but not outgoing. It is sometimes useful for auditing purposes to give your secret view key to a third party.    
+**(3) Public view key:** The public view key is used for stealth address creation. *Learn more about [view keys](https://getmonero.org/resources/moneropedia/viewkey.html).*    
+**(4) Secret spend key: DO NOT share your secret spend key with anyone. The secret spend key is used to sign transactions and should be regarded with the same security as your mnemonic seed.**    
+**(5) Public spend key:** The public spend key is used by the network to verify the signature of the key image you generate when you make a transaction. This is what prevents double-spends as the network enforces the rule that a key image can be spent only once. *Learn more about [spend keys](https://getmonero.org/resources/moneropedia/spendkey.html).*    
+**(6) Export Spendable Wallet: DO NOT share your spendable wallet qr code with anyone. This can be used like a mnemonic seed for recovering your wallet.** This creates a qrcode that contains all of your keys.    
+**(7) Export View Only Wallet:** This creates a qr code that contains only the keys for viewing the transactions that this wallet sends or receives, but cannot create transactions.    
 
 # Common issues and solutions
 
@@ -240,3 +230,5 @@ Once all the required information has been entered click the "Verify" button. Yo
 + [How do I change the language of the 25 word mnemonic seed in the GUI or CLI?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)
 + [My blockchain is stuck, how do I “unstuck” it?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)
 + [I am using remote node, but the GUI still syncs blockchain?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)
++ TO DO: [How to add the blockchain manually]()
+
