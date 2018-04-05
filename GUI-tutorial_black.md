@@ -1,5 +1,32 @@
+# Table of contents
 
-# Windows Preparation
+0. [Windows Preparation](#0-windows-preparation)
+1. [Choose a Language](#1-choose-a-language)
+2. [Create a Wallet](#2-create-a-wallet)    
+   + 2.1. [Create new wallet](#21-create-new-wallet)
+      + 2.1.1. [Add a password](#211-add-a-password)
+      + 2.1.2. [Daemon settings](#212-daemon-settings)
+      + 2.1.3. [Run a full node](#213-run-a-full-node)
+   + 2.2. [Restore wallet from keys or mnemonic seed](#22-restore-wallet-from-keys-or-mnemonic-seed)    
+      + 2.2.1. [Restoring from seed](#221-restoring-from-seed)
+      + 2.2.2. [Restoring from keys](#222-restoring-from-keys)    
+   + 2.3. [Open a wallet from file](#23-open-a-wallet-from-file)    
+3. [Send Monero](#3-send-monero)    
+   + 3.1. [Address Book](#31-address-book)
+4. [Receive Monero](#4-receive-monero)    
+5. [Advanced Features](#5-advanced-features)    
+   + 5.1. [Solo mining](#51-solo-mining)    
+   + 5.2. [Prove - check](#52-prove---check)    
+      + 5.2.1. [Prove Transaction](#521-prove-transaction)
+      + 5.2.2. [Check Transaction](#522-check-transaction)    
+   + 5.3. [Sign - verify](#53-sign---verify)
+      + 5.3.1. [Sign](#531-sign)
+      + 5.3.2. [Verify](#532-verify)
+6. [Settings](#6-settings)    
+   + 6.1. [Seed - keys](#61-seed-and-keys)
+7. [Common issues and solutions](#7-common-issues-and-solutions)
+
+# 0. Windows Preparation
 + Be sure that your antivirus does not block the program.
 
 + The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
@@ -83,7 +110,7 @@ Restoring from keys is quite easy and can be extremely useful, especially if you
 
 When everything is ready click the right arrow and then the `Use Monero` button.
 
-## 2.3. Open a wallet from file
+## 2.3 Open a wallet from file
 After clicking this option a window will pop up. Navigate to your file with the extension `.keys`, select it and click the right arrow.
 
 # 3. Send Monero
@@ -124,7 +151,7 @@ The `Receive` tab provides tools for generating subaddresses, crafting payment r
 
 # 5. Advanced Features
 
-## 5.1. Solo mining
+## 5.1 Solo mining
 
 ![mining](/media/black_mining.png)
 
@@ -135,7 +162,7 @@ The Mining tab provides a one click CPU miner that is embedded into the GUI.
 **(3) Start mining:** Start the miner.    
 **(4) Stop mining:** Stop the miner.    
 
-## 5.2. Prove/check
+## 5.2. Prove - Check
 
 ![Check payment](/media/black_prove-check.png)
 
@@ -160,7 +187,7 @@ This will verify that a payment was made. You need to put the following informat
 **(8) Signature:** This is the signature generated to prove payment.    
 **(9) Check:** Click here once you've entered all the details to check that the transaction proof is valid.    
 
-## 5.3. Sign/verify
+## 5.3. Sign - verify
 
 ![sign/verify](/media/black_sign-verify.png)
 
@@ -204,7 +231,7 @@ The `Settings` tab provides tools for customizing configuration options.
 **(17) Log categories:** Add specific categories to the debug logs.    
 **(18) Wallet creation height:** Change the block height that a wallet rescan will go back to. Click `Save` for changes to take effect.    
 
-## 6.1. Seed & keys
+## 6.1. Seed and keys
 
 ![seed-keys](/media/black_seed-keys.png)
 
@@ -218,7 +245,7 @@ The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secre
 **(6) Export Spendable Wallet: DO NOT share your spendable wallet qr code with anyone. This can be used like a mnemonic seed for recovering your wallet.** This creates a qrcode that contains all of your keys.    
 **(7) Export View Only Wallet:** This creates a qr code that contains only the keys for viewing the transactions that this wallet sends or receives, but cannot create transactions.    
 
-# Common issues and solutions
+# 7. Common issues and solutions
 
 + [I am missing (not seeing) a transaction to (in) the GUI (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)
 + [I am using the GUI and my daemon doesn't start anymore](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)
