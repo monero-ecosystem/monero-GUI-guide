@@ -24,7 +24,8 @@
       + 5.3.2. [Verify](#532-verify)
 6. [Settings](#6-settings)    
    + 6.1. [Seed - keys](#61-seed-and-keys)
-7. [Common issues and solutions](#7-common-issues-and-solutions)
+7. [Binaries Verification](#7-binaries-verification)
+8. [Common issues and solutions](#7-common-issues-and-solutions)
 
 # 0. Windows Preparation
 + Be sure that your antivirus does not block the program.
@@ -245,7 +246,11 @@ The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secre
 **(6) Export Spendable Wallet: DO NOT share your spendable wallet qr code with anyone. This can be used like a mnemonic seed for recovering your wallet.** This creates a qrcode that contains all of your keys.    
 **(7) Export View Only Wallet:** This creates a qr code that contains only the keys for viewing the transactions that this wallet sends or receives, but cannot create transactions.    
 
-# 7. Common issues and solutions
+# 7. Binaries Verification
+
+Verify that the files you downloaded match the official ones, you can use [this step-by-step guide](https://getmonero.org/resources/user-guides/verification-windows-beginner.html) with pictures (easy, for Windows user)
+
+# 8. Common issues and solutions
 
 + [I am missing (not seeing) a transaction to (in) the GUI (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)
 + [I am using the GUI and my daemon doesn't start anymore](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)
