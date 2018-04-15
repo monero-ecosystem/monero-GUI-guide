@@ -1,8 +1,8 @@
 # Table of contents
 
-0. [Windows Preparation](#0-windows-preparation)
-1. [Choose a Language](#1-choose-a-language)
-2. [Create a Wallet](#2-create-a-wallet)    
+0. **[Windows Preparation](#0-windows-preparation)**
+1. **[Choose a Language](#1-choose-a-language)**
+2. **[Create a Wallet](#2-create-a-wallet)**   
    + 2.1. [Create new wallet](#21-create-new-wallet)
       + 2.1.1. [Add a password](#211-add-a-password)
       + 2.1.2. [Daemon settings](#212-daemon-settings)
@@ -11,10 +11,10 @@
       + 2.2.1. [Restoring from seed](#221-restoring-from-seed)
       + 2.2.2. [Restoring from keys](#222-restoring-from-keys)    
    + 2.3. [Open a wallet from file](#23-open-a-wallet-from-file)    
-3. [Send Monero](#3-send-monero)    
+3. **[Send Monero](#3-send-monero)**    
    + 3.1. [Address Book](#31-address-book)
-4. [Receive Monero](#4-receive-monero)    
-5. [Advanced Features](#5-advanced-features)    
+4. **[Receive Monero](#4-receive-monero)**    
+5. **[Advanced Features](#5-advanced-features)**    
    + 5.1. [Solo mining](#51-solo-mining)    
    + 5.2. [Prove - check](#52-prove---check)    
       + 5.2.1. [Prove Transaction](#521-prove-transaction)
@@ -22,10 +22,10 @@
    + 5.3. [Sign - verify](#53-sign---verify)
       + 5.3.1. [Sign](#531-sign)
       + 5.3.2. [Verify](#532-verify)
-6. [Settings](#6-settings)    
+6. **[Settings](#6-settings)**    
    + 6.1. [Seed - keys](#61-seed-and-keys)
-7. [Binaries Verification](#7-binaries-verification)
-8. [Common issues and solutions](#7-common-issues-and-solutions)
+7. **[Binaries Verification](#7-binaries-verification)**
+8. **[Common issues and solutions](#7-common-issues-and-solutions)**
 
 # 0. Windows Preparation
 + Be sure that your antivirus does not block the program.
