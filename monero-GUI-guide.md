@@ -252,6 +252,10 @@ Verify that the files you downloaded match the official ones, you can use [this 
 
 # 8. Common issues and solutions
 
++ [Monero GUI startup (on Linux) getting *** Error in `./monero-wallet-gui': free(): invalid pointer: 0x00007f2afd1b9c60 ***](https://monero.stackexchange.com/questions/7951/monero-gui-startup-on-linux-getting-error-in-monero-wallet-gui-free/)
++ [TAILS - GUI v0.12 does not connect to the daemon (monerod) that is already running](https://monero.stackexchange.com/questions/7995/tails-gui-v0-12-does-not-connect-to-the-daemon-monerod-that-is-already-runni/)
++ [WINDOWS - GUI v0.12 does not launch / start](https://monero.stackexchange.com/questions/7997/windows-gui-v0-12-does-not-launch-start)
++ [LINUX - GUI v0.12 does not connect to local or remote node (std::bad_cast error)](https://monero.stackexchange.com/questions/7999/linux-gui-v0-12-does-not-connect-to-local-or-remote-node-stdbad-cast-error/)
 + [I am missing (not seeing) a transaction to (in) the GUI (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)
 + [I am using the GUI and my daemon doesn't start anymore](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)
 + [Transaction stuck as “pending” in the GUI](https://monero.stackexchange.com/questions/6649/transaction-stuck-as-pending-in-the-gui)
