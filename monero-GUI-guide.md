@@ -33,15 +33,15 @@
 
 + The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
 
-![win firewall check](/media/win-firewall-check.png)
+![win firewall check](media/win-firewall-check.png)
 
 # 1. Choose a Language
-![Language](/media/wizard_1-lang.png)
+![Language](media/wizard_1-lang.png)
 
 Extract the package and click on `monero-wallet-gui`. You'll see a list of available languages, click on the one of your choice and go to the next step.
 
 # 2. Create a Wallet
-![welcome](/media/wizard_2-options.png)
+![welcome](media/wizard_2-options.png)
 
 On this page you can choose between three methods for accessing a wallet, and two options for connecting to the network:
 
@@ -52,7 +52,7 @@ On this page you can choose between three methods for accessing a wallet, and tw
 **(5) Stagenet:** Check this box if you would like to use a network for staging instead of the main network. Stagenet mimics the features of Mainnet and is designed to let end users test Monero without the risk of losing funds.    
 
 ## 2.1. Create new wallet
-![new](/media/wizard_3-create.png)
+![new](media/wizard_3-create.png)
 
 Here you can create a new wallet:
 
@@ -61,12 +61,12 @@ Here you can create a new wallet:
 **(3) Wallet location:** Select the destination folder of the wallet.    
 
 ### 2.1.1 Add a password
-![add password](/media/wizard_4-pass.png)
+![add password](media/wizard_4-pass.png)
 
 Add a strong password to protect your wallet. If you lose your password, then only your mnemonic seed can recover your wallet.
 
 ### 2.1.2 Daemon settings
-![daemon settings](/media/wizard_5-daemon-settings.png)
+![daemon settings](media/wizard_5-daemon-settings.png)
 
 Here you can choose if you are going to run a full node or use a remote one:
 
@@ -78,7 +78,7 @@ Here you can choose if you are going to run a full node or use a remote one:
 ### 2.1.3 Run a full node
 Upon completion of the setup you will be prompted to the settings menu, but first you will see a window like this pop up:
 
-![sync](/media/daemon-launch.png)
+![sync](media/daemon-launch.png)
 
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then wait until your node is fully synced.
 
@@ -89,7 +89,7 @@ If you need some special settings, like setting up a view-only wallet or adding 
 
 
 ### 2.2.1 Restoring from seed
-![restore from seed](/media/wizard_6-restore-seed.png)
+![restore from seed](media/wizard_6-restore-seed.png)
 
 Restoring from your mnemonic seed is the easiest way to recover your wallet. You need to put the following information:
 
@@ -99,7 +99,7 @@ Restoring from your mnemonic seed is the easiest way to recover your wallet. You
 **(4) Wallet location:** Select the destination folder of the wallet.    
 
 ### 2.2.2 Restoring from keys
-![restore from key](/media/wizard_7-restore-keys.png)
+![restore from key](media/wizard_7-restore-keys.png)
 
 Restoring from keys is quite easy and can be extremely useful, especially if you are moving your wallet from an online service like MyMonero. You need to put the following information:
 
@@ -117,7 +117,7 @@ After clicking this option a window will pop up. Navigate to your file with the 
 
 # 3. Send Monero
 
-![send](/media/black_send.png)
+![send](media/black_send.png)
 
 The `Send` tab provides tools for creating outgoing transactions.
 
@@ -140,7 +140,7 @@ The `Address Book` tab lets you save addresses that you frequently transact with
 
 # 4. Receive Monero
 
-![receive](/media/black_receive.png)
+![receive](media/black_receive.png)
 
 The `Receive` tab provides tools for generating subaddresses, crafting payment requests, and monitoring incoming transactions.
 
@@ -155,7 +155,7 @@ The `Receive` tab provides tools for generating subaddresses, crafting payment r
 
 ## 5.1 Solo mining
 
-![mining](/media/black_mining.png)
+![mining](media/black_mining.png)
 
 The Mining tab provides a one click CPU miner that is embedded into the GUI.
 
@@ -166,7 +166,7 @@ The Mining tab provides a one click CPU miner that is embedded into the GUI.
 
 ## 5.2. Prove - Check
 
-![Check payment](/media/black_prove-check.png)
+![Check payment](media/black_prove-check.png)
 
 The `Prove/check` tab provides tools for proving a payment or validating proof of a payment. This is necessary with Monero because these details are not available on the blockchain.
 
@@ -191,11 +191,11 @@ This will verify that a payment was made. You need to put the following informat
 
 ## 5.3. Shared RingDB
 
-![shared ringdb](/media/black_sharedringdb.png)
+![shared ringdb](media/black_sharedringdb.png)
 
 ## 5.4. Sign - verify
 
-![sign/verify](/media/black_sign-verify.png)
+![sign/verify](media/black_sign-verify.png)
 
 The `Sign/verify` tab provides tools for signing a message or file with your private key or verifying the authenticity of a singed message or file.
 
@@ -214,7 +214,7 @@ The `Sign/verify` tab provides tools for signing a message or file with your pri
 
 # 6. Settings
 
-![settings](/media/black_settings.png)
+![settings](media/black_settings.png)
 
 The `Settings` tab provides tools for customizing configuration options.
 
@@ -239,7 +239,7 @@ The `Settings` tab provides tools for customizing configuration options.
 
 ## 6.1. Seed and keys
 
-![seed-keys](/media/black_seed-keys.png)
+![seed-keys](media/black_seed-keys.png)
 
 The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secret view key, public view key, secret spend key, and public spend key.
 
