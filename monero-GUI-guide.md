@@ -1,8 +1,8 @@
 # Table of contents
 
-0. [Windows Preparation](#0-windows-preparation)
-1. [Choose a Language](#1-choose-a-language)
-2. [Create a Wallet](#2-create-a-wallet)    
+0. **[Windows Preparation](#0-windows-preparation)**
+1. **[Choose a Language](#1-choose-a-language)**
+2. **[Create a Wallet](#2-create-a-wallet)**   
    + 2.1. [Create new wallet](#21-create-new-wallet)
       + 2.1.1. [Add a password](#211-add-a-password)
       + 2.1.2. [Daemon settings](#212-daemon-settings)
@@ -11,21 +11,22 @@
       + 2.2.1. [Restoring from seed](#221-restoring-from-seed)
       + 2.2.2. [Restoring from keys](#222-restoring-from-keys)    
    + 2.3. [Open a wallet from file](#23-open-a-wallet-from-file)    
-3. [Send Monero](#3-send-monero)    
+3. **[Send Monero](#3-send-monero)**    
    + 3.1. [Address Book](#31-address-book)
-4. [Receive Monero](#4-receive-monero)    
-5. [Advanced Features](#5-advanced-features)    
+4. **[Receive Monero](#4-receive-monero)**    
+5. **[Advanced Features](#5-advanced-features)**    
    + 5.1. [Solo mining](#51-solo-mining)    
    + 5.2. [Prove - check](#52-prove---check)    
       + 5.2.1. [Prove Transaction](#521-prove-transaction)
       + 5.2.2. [Check Transaction](#522-check-transaction)    
-   + 5.3. [Sign - verify](#53-sign---verify)
-      + 5.3.1. [Sign](#531-sign)
-      + 5.3.2. [Verify](#532-verify)
-6. [Settings](#6-settings)    
+   + 5.3. [Shared RingDB](#53-shared-ringdb)
+   + 5.4. [Sign - verify](#54-sign---verify)
+      + 5.4.1. [Sign](#541-sign)
+      + 5.4.2. [Verify](#542-verify)
+6. **[Settings](#6-settings)**    
    + 6.1. [Seed - keys](#61-seed-and-keys)
-7. [Binaries Verification](#7-binaries-verification)
-8. [Common issues and solutions](#7-common-issues-and-solutions)
+7. **[Binaries Verification](#7-binaries-verification)**
+8. **[Common issues and solutions](#7-common-issues-and-solutions)**
 
 # 0. Windows Preparation
 + Be sure that your antivirus does not block the program.
@@ -188,19 +189,23 @@ This will verify that a payment was made. You need to put the following informat
 **(8) Signature:** This is the signature generated to prove payment.    
 **(9) Check:** Click here once you've entered all the details to check that the transaction proof is valid.    
 
-## 5.3. Sign - verify
+## 5.3. Shared RingDB
+
+![shared ringdb](/media/black_sharedringdb.png)
+
+## 5.4. Sign - verify
 
 ![sign/verify](/media/black_sign-verify.png)
 
 The `Sign/verify` tab provides tools for signing a message or file with your private key or verifying the authenticity of a singed message or file.
 
-### 5.3.1. Sign
+### 5.4.1. Sign
 
 **(1) Message:** This is where you can enter a message to be signed.    
 **(2) Message from file:** This is where you can choose a file to be signed. Click Browse to navigate the file system.    
 **(3) Signature:** This is where your unique signature will appear once you click the Sign button. This is linked to your private key and the message or file you entered. It will be given as proof along with the message or file which was signed.    
 
-### 5.3.2. Verify
+### 5.4.2. Verify
 
 **(4) Verify message:** This is where you will put a message that has been signed.    
 **(5) Verify file:** This is where you enter the path to a file that has been signed. Click Browse to navigate the file system.    
@@ -265,4 +270,3 @@ Verify that the files you downloaded match the official ones, you can use [this 
 + **I use an high resolution display and the GUI looks extremely small**    
 This problem will be fixed soon, but there is a workaround for Windows: right click on monero-wallet-gui.exe, select properties --> compatibility. you'll find an 'high DPI' option, change value there from "Application" to "System" or vice versa
 + TO DO: **[How to add the blockchain manually]()**
-
