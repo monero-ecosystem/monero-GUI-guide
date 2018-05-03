@@ -1,6 +1,8 @@
 # Table of contents
 
-0. **[Windows Preparation](#0-windows-preparation)**
+0. **[Prefaction](#0-prefaction)**
+   + 0.1. [Translations](#01-translations)
+   + 0.2. [Windows Preparation](#02-windows-preparation)
 1. **[Choose a Language](#1-choose-a-language)**
 2. **[Create a Wallet](#2-create-a-wallet)**   
    + 2.1. [Create new wallet](#21-create-new-wallet)
@@ -28,7 +30,16 @@
 7. **[Binaries Verification](#7-binaries-verification)**
 8. **[Common issues and solutions](#7-common-issues-and-solutions)**
 
-# 0. Windows Preparation
+# 0. Prefaction
+This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the developement of this guide, feel free to open Pull Requests or Issues on the
+GitHub repository where this document is maintained: [github.com/monero-ecosystem/monero-GUI-guide](https://github.com/monero-ecosystem/monero-GUI-guide)
+
+## 0.1. Translations
+This document will be localized into several languages. You can find all available translations in the [dedicated section on GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations)
+
+## 0.2. Windows Preparation
+If you are on Windows:
+
 + Be sure that your antivirus does not block the program.
 
 + The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
