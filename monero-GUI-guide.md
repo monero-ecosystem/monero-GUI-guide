@@ -157,9 +157,9 @@ The `Receive` tab provides tools for generating subaddresses, crafting payment r
 
 **(1) Addresses:** This is a list of your primary address and subaddresses.    
 **(2) Create new address:** This button allows you to create new subaddresses. You can create as many as you would like. *Learn more about [subaddresses](https://monero.stackexchange.com/questions/3673/what-is-a-sub-address).*    
-**(3) Rename:** This button allows you to change the label of a subaddress.    
+**(3) Advanced options:** Clicking here you will be prompted to the advanced section.    
 **(4) Amount:** This is for creating a payment request, enter the amount of Monero you would like to receive.    
-**(5) Tracking:** This is a list of incoming transactions.    
+**(5) Tracking:** Thicking this box you'll see a list of incoming transactions.    
 **(6) QR code:** This is a QR code that has your selected address, and optionally the amount, embedded into it. It can be used as a way to give others your Monero address by scanning the code.    
 
 # 5. Advanced Features
