@@ -206,15 +206,15 @@ This will verify that a payment was made. You need to put the following informat
 
 This is an advanced tool that can be used to improve the privacy of ring signatures. The outputs used in ring signatures can be adapted to mitigate the privacy loss when using a key-reusing fork or to avoid outputs that could not be spent in this transaction.
 
-**(1) Blackball filename:** This tool will blackball outputs that are known to be spent. After running monero-blockchain-blackball, import the resulting file to avoid using these outputs as decoys in constructed ring signatures. This file is stored in the .shared-ringdb folder by default.
-**(2) Blackball output:** This will blackball or unblackball a chosen single output. Outputs are represented by 64-character strings. The outputs added in this field will not be used as decoys in constructed ring signatures. Unblackballed outputs may (but will not necessarily) by used as decoys.
-**(3) Key image input:** Add the key image that was used on the key-reusing fork.
-**(4) Get ring:** Press the "Get Ring" button to get the ring members for the given key image in 3.
-**(5) Set ring:** Press the "Set Ring" button to set the ring members for a transaction. Copy the ring members from 4 to get those for the key image, or manually type in your own.
-**(6) Intent to spend:** Select this if you are certain that you will spend Monero on a key-reusing fork. This will aggressively modify the input selection algorithm to give you the greatest plausible deniability.
-**(7) Possibility to spend:** Select this if you may spend Monero on a key-reusing fork. This will modify the input selection algorithm. Uncheck this only if you are certain you will not use a key-reusing fork.
-**(8) Relative:** When selected, the offsets are encoded relative to the previous, as opposed to absolute (transactions use relative offsets).
-**(9) Segregation height:** The block height at which the key-reusing fork splits.
+**(1) Blackball filename:** This tool will blackball outputs that are known to be spent. After running monero-blockchain-blackball, import the resulting file to avoid using these outputs as decoys in constructed ring signatures. This file is stored in the .shared-ringdb folder by default.    
+**(2) Blackball output:** This will blackball or unblackball a chosen single output. Outputs are represented by 64-character strings. The outputs added in this field will not be used as decoys in constructed ring signatures. Unblackballed outputs may (but will not necessarily) by used as decoys.    
+**(3) Key image input:** Add the key image that was used on the key-reusing fork.    
+**(4) Get ring:** Press the "Get Ring" button to get the ring members for the given key image in 3.    
+**(5) Set ring:** Press the "Set Ring" button to set the ring members for a transaction. Copy the ring members from 4 to get those for the key image, or manually type in your own.    
+**(6) Intent to spend:** Select this if you are certain that you will spend Monero on a key-reusing fork. This will aggressively modify the input selection algorithm to give you the greatest plausible deniability.    
+**(7) Possibility to spend:** Select this if you may spend Monero on a key-reusing fork. This will modify the input selection algorithm. Uncheck this only if you are certain you will not use a key-reusing fork.    
+**(8) Relative:** When selected, the offsets are encoded relative to the previous, as opposed to absolute (transactions use relative offsets).    
+**(9) Segregation height:** The block height at which the key-reusing fork splits.    
 
 ## 5.4. Sign - verify
 
