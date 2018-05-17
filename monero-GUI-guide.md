@@ -1,6 +1,6 @@
 # Table of contents
 
-0. **[Prefaction](#0-prefaction)**
+0. **[Preface](#0-preface)**
    + 0.1. [Translations](#01-translations)
    + 0.2. [Windows Preparation](#02-windows-preparation)
 1. **[Choose a Language](#1-choose-a-language)**
@@ -30,17 +30,17 @@
 7. **[Binaries Verification](#7-binaries-verification)**
 8. **[Common issues and solutions](#7-common-issues-and-solutions)**
 
-# 0. Prefaction
-This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the developement of this guide, feel free to open Pull Requests or Issues on the
-GitHub repository where this document is maintained: [github.com/monero-ecosystem/monero-GUI-guide](https://github.com/monero-ecosystem/monero-GUI-guide)
+# 0. Preface
+This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the development of this guide, feel free to open Pull Requests or Issues on the
+GitHub repository where this document is maintained: [github.com/monero-ecosystem/monero-GUI-guide](https://github.com/monero-ecosystem/monero-GUI-guide).
 
 ## 0.1. Translations
-This document will be localized into several languages. You can find all available translations in the [dedicated section on GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations)
+This document will be localized into several languages. You can find all available translations in the [dedicated section on GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations).
 
 ## 0.2. Windows Preparation
 If you are on Windows:
 
-+ Be sure that your antivirus does not block the program.
++ Make sure that your antivirus does not block the program.
 
 + The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
 
@@ -59,7 +59,7 @@ On this page you can choose between three methods for accessing a wallet, and tw
 **(1) Create a new wallet:** Start the procedure to make a new wallet. Choose this option if this is your first time using Monero.    
 **(2) Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existing wallet using the mnemonic seed or the keys.    
 **(3) Open a wallet from file:** Choose this option to select a pre-existing wallet from your files with the extension `.keys`.    
-**(4) Testnet:** Check this box if you would like to use a developers network instead of the main network. Testnet is designed to let developers test new features that are not available on Mainnet or Stagenet.    
+**(4) Testnet:** Check this box if you would like to use a development network instead of the main network. Testnet is designed to let developers test new features that are not available on Mainnet or Stagenet.    
 **(5) Stagenet:** Check this box if you would like to use a network for staging instead of the main network. Stagenet mimics the features of Mainnet and is designed to let end users test Monero without the risk of losing funds.    
 
 ## 2.1. Create new wallet
@@ -106,7 +106,7 @@ Restoring from your mnemonic seed is the easiest way to recover your wallet. You
 
 **(1) Wallet name:** Give a name for your wallet (in this example `testname` is used).    
 **(2) Mnemonic seed:** Paste your seed made of 25 (or 24) words.    
-**(3) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (eg. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(3) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (e.g. `1330000`) so the wallet will start scanning from there, saving you some time.    
 **(4) Wallet location:** Select the destination folder of the wallet.    
 
 ### 2.2.2 Restoring from keys
@@ -118,7 +118,7 @@ Restoring from keys is quite easy and can be extremely useful, especially if you
 **(2) Account address:** The address of the wallet you are recovering.    
 **(3) View key:** Your private view key (needed to be able to check your funds).    
 **(4) Spend key:** Your private spend key (needed to spend your funds).    
-**(5) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (eg. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(5) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (e.g. `1330000`) so the wallet will start scanning from there, saving you some time.    
 **(6) Wallet location:** Select the destination folder of the wallet.    
 
 When everything is ready click the right arrow and then the `Use Monero` button.
@@ -159,7 +159,7 @@ The `Receive` tab provides tools for generating subaddresses, crafting payment r
 **(2) Create new address:** This button allows you to create new subaddresses. You can create as many as you would like. *Learn more about [subaddresses](https://monero.stackexchange.com/questions/3673/what-is-a-sub-address).*    
 **(3) Advanced options:** Clicking here you will be prompted to the advanced section.    
 **(4) Amount:** This is for creating a payment request, enter the amount of Monero you would like to receive.    
-**(5) Tracking:** Thicking this box you'll see a list of incoming transactions.    
+**(5) Tracking:** If you tick this box, you'll see a list of incoming transactions.    
 **(6) QR code:** This is a QR code that has your selected address, and optionally the amount, embedded into it. It can be used as a way to give others your Monero address by scanning the code.    
 
 # 5. Advanced Features
@@ -271,12 +271,12 @@ The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secre
 **(3) Public view key:** The public view key is used for stealth address creation. *Learn more about [view keys](https://getmonero.org/resources/moneropedia/viewkey.html).*    
 **(4) Secret spend key: DO NOT share your secret spend key with anyone. The secret spend key is used to sign transactions and should be regarded with the same security as your mnemonic seed.**    
 **(5) Public spend key:** The public spend key is used by the network to verify the signature of the key image you generate when you make a transaction. This is what prevents double-spends as the network enforces the rule that a key image can be spent only once. *Learn more about [spend keys](https://getmonero.org/resources/moneropedia/spendkey.html).*    
-**(6) Export Spendable Wallet: DO NOT share your spendable wallet qr code with anyone. This can be used like a mnemonic seed for recovering your wallet.** This creates a qrcode that contains all of your keys.    
-**(7) Export View Only Wallet:** This creates a qr code that contains only the keys for viewing the transactions that this wallet sends or receives, but cannot create transactions.    
+**(6) Export Spendable Wallet: DO NOT share your spendable wallet QR code with anyone. This can be used like a mnemonic seed for recovering your wallet.** This creates a qrcode that contains all of your keys.    
+**(7) Export View Only Wallet:** This creates a QR code that contains only the keys for viewing the transactions that this wallet sends or receives, but cannot create transactions.    
 
 # 7. Binaries Verification
 
-Verify that the files you downloaded match the official ones, you can use [this step-by-step guide](https://getmonero.org/resources/user-guides/verification-windows-beginner.html) with pictures (easy, for Windows user)
+Verify that the files you downloaded match the official ones. You can use [this step-by-step guide](https://getmonero.org/resources/user-guides/verification-windows-beginner.html) with pictures (easy, for Windows user).
 
 # 8. Common issues and solutions
 
