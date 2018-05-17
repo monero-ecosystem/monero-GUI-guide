@@ -28,7 +28,8 @@
 6. **[Settings](#6-settings)**    
    + 6.1. [Seed - keys](#61-seed-and-keys)
 7. **[Binaries Verification](#7-binaries-verification)**
-8. **[Common issues and solutions](#7-common-issues-and-solutions)**
+8. **[About remote nodes](#8-about-remote-nodes)**
+9. **[Common issues and solutions](#7-common-issues-and-solutions)**
 
 # 0. Preface
 This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the development of this guide, feel free to open Pull Requests or Issues on the
@@ -83,7 +84,7 @@ Here you can choose if you are going to run a full node or use a remote one:
 
 **(1) Start node in background:** Check this box to run a full node and begin blockchain sync.    
 **(2) Blockchain location (optional):** To store the blockchain somewhere other than default, enter that location here.    
-**(3) Bootstrap node:** To use a bootstrap node enter the host and port. A bootstrap node allows you to use your wallet while you are downloading the blockchain by connecting to a remote node. You can find available remote nodes at [MoneroWorld](https://moneroworld.com/).    
+**(3) Bootstrap node:** To use a bootstrap node enter the host and port. A bootstrap node allows you to use your wallet while you are downloading the blockchain by connecting to a remote node. For a list of available remote nodes and info about them, check the [About remote nodes](#8-about-remote-nodes) section of this guide.    
 **(4) Connect to a remote node:** Check this box if you want to use only a remote node without downloading the blockchain. You will need to put the host and port of the remote node after checking the box.
 
 ### 2.1.3 Run a full node
@@ -93,7 +94,7 @@ Upon completion of the setup you will be prompted to the settings menu, but firs
 
 If you want to create a normal wallet using your personal full node, you don't need to do anything, let the countdown finish, then wait until your node is fully synced.
 
-If you need some special settings, like setting up a view-only wallet or adding the blockchain manually, go to [section 3](#3-settings).
+If you need some special settings, like setting up a view-only wallet or adding the blockchain manually, go to [section 3](#3-settings).    
 
 
 ## 2.2 Restore wallet from keys or mnemonic seed
@@ -246,7 +247,7 @@ The `Settings` tab provides tools for customizing configuration options.
 **(3) Rescan wallet balance:** Make a complete rescan of your spent outputs.    
 **(4) Change password:** Change the password of your wallet.    
 **(5) Local Node:** Use a local node, download the blockchain. You may use a bootstrap node until your blockchain syncs.    
-**(6) Remote Node:** Use a remote node, do not download the blockchain.    
+**(6) Remote Node:** Use a remote node, do not download the blockchain. Check the [About remote nodes](#8-about-remote-nodes) section of this guide for info and risks related to the use of remote nodes.    
 **(7) Bootstrap/Remote Node Address:** Enter the hostname or IP address of the remote node.    
 **(8) Bootstrap/Remote Node Port:** Enter the port of the remote node.    
 **(9) Start/Stop Local Node:** Depending on its current state, either start or stop the local node.    
@@ -278,7 +279,11 @@ The `Seeds & Keys` tab displays your wallets mnemonic seed as well as your secre
 
 Verify that the files you downloaded match the official ones. You can use [this step-by-step guide](https://getmonero.org/resources/user-guides/verification-windows-beginner.html) with pictures (easy, for Windows user).
 
-# 8. Common issues and solutions
+# 8. About remote nodes
+
+Remote nodes can be very useful if you are not able/don't want to download the whole blockchain, but be advised that malicious remote nodes could compromise the level of privacy of your transaction, tracking your IP or, in extreme cases, even showing the amount transacted. That said, a list of remote nodes can be found at [moneroworld.com](https://moneroworld.com). Keep in mind anybody is able to add a node to that list, you shouldn't consider those nodes as trusted or safe, always run your own node for the best privacy.
+
+# 9. Common issues and solutions
 
 + **[I am missing (not seeing) a transaction to (in) the GUI (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)**
 + **[I am using the GUI and my daemon doesn't start anymore](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)**
