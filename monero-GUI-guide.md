@@ -297,4 +297,3 @@ Remote nodes can be very useful if you are not able/don't want to download the w
 + **[I am using remote node, but the GUI still syncs blockchain?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
 + **I use an high resolution display and the GUI looks extremely small**    
 This problem will be fixed soon, but there is a workaround for Windows: right click on monero-wallet-gui.exe, select properties --> compatibility. you'll find an 'high DPI' option, change value there from "Application" to "System" or vice versa
-+ TO DO: **[How to add the blockchain manually]()**
