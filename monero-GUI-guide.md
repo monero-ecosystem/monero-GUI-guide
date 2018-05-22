@@ -34,6 +34,9 @@
 # 0. Preface
 This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the development of this guide, feel free to open Pull Requests or Issues on the
 GitHub repository where this document is maintained: [github.com/monero-ecosystem/monero-GUI-guide](https://github.com/monero-ecosystem/monero-GUI-guide).
+&nbsp;
+
+For the online version of this guide, click [here](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)
 
 ## 0.1. Translations
 This document will be localized into several languages. You can find all available translations in the [dedicated section on GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations).
