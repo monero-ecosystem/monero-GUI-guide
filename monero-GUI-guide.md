@@ -29,7 +29,7 @@
    + 6.1. [Seed - keys](#61-seed-and-keys)
 7. **[Binaries Verification](#7-binaries-verification)**
 8. **[About remote nodes](#8-about-remote-nodes)**
-9. **[Common issues and solutions](#7-common-issues-and-solutions)**
+9. **[Common issues and solutions](#9-common-issues-and-solutions)**
 
 # 0. Preface
 This guide is open source and maintained by ErCiccione, of the Monero community. If you have suggestions or wish to contribute to the development of this guide, feel free to open Pull Requests or Issues on the
