@@ -113,6 +113,8 @@ Restoring from your mnemonic seed is the easiest way to recover your wallet. You
 **(3) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (e.g. `1330000`) so the wallet will start scanning from there, saving you some time.    
 **(4) Wallet location:** Select the destination folder of the wallet.    
 
+A detailed guide is available on getmonero.org: ['How to restore your account'](https://getmonero.org/resources/user-guides/restore_account.html)
+
 ### 2.2.2 Restoring from keys
 ![restore from key](media/wizard_7-restore-keys.png)
 
@@ -125,7 +127,8 @@ Restoring from keys is quite easy and can be extremely useful, especially if you
 **(5) Restore height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (e.g. `1330000`) so the wallet will start scanning from there, saving you some time.    
 **(6) Wallet location:** Select the destination folder of the wallet.    
 
-When everything is ready click the right arrow and then the `Use Monero` button.
+When everything is ready click the right arrow and then the `Use Monero` button.    
+A detailed guide is available on getmonero.org: ['Restoring wallet from keys'](https://getmonero.org/resources/user-guides/restore_from_keys.html)
 
 ## 2.3 Open a wallet from file
 After clicking this option a window will pop up. Navigate to your file with the extension `.keys`, select it and click the right arrow.
@@ -192,7 +195,10 @@ This will generate a proof that you made a payment to a certain address. You nee
 **(1) Transaction ID:** This is the ID of the payment you are creating proof for. You can find the transaction details by selecting the History tab from the left menu.    
 **(2) Address:** This is the address you are proving payment to.    
 **(3) Message (optional):** This an optional message that will be signed with the transaction details. If you choose to include a message then the other party must also include the exact same message in order to verify your proof.    
-**(4) Generate:** Click here once you've entered all the details to generate your proof.    
+**(4) Generate:** Click here once you've entered all the details to generate your proof.
+&nbsp;
+
+A detailed guide is available on getmonero.org: ['How to prove payment'](https://getmonero.org/resources/user-guides/prove-payment.html)
 
 ### 5.2.2. Check Transaction
 
@@ -246,7 +252,7 @@ The `Sign/verify` tab provides tools for signing a message or file with your pri
 The `Settings` tab provides tools for customizing configuration options.
 
 **(1) Close wallet:** Close your wallet and restart wallet creation wizard.    
-**(2) Create view only wallet:** Create a view-only version of the current wallet. You will be prompted for a file name and password for encryption.    
+**(2) Create view only wallet:** Create a view-only version of the current wallet. You will be prompted for a file name and password for encryption. See the [How to make a view-only wallet](https://getmonero.org/resources/user-guides/view_only.html) guide on getmonero.org    
 **(3) Rescan wallet balance:** Make a complete rescan of your spent outputs.    
 **(4) Change password:** Change the password of your wallet.    
 **(5) Local Node:** Use a local node, download the blockchain. You may use a bootstrap node until your blockchain syncs.    
