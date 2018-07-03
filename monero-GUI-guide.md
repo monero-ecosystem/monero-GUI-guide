@@ -3,6 +3,7 @@
 0. **[Preface](#0-preface)**
    + 0.1. [Translations](#01-translations)
    + 0.2. [Windows Preparation](#02-windows-preparation)
+   + 0.3. [Shortcuts](#03-shortcuts)
 1. **[Choose a Language](#1-choose-a-language)**
 2. **[Create a Wallet](#2-create-a-wallet)**   
    + 2.1. [Create new wallet](#21-create-new-wallet)
@@ -49,6 +50,23 @@ If you are on Windows:
 + The first time you start the wallet you must give permission to connect to the network via a pop-up. Check the appropriate boxes and click `Allow access`.
 
 ![win firewall check](media/win-firewall-check.png)
+
+## 0.3. Shortcuts
+Some shorcuts are avialable to make the user experience with the GUI easier:
+&nbsp;
+
+**On all operative systems:**    
+Press `Ctrl` to view each page shortcut. Press `ctrl+"shorcut"` to go to that page
+&nbsp;
+
+**On Linux/Windoes:**    
+`ctrl + tab` -> go to the next page    
+`ctrl + shift + tab` -> go to the previous page
+&nbsp;
+
+**On OSx:**    
+`cmd + tab` -> go to the next page    
+`cmd + shift + tab` -> go to the previous page
 
 # 1. Choose a Language
 ![Language](media/wizard_1-lang.png)
