@@ -52,19 +52,19 @@ If you are on Windows:
 ![win firewall check](media/win-firewall-check.png)
 
 ## 0.3. Shortcuts
-Some shorcuts are avialable to make the user experience with the GUI easier:
+Some shortcuts are available to make the user experience with the GUI easier:
 &nbsp;
 
-**On all operative systems:**    
+**On all operating systems:**    
 Press `Ctrl` to view each page shortcut. Press `ctrl+"shorcut"` to go to that page
 &nbsp;
 
-**On Linux/Windoes:**    
+**On Linux/Windows:**    
 `ctrl + tab` -> go to the next page    
 `ctrl + shift + tab` -> go to the previous page
 &nbsp;
 
-**On OSx:**    
+**On macOS:**    
 `cmd + tab` -> go to the next page    
 `cmd + shift + tab` -> go to the previous page
 
@@ -322,5 +322,5 @@ Remote nodes can be very useful if you are not able/don't want to download the w
 + **[How do I change the language of the 25 word mnemonic seed in the GUI or CLI?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
 + **[My blockchain is stuck, how do I “unstuck” it?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
 + **[I am using remote node, but the GUI still syncs blockchain?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
-+ **I use an high resolution display and the GUI looks extremely small**    
-This problem will be fixed soon, but there is a workaround for Windows: right click on monero-wallet-gui.exe, select properties --> compatibility. you'll find an 'high DPI' option, change value there from "Application" to "System" or vice versa
++ **I use a high resolution display and the GUI looks extremely small**    
+This problem will be fixed soon, but there is a workaround for Windows: right click on monero-wallet-gui.exe, select properties --> compatibility. you'll find a 'high DPI' option, change value there from "Application" to "System" or vice versa
