@@ -14,6 +14,8 @@
       + 2.2.1. [Restoring from seed](#221-restoring-from-seed)
       + 2.2.2. [Restoring from keys](#222-restoring-from-keys)    
    + 2.3. [Open a wallet from file](#23-open-a-wallet-from-file)    
+   + 2.4. [Create new wallet from hardware](#24-create-new-wallet-from-hardware)
+      + 2.4.1. [Create the wallet](#241-create-the-wallet)
 3. **[Send Monero](#3-send-monero)**    
    + 3.1. [Address Book](#31-address-book)
 4. **[Receive Monero](#4-receive-monero)**    
@@ -81,8 +83,10 @@ On this page you can choose between three methods for accessing a wallet, and tw
 **(1) Create a new wallet:** Start the procedure to make a new wallet. Choose this option if this is your first time using Monero.    
 **(2) Restore wallet from keys or mnemonic seed:** Click here if you want to recover a pre-existing wallet using the mnemonic seed or the keys.    
 **(3) Open a wallet from file:** Choose this option to select a pre-existing wallet from your files with the extension `.keys`.    
-**(4) Testnet:** Check this box if you would like to use a development network instead of the main network. Testnet is designed to let developers test new features that are not available on Mainnet or Stagenet.    
-**(5) Stagenet:** Check this box if you would like to use a network for staging instead of the main network. Stagenet mimics the features of Mainnet and is designed to let end users test Monero without the risk of losing funds.    
+**(4) Create new wallet from hardware:** Create a new wallet from an hardware device (like Ledger)    
+**(5) Mainnet:** *Advanced:* use the main Monero network    
+**(6) Testnet:** *Advanced:* Check this box if you would like to use a development network instead of the main network. Testnet is designed to let developers test new features that are not available on Mainnet or Stagenet.    
+**(7) Stagenet:** *Advanced:* Check this box if you would like to use a network for staging instead of the main network. Stagenet mimics the features of Mainnet and is designed to let end users test Monero without the risk of losing funds.    
 
 ## 2.1. Create new wallet
 ![new](media/wizard_3-create.png)
@@ -150,6 +154,24 @@ A detailed guide is available on getmonero.org: ['Restoring wallet from keys'](h
 
 ## 2.3 Open a wallet from file
 After clicking this option a window will pop up. Navigate to your file with the extension `.keys`, select it and click the right arrow.
+
+## 2.4 Create new wallet from hardware
+
+### 2.4.1 Create the wallet
+![2.4.1](media/create_hardware_wallet.png)
+
+**(1) Wallet name:** Give a name for your wallet (in this example `ledger-test` is used).    
+**(2) Restore Height (optional):** If you know the block height that your wallet was created at, you can specify it here so the wallet doesn't have to scan the entire blockchain looking for your funds. For example, if your first transaction was included in block `1350000`, you should put a slightly lower height (e.g. `1330000`) so the wallet will start scanning from there, saving you some time.    
+**(3) Subaddress lookahead (optional):** pregenerate a number of accounts with a number of subaddresses each    
+**(4) Device name:** Select the hardware wallet you want to use (at the moment, only 'Ledger' is available)    
+**(5) Wallet location:** Select the destination folder of the wallet. 
+&nbsp;
+
+All next steps are the same as explained from [2.1.1](#211-add-a-password) to [2.1.3](#213-run-a-full-node)
+&nbsp;
+
+Step by step guide to generate a Ledger wallet with the Monero GUI for all operative systems (StackExchange):    
+[How do I generate a Ledger Monero wallet with the GUI (monero-wallet-gui)?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)
 
 # 3. Send Monero
 
