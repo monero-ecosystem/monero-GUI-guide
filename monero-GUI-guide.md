@@ -29,9 +29,15 @@
       + 5.4.1. [Sign](#541-sign)
       + 5.4.2. [Verify](#542-verify)
 6. **[Settings](#6-settings)**    
-   + 6.1. [Seed - keys](#61-seed-and-keys)
+      + 6.0.1. [Wallet](#601-wallet)    
+      + 6.0.2a. [Local Node](#602a-local-node)    
+      + 6.0.2b. [Remote Node](#602b-remote-node)
+      + 6.0.3. [Log](#603-log)    
+      + 6.0.4. [Info](#604-info)
+   - 6.1. [Seed - keys](#61-seed-and-keys)
 7. **[Binaries Verification](#7-binaries-verification)**
-8. **[About remote nodes](#8-about-remote-nodes)**
+8. **[About remote nodes](#8-about-remote-nodes)**    
+   + 8.1 [Bootstrap nodes](#81-bootstrap-nodes)
 9. **[Common issues and solutions](#9-common-issues-and-solutions)**
 
 # 0. Preface
@@ -287,28 +293,52 @@ The `Sign/verify` tab provides tools for signing a message or file with your pri
 
 # 6. Settings
 
-![settings](media/black_settings.png)
-
 The `Settings` tab provides tools for customizing configuration options.
 
-**(1) Close wallet:** Close your wallet and restart wallet creation wizard.    
-**(2) Create view only wallet:** Create a view-only version of the current wallet. You will be prompted for a file name and password for encryption. See the [How to make a view-only wallet](https://getmonero.org/resources/user-guides/view_only.html) guide on getmonero.org    
-**(3) Rescan wallet balance:** Make a complete rescan of your spent outputs.    
-**(4) Change password:** Change the password of your wallet.    
-**(5) Local Node:** Use a local node, download the blockchain. You may use a bootstrap node until your blockchain syncs.    
-**(6) Remote Node:** Use a remote node, do not download the blockchain. Check the [About remote nodes](#8-about-remote-nodes) section of this guide for info and risks related to the use of remote nodes.    
-**(7) Bootstrap/Remote Node Address:** Enter the hostname or IP address of the remote node.    
-**(8) Bootstrap/Remote Node Port:** Enter the port of the remote node.    
-**(9) Start/Stop Local Node:** Depending on its current state, either start or stop the local node.    
-**(10) Show status:** Shows the current status of your node.    
-**(11) Blockchain location:** Manually enter a non-default path to the blockchain.    
-**(12) Change location:** Use a GUI to enter a non-default path to the blockchain.    
-**(13) Show advanced:** Check this box to show advanced options (Startup flags or Node login).    
-**(14) Startup flags/Node login:** When using a local node this will be where you enter additional command line options. When using a remote node this will be where you can enter a username and password in case authentication is required.    
-**(15) Custom decorations:** Check this box to show the Monero custom decorations.    
-**(16) Log level:** Change the verbosity of the debug logs.    
-**(17) Log categories:** Add specific categories to the debug logs.    
-**(18) Wallet creation height:** Change the block height that a wallet rescan will go back to. Click `Save` for changes to take effect.    
+### 6.0.1. Wallet
+
+![settings-wallet](media/black_settings-wallet.png)
+
+### 6.0.2a. Local Node
+
+![settings_local-node](media/black_settings-node-local_node.png)
+
+**(1) Start/Stop Local Node:** Depending on its current state, either start or stop the local node.    
+**(2) Blockchain location:** Manually enter a non-default path to the blockchain.    
+**(3) Startup flags:** When using a local node, this will be where you enter additional command line options.    
+**(4) Bootstrap Address:** Enter the hostname or IP address of the bootstrap remote node. See section [8.1 Bootstrap nodes](#8.1-bootstrap-nodes) for a brief explanation of what is a bootstrap node.    
+**(5) Bootstrap Port:** Enter the port of the bootstrap remote node.
+
+### 6.0.2b. Remote Node
+
+Use a remote node, do not download the blockchain. Check the ['About remote nodes' section](#8-about-remote-nodes) of this guide.
+
+![settings_remote-node](media/black_settings-node-remote_node.png)
+
+**(1) Address:** Enter the hostname or IP address of the remote node.    
+**(2) Port:** Enter the port of the remote node.    
+**(3) Daemon Username:**  enter a username in case authentication to the remote node is required.    
+**(4) Daemon Password:**  enter a password in case authentication to the remote node is required.
+
+### 6.0.3. Log
+
+![settings-log](media/black_settings-log.png)
+
+**(1) Log level:** Change the verbosity of the debug logs.    
+**(2) Log categories:** Add specific categories to the debug logs.    
+**(3) Daemon log:** Real time output of the log.    
+**(4) Command line:** Interact with the daemon.
+
+### 6.0.4. Info
+
+![settings-info](media/black_settings-info.png)
+
+**(1) GUI Version:** Version of the GUI wallet installed.    
+**(2) Embedded Monero Version:** Version of the embedded daemon in use.    
+**(3) Wallet path:** Where the wallet is located on your computer.    
+**(4) Wallet creation height:** Change the block height that a wallet rescan will go back to.    
+**(5) Wallet log path:** Where the logs for this wallet will be saved.    
+**(6) Copy to clipboard:** Copy all these informations to the clipboard.    
 
 ## 6.1. Seed and keys
 
@@ -331,6 +361,12 @@ Verify that the files you downloaded match the official ones. You can use [this 
 # 8. About remote nodes
 
 Remote nodes can be very useful if you are not able/don't want to download the whole blockchain, but be advised that malicious remote nodes could compromise the level of privacy of your transaction, tracking your IP or, in extreme cases, even showing the amount transacted. That said, a list of remote nodes can be found at [moneroworld.com](https://moneroworld.com). Keep in mind anybody is able to add a node to that list, you shouldn't consider those nodes as trusted or safe, always run your own node for the best privacy.
+
+## 8.1. Bootstrap nodes
+
+A bootstrap node is a remote node to use whilst also syncing the blockchain. This is different to a straight up remote node in that using a remote node will not also sync the blockchain to local.    
+If the bootstrap node feature is utilized it will always automatically switch to the local node when the blockchain is fully synced, regardless of whether the user put in the remote node themselves or the remote node was specified by default.    
+More infos at https://getmonero.org/resources/moneropedia/bootstrap-node.html
 
 # 9. Common issues and solutions
 
