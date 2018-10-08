@@ -8,9 +8,9 @@
 2. **[Crea un monedero](#2-crea-un-monedero)**   
    + 2.1. [Crea un nuevo monedero](#21-crea-un-nuevo-monedero)
       + 2.1.1. [Añade una contraseña](#211-añade-una-contraseña)
-      + 2.1.2. [Configuración del demonio](#212-configuración-del-demonio)
+      + 2.1.2. [Configuración del daemon](#212-configuración-del-daemon)
       + 2.1.3. [Ejecuta un nodo completo](#213-ejecuta-un-nodo-completo)
-   + 2.2. [Restaura un monedero a partir de las claves o desde una semilla mnemotécnica](#22-restaura-un-monedero-a-partir-de-las-claves-o-desde-una-semilla-mnemotécnica)
+   + 2.2. [Restaura un monedero a partir de las claves o desde una semilla mnemónica](#22-restaura-un-monedero-a-partir-de-las-claves-o-desde-una-semilla-mnemónica)
       + 2.2.1. [Restaurando a partir de una semilla](#221-restaurando-a-partir-de-una-semilla)    
       + 2.2.2. [Restaurando desde claves](#222-restaurando-desde-claves)    
    + 2.3. [Abre un monedero desde archivo](#23-abre-un-monedero-desde-un-archivo)    
@@ -41,10 +41,10 @@ Este documento será localizado en diferentes idiomas. Puedes encontrar todas la
 ## 0.2. Preparación en sistemas Windows
 Si estás en Windows:
 
-+ Asegúrate de que tu antivirus no bloquea el programa.
++ Asegúrate de que tu antivirus no bloquee el programa.
 
 + En Windows, la primera vez que arranques el monedero deberás darle permisos a la aplicación para conectarse a la red a través de un _pop-up_ del UAC (del inglés, User Account Control o Control de Cuentas de Usuario) de Windows. 
-Haz clic en la opción adecuada y pincha en `Permitir acceso` o `Allow access` en función del idioma de tu equipo.
+Haz clic en la opción adecuada y selecciona `Permitir acceso` o `Allow access` en función del idioma de tu equipo.
 
 ![win firewall check](/media/win-firewall-check.png)
 
@@ -77,10 +77,10 @@ Haz clic en el idioma de tu elección para ir al siguiente paso.
 # 2. Crea un monedero
 ![welcome](/media/wizard_2-options.png)
 
-En esta página puede elegir entre tres métodos para acceder a una billetera y dos opciones para conectarse a la red:
+En esta página puede elegir entre tres métodos para acceder a un monedero y dos opciones para conectarse a la red:
 
-**(1) Crea una nueva billetera:** Comienza el procedimiento para generar una nueva billetera. Elije esta opción si es la primera vez que usas Monero.    
-**(2) Restaura la billetera a partir de claves o semillas mnemotécnicas:** Haz clic aquí si deseas recuperar una billetera preexistente utilizando la semilla mnemotécnica o las teclas.    
+**(1) Crea un nuevo monedero:** Comienza el procedimiento para generar un nuevo monedero. Elije esta opción si es la primera vez que usas Monero.    
+**(2) Restaura el monedero a partir de claves o semillas mnemónicas:** Haz clic aquí si deseas recuperar un monedero preexistente utilizando la semilla mnemónica o las teclas.    
 **(3) Abre una cartera desde archivo:** Elije esta opción para seleccionar una cartera preexistente entre tus archivos. Estas se identifican por usar la extensión `.keys`.    
 **(4) Crear nuevo monedero _hardware_**: Crear un nuevo monedero desde un dispositivo _hardware_ (como Ledger).    
 **(5) _Mainnet_:**  [Avanzado] Uso de la red principal de Monero.    
@@ -96,17 +96,17 @@ En este paso se procede a crear un nuevo monedero.
 Los campos a rellenar son los siguientes:
 
 **(1) Nombre:** Da un nombre a tu monedero (en este ejemplo se usa `testname`).    
-**(2) Semilla mnemotécnica:** [IMPORTANTE] Anota tu [semilla mnemotécnica](https://getmonero.org/resources/moneropedia/mnemonicseed.html) y mantenla a salvo. Tu semilla es la **clave maestra** de tu monedero y podrás usarla para recuperar tus fundos.    
+**(2) Semilla mnemónica:** [IMPORTANTE] Anota tu [semilla mnemónica](https://getmonero.org/resources/moneropedia/mnemonicseed.html) y mantenla a salvo. Tu semilla es la **clave maestra** de tu monedero y podrás usarla para recuperar tus fundos.    
 **(3) Wallet location:** Directorio de destino donde se almacenará el monedero.    
 
 ### 2.1.1 Añade una contraseña
 
 Es importante que añadas una contraseña robusta para proteger tu monedero y evitar que un tercero con acceso al equipo pueda utilizar tus moneroj.
-Ten en cuenta que si pierdes tu contraseña, solamente podrás recuperar tu monedero usando tu **semilla mnemotécnica**.
+Ten en cuenta que si pierdes tu contraseña, solamente podrás recuperar tu monedero usando tu **semilla mnemónica**.
 
 ![add password](/media/wizard_4-pass.png)
 
-### 2.1.2 Configuración del demonio
+### 2.1.2 Configuración del daemon
 
 En esta ventana puede elegir si quieres ejecutar un nodo completo o usar uno remoto:
 
@@ -114,7 +114,7 @@ En esta ventana puede elegir si quieres ejecutar un nodo completo o usar uno rem
 
 **(1) Iniciar el nodo en segundo plano:** Marca esta casilla para ejecutar un nodo completo y comenzar la sincronización de la cadena de bloques.    
 **(2) Ubicación de la cadena de bloques (opcional):** Desde aquí se puede modificar el lugar de almacenamiento de la cadena de bloques.    
-**(3) Nodo de arranque:** Para usar un nodo de arranque, introduce el _host_ y el puerto. Un nodo de arranque permite usar la billetera mientras se descarga la cadena de bloques conectándose a un nodo remoto. Se pueden encontrar los nodos remotos disponibles en [MoneroWorld](https://moneroworld.com/).    
+**(3) Nodo de arranque:** Para usar un nodo de arranque, introduce el _host_ y el puerto. Un nodo de arranque permite usar el monedero mientras se descarga la cadena de bloques conectándose a un nodo remoto. Se pueden encontrar los nodos remotos disponibles en [MoneroWorld](https://moneroworld.com/).    
 **(4) Conéctate a un nodo remoto:** Marca esta casilla si deseas usar solo un nodo remoto sin descargar la cadena de bloques. Deberás facilitar el _host_ y el puerto del nodo remoto después de marcar la casilla.
 
 ### 2.1.3 Ejecuta un nodo completo
@@ -127,18 +127,18 @@ Si quieres crear un monedero normal usando un nodo completo personal, no necesit
 
 Si necesitas algún tipo de configuración adicional, como crear un monedero de solo lectura o añadir la _blockchain_ manualmente, comprueba la [Sección 6](#6-ajustes).
 
-## 2.2 Restaura un monedero a partir de las claves o desde una semilla mnemotécnica
+## 2.2 Restaura un monedero a partir de las claves o desde una semilla mnemónica
 
 ### 2.2.1 Restaurando a partir de una semilla
 
-Restaurar desde tu semilla mnemotécnicas es la forma más fácil de recuperar tu monedero. 
+Restaurar desde tu semilla mnemónicas es la forma más fácil de recuperar tu monedero. 
 
 ![restore from seed](/media/wizard_6-restore-seed.png)
 
 Necesitas facilitar la siguiente información:
 
-**(1) Nombre de billetera:** Asigna un nombre a tu monedero (en este ejemplo se usa `testname`).    
-**(2) Semillas mnemotécnicas:** Pega tu semilla formada por 25 (o 24) palabras.    
+**(1) Nombre del monedero:** Asigna un nombre a tu monedero (en este ejemplo se usa `testname`).    
+**(2) Semillas mnemónicas:** Pega tu semilla formada por 25 (o 24) palabras.    
 **(3) Altura de restauración (opcional):** Si conoces la altura de bloque en la que se creó tu monedero, puedes especificarla aquí para no tener que escanear toda la cadena de bloques en busca de tus fondos. Por ejemplo, si tu primera transacción se incluyó en el bloque `1350000`, puedes usar una altura ligeramente más baja (por ejemplo,` 1330000`) para que la monedero comience a escanear desde allí, ahorrando tiempo.    
 **(4) Ubicación de la cartera:** Selecciona la carpeta de destino del monedero.
 
@@ -150,7 +150,7 @@ La restauración desde las claves es bastante sencilla y puede ser extremadament
 
 Necesitas facilitar la siguiente información:
 
-**(1) Nombre de billetera:** Asigna un nombre a tu monedero (en este ejemplo se usa `testname`).    
+**(1) Nombre del monedero:** Asigna un nombre a tu monedero (en este ejemplo se usa `testname`).    
 **(2) Dirección de la cuenta:** La dirección de la monedero que estás recuperando.    
 **(3) Clave de vista:** Tu clave de vista privada (necesaria para poder verificar tus fondos).    
 **(4) Clave de gasto:** Tu clave de gasto privado (necesaria para gastar tus fondos).    
@@ -181,7 +181,7 @@ _Si olvidas agregar tu ID de pago, aún podrás recuperar tus fondos comunicánd
 **(5) Descripción (opcional):** Esta descripción es para un registro personal. Puedes agregar alguna información con respecto al motivo de la transacción para referencias futuras.    
 **(6) Nivel de privacidad (tamaño del anillo):** Este control deslizante aumenta el tamaño de las firmas del anillo en la transacción. Los tamaños de anillo más altos pueden aumentar la privacidad de la transacción, pero también aumentan las tarifas. Se recomienda dejar el tamaño del anillo por defecto.
 _Aprenda más sobre las firmas de anillos._    
-**(7) Barrido no se puede mezclar:** Esta función permite deshacerse de las salidas en tu billetera que tienen cantidades extrañas como `0.000006839355`. Estos son inamovibles sin combinarlos con otra salida.
+**(7) Barrido no se puede mezclar:** Esta función permite deshacerse de las salidas en tu monedero que tienen cantidades extrañas como `0.000006839355`. Estos son inamovibles sin combinarlos con otra salida.
 _La mayoría de los usuarios nunca necesitarán usar esta función._    
 **(8) Firmar archivo tx:** Este botón te permite firmar un archivo de transacción que se hubiera creado en una monedero de solo lectura. 
 _Esta forma de trabajar puede ser utilizada para firmar transacciones con claves privadas alojadas en dispositivos no conectados a internet, lo que reduce el impacto de una posible infección en el equipo que se conecta a la red._
@@ -275,14 +275,14 @@ La pestaña de `Ajustes` facilita herramientas para configurar las diferentes op
 
 ![settings](/media/black_settings.png)
 
-**(1) Cerrar billetera:** Cierra el monedero y reinicia el asistente de creación.    
+**(1) Cerrar monedero:** Cierra el monedero y reinicia el asistente de creación.    
 **(2) Crear cartera solo de vista:** Crea una versión de solo visualización de la cartera actual. Se te solicitará un nombre de archivo y una contraseña para cifrarla.    
-**(3) Volver a escanear el saldo de la billetera:** Haz un nuevo escaneo de las salidas gastadas.    
-**(4) Cambiar contraseña:** Cambia la contraseña de su billetera.    
+**(3) Reescanear el balance del monedero:** Haz un nuevo escaneo de las salidas gastadas.    
+**(4) Cambiar contraseña:** Cambia la contraseña de tu monedero.    
 **(5) Nodo local:** Usa un nodo local y descarga la _blockchain_. Puedes usar un nodo de arranque hasta que tu cadena de bloques esté sincronizada.    
 **(6) Nodo remoto:** Usa un nodo remoto sin descargar la cadena de bloques.    
 **(7) Dirección de inicio / nodo remoto:** Introduce el nombre del _host_ o la dirección IP del nodo remoto.    
-**(8) Bootstrap / Remote Node Port:** Introduce el puerto del nodo remoto.    
+**(8) Bootstrap / Puerto de nodo remoto:** Introduce el puerto del nodo remoto.    
 **(9) Iniciar / Detener nodo local:** Dependiendo de su estado actual, inicia o detén el nodo local.    
 **(10) Mostrar estado:** Muestra el estado actual de tu nodo.    
 **(11) Ubicación de la cadena de bloques:** Introduce manualmente una ruta no predeterminada en el sistema a la cadena de bloques.    
@@ -292,39 +292,39 @@ La pestaña de `Ajustes` facilita herramientas para configurar las diferentes op
 **(15) Decoraciones personalizadas:** Marca esta casilla para mostrar las decoraciones personalizadas de Monero.    
 **(16) Nivel de registro:** Cambia la verbosidad de los registros de depuración.    
 **(17) Categorías de registro:** Agrega categorías específicas a los registros de depuración.    
-**(18) Altura de creación de cartera:** Cambia la altura de bloque a la que volverá a escanear la billetera. Haz clic en `Guardar` para que los cambios surtan efecto.
+**(18) Altura de creación de cartera:** Cambia la altura de bloque a la que volverá a escanear el monedero. Haz clic en `Guardar` para que los cambios surtan efecto.
 
 ## 6.1. Semilla y claves
 
-La pestaña `Semillas y claves` muestra la información mnemotécnicas de su billetera, así como su clave de vista secreta, clave de vista pública, clave de gasto secreta y clave de gasto público.
+La pestaña `Semillas y claves` muestra la información mnemónicas de tu monedero, así como tu clave de vista secreta, clave de vista pública, clave de gasto secreta y clave de gasto público.
 
 ![seed-keys](/media/black_seed-keys.png)
 
 A continuación, se describen brevemente algunas de las opciones presentes en esta pestaña:
 
-**(1) Semilla mnemotécnica:** [**NO comparta su semilla mnemotécnica con nadie*. Guarde una copia de forma segura.] La semilla mnemotécnica es una frase de 25 palabras que contiene toda la información necesaria para ver y gastar fondos. _Obtén más información sobre las semillas mnemotécnicas en Monero en [este enlace [EN]](https://getmonero.org/resources/moneropedia/mnemonicseed.html)._    
+**(1) Semilla mnemónica:** [**NO comparta su semilla mnemónica con nadie*. Guarde una copia de forma segura.] La semilla mnemónica es una frase de 25 palabras que contiene toda la información necesaria para ver y gastar fondos. _Obtén más información sobre las semillas mnemónicas en Monero en [este enlace [EN]](https://getmonero.org/resources/moneropedia/mnemonicseed.html)._    
 **(2) Clave de vista secreta:** Las claves de vista secretas permiten al titular ver las transacciones entrantes de su monedero, pero no las salientes. A veces esta funcionalidad es útil para permitir que un tercero pueda auditar y comprobar las transacciones entrantes.    
 **(3) Clave de vista pública:** Las claves de vista públicas se usan para la creación de direcciones ocultas. _Obtén más información sobre las claves en [este enlace [EN]](https://getmonero.org/resources/moneropedia/viewkey.html)._    
-**(4) Clave secreta de gastos:** [**NO comparta su clave secreta de gastos con nadie.**] La clave de gasto secreta se usa para firmar transacciones y debe protegerse con un nivel de seguridad equivalente al de su semilla mnemotécnica.    
+**(4) Clave secreta de gastos:** [**NO comparta su clave secreta de gastos con nadie.**] La clave de gasto secreta se usa para firmar transacciones y debe protegerse con un nivel de seguridad equivalente al de su semilla mnemónica.    
 **(5) Clave de gasto público:** La red utiliza la clave de gasto pública para verificar la firma de la imagen de clave que se genera cuando realiza una transacción. Esto evita la presencia del doble gasto ya que la red obliga a que una clave de imagen solo pueda gastarse una vez. _Obtén más información sobre las claves de gasto en [este enlace](https://getmonero.org/resources/moneropedia/spendkey.html)._    
-**(6) Exportar billetera gastable:** [**NO compartas tu código QR del monedero con nadie. Esto puede usarse como una semilla mnemotécnicas para recuperar su billetera.**] Esta opción crea un código QR que contiene todas sus claves.    
-**(7) Exportar solo billetera vista:** Esta opción crea un código QR que contiene solo las claves para ver las transacciones que esta billetera envía o recibe, pero no puede crear y generar transacciones.    
+**(6) Exportar monedero gastable:** [**NO compartas tu código QR del monedero con nadie. Esto puede usarse como una semilla mnemónicas para recuperar su monedero.**] Esta opción crea un código QR que contiene todas sus claves.    
+**(7) Exportar solo monedero de vista:** Esta opción crea un código QR que contiene solo las claves para ver las transacciones que este monedero envía o recibe, pero no puede crear y generar transacciones.    
 
 # 7. Verificación de los binarios
 
 Debes asegurarte de que los ficheros que has descargado se corresponden con los ficheros oficiales. 
-Puedes utilizar [esta sencilla guía ilustrada](https://getmonero.org/resources/user-guides/verification-windows-beginner.html) para sistemas Windows.
+Puedes utilizar [esta guía paso-a-paso](https://getmonero.org/es/resources/user-guides/verification-windows-beginner.html) para sistemas Windows.
 
 # 8. Problemas frecuentes y soluciones
 
 + **[[EN] He perdido (no estoy viendo) una transacción entrante en la interfaz gráfica (balance cero)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)**
-+ **[[EN] Uso la interfaz gráfica y mi demonio ha dejado de arrancar](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)**
++ **[[EN] Uso la interfaz gráfica y mi daemon ha dejado de arrancar](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)**
 + **[[EN] La transacción está bloqueada como _pendiente_ en la interfaz gráfica](https://monero.stackexchange.com/questions/6649/transaction-stuck-as-pending-in-the-gui)**
 + **[[EN] La interfaz gráfica parece que tiene errores o se congela todo el rato](https://monero.stackexchange.com/questions/6651/my-gui-feels-buggy-freezes-all-the-time)**
 + **[[EN] Mi nombre contiene caracteres especiales (non-ASCII) (e.g. é, ø, â, Ö) y no puedo crear un monedero en la interfaz gráfica](https://monero.stackexchange.com/questions/6823/my-name-contains-a-special-non-ascii-character-e-g-%c3%a9-%c3%b8-%c3%a2-%c3%96-and-i-cant-c)**
 + **[[EN] La interfaz gráfica usa todo mi ancho de banda y no puedo navegar o usar otras aplicaciones que requieran conexión a internet](https://monero.stackexchange.com/questions/6653/the-gui-uses-all-my-bandwidth-and-i-cant-browse-anymore-or-use-another-applicat)**
-+ **[[EN] ¿Cómo puedo mover la cadena de bloques (`data.mdb`) a un directorio diferente durante (o después) de la sincronización inicial sin perder los avances?](https://monero.stackexchange.com/questions/7225/how-do-i-move-the-blockchain-data-mdb-to-a-different-directory-during-or-afte)**
-+ **[[EN] ¿Cómo puedo cambiar el idioma de las 25 palabras de la semilla mnemotécnica en la interfaz gráfica y en la terminal?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
++ **[[EN] ¿Cómo puedo mover la cadena de bloques (`data.mdb`) a un directorio diferente durante (o después) de la sincronización inicial sin perder el progreso?](https://monero.stackexchange.com/questions/7225/how-do-i-move-the-blockchain-data-mdb-to-a-different-directory-during-or-afte)**
++ **[[EN] ¿Cómo puedo cambiar el idioma de las 25 palabras de la semilla mnemónica en la interfaz gráfica y en la terminal?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
 + **[[EN] Mi cadena de bloques está bloqueada, ¿cómo la desatasco?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
 + **[[EN] Estoy usando un nodo remoto pero, ¿por qué sigue sincronizándose la cadena de bloques en la interfaz gráfica?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
 + **Utilizo una pantalla de alta resolución y la interfaz gráfica parece extremadamente pequeña**    
