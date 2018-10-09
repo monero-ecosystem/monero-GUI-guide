@@ -123,7 +123,7 @@ Al completar la configuración inicial, verás una ventana como esta:
 
 ![sync](/media/daemon-launch.png)
 
-Si quieres crear un monedero normal usando un nodo completo personal, no necesitas hacer nada más que esperar a que la cuenta atrás termine y a que el nodo se sincronice completamente una vez lo haya hecho.
+Si quieres crear un monedero normal usando un nodo completo personal, no necesitas hacer nada más que esperar a que la cuenta atrás termine y a que el nodo el nodo se sincronice completamente.
 
 Si necesitas algún tipo de configuración adicional, como crear un monedero de solo lectura o añadir la _blockchain_ manualmente, comprueba la [Sección 6](#6-ajustes).
 
@@ -325,7 +325,7 @@ Puedes utilizar [esta guía paso-a-paso](https://getmonero.org/es/resources/user
 + **[[EN] La interfaz gráfica usa todo mi ancho de banda y no puedo navegar o usar otras aplicaciones que requieran conexión a internet](https://monero.stackexchange.com/questions/6653/the-gui-uses-all-my-bandwidth-and-i-cant-browse-anymore-or-use-another-applicat)**
 + **[[EN] ¿Cómo puedo mover la cadena de bloques (`data.mdb`) a un directorio diferente durante (o después) de la sincronización inicial sin perder el progreso?](https://monero.stackexchange.com/questions/7225/how-do-i-move-the-blockchain-data-mdb-to-a-different-directory-during-or-afte)**
 + **[[EN] ¿Cómo puedo cambiar el idioma de las 25 palabras de la semilla mnemónica en la interfaz gráfica y en la terminal?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
-+ **[[EN] Mi cadena de bloques está bloqueada, ¿cómo la desatasco?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
++ **[[EN] Mi cadena de bloques está bloqueada, ¿cómo la desbloqueo?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
 + **[[EN] Estoy usando un nodo remoto pero, ¿por qué sigue sincronizándose la cadena de bloques en la interfaz gráfica?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
 + **Utilizo una pantalla de alta resolución y la interfaz gráfica parece extremadamente pequeña**    
 Este problema será resuelto próximamente, pero se puede solucionar temporalmente en Windows: haz clic con botón derecho en `monero-wallet-gui.exe`, selecciona `Propiedades` --> `Compatibilidad`. En la opción de alta resolución (`high DPI`), cambia el valor de `Aplicación` a `Sistema` o viceversa.
