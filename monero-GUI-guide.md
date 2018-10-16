@@ -380,5 +380,6 @@ More infos at https://getmonero.org/resources/moneropedia/bootstrap-node.html
 + **[How do I change the language of the 25 word mnemonic seed in the GUI or CLI?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
 + **[My blockchain is stuck, how do I “unstuck” it?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
 + **[I am using remote node, but the GUI still syncs blockchain?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
++ **[GUI v0.13.0.3 does not start on Linux because of “./monero-wallet-gui: error while loading shared libraries: libhidapi-libusb.so.0”](https://monero.stackexchange.com/questions/10361/gui-monerod-v0-13-0-3-does-not-start-on-linux-because-of-monero-wallet-gui/)**
 + **I use a high resolution display and the GUI looks extremely small**    
 This problem will be fixed soon, but there is a workaround for Windows: right click on monero-wallet-gui.exe, select properties --> compatibility. you'll find a 'high DPI' option, change value there from "Application" to "System" or vice versa
