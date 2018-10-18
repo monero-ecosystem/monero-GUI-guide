@@ -3,9 +3,9 @@ BOOKNAME = monero-gui-wallet-guide
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS = ch00.md ch01.md ch02.md ch03.md ch04.md ch05.md ch06.md ch08.md ch09.md
-TOC = --toc --toc-depth=2
+TOC = --toc --toc-depth=3
 COVER_IMAGE = media/monero-logo-1280.png
-LATEX_CLASS = book
+LATEX_CLASS = report
 
 all: book
 
