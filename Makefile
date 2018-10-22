@@ -1,36 +1,39 @@
-BUILD = build
-BOOKNAME = monero-gui-wallet-guide
-TITLE = title.txt
-METADATA = metadata.xml
-CHAPTERS = ch00.md ch01.md ch02.md ch03.md ch04.md ch05.md ch06.md ch08.md ch09.md
-TOC = --toc --toc-depth=3
-COVER_IMAGE = media/monero-logo-1280.png
-LATEX_CLASS = report
+export BUILD = build
+export BOOKNAME = monero-gui-wallet-guide
+export TITLE = title.txt
+export METADATA = metadata.xml
+export TOC = --toc --toc-depth=3
+export COVER_IMAGE = media/monero-logo-1280.png
+export LATEX_CLASS = report
+export LATEX_ENGINE = xelatex
+
+# The following is the list of folders containing translations of the guide
+LANGUAGES = en 
+
+EPUB_DIRS = $(LANGUAGES:%=epub-%)
+HTML_DIRS = $(LANGUAGES:%=html-%)
+PDF_DIRS = $(LANGUAGES:%=pdf-%)
 
 all: book
 
 book: epub html pdf
 
-clean:
+clean: 
 	rm -r $(BUILD)
 
-epub: $(BUILD)/epub/$(BOOKNAME)
+epub: $(EPUB_DIRS)
+$(EPUB_DIRS):
+	$(MAKE) -C $(subst epub-,,$@) LANGUAGE=$(subst epub-,,$@) epub
 
-html: $(BUILD)/html/$(BOOKNAME)
+html: $(HTML_DIRS) 
+$(HTML_DIRS): 
+	$(MAKE) -C $(subst html-,,$@) LANGUAGE=$(subst html-,,$@) html
 
-pdf: $(BUILD)/pdf/$(BOOKNAME)
+pdf: $(PDF_DIRS)
+$(PDF_DIRS): 
+	$(MAKE) -C $(subst pdf-,,$@) LANGUAGE=$(subst pdf-,,$@) pdf
 
-$(BUILD)/epub/$(BOOKNAME): $(TITLE) $(CHAPTERS)
-	mkdir -p $(BUILD)/epub
-	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@.epub $^
-
-$(BUILD)/html/$(BOOKNAME): $(CHAPTERS)
-	mkdir -p $(BUILD)/html
-	pandoc $(TOC) --standalone --to=html5 -o $@.html $^
-
-$(BUILD)/pdf/$(BOOKNAME): $(TITLE) $(CHAPTERS)
-	mkdir -p $(BUILD)/pdf
-	pandoc $(TOC) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o $@.pdf $^
-#	pandoc $(TOC) --latex-engine=xelatex  -o $@.pdf $^
-
-.PHONY: all book clean epub html pdf
+.PHONY: subdirs $(EPUB_DIRS)
+.PHONY: subdirs $(HTML_DIRS)
+.PHONY: subdirs $(PDF_DIRS)
+.PHONY: all book clean epub html pdf 
