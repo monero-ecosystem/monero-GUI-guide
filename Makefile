@@ -8,7 +8,7 @@ export LATEX_CLASS = report
 export LATEX_ENGINE = xelatex
 
 # The following is the list of folders containing translations of the guide
-LANGUAGES = en 
+LANGUAGES = en es
 
 EPUB_DIRS = $(LANGUAGES:%=epub-%)
 HTML_DIRS = $(LANGUAGES:%=html-%)
