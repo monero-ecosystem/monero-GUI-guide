@@ -106,6 +106,8 @@ Adding a translation is very easy:
 3. Edit the string `LANGUAGES =` in the main makefile, after 'en' (or the previous added language) add the name of the folder which contains your translations.
 4. Push the changes to your local branch and open a pull request.
 
+**Do not edit** the files cointained in the /translations folder. They are manually built. All changes MUST be done on the appropriate source foler (/en for english, /es for spanish, etc..).
+
 ### Support
 If you need **help/support**, open an issue on this repository or contact ErCiccione. You can do so:
   
