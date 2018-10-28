@@ -75,7 +75,7 @@ To do so we use pandoc. If you wish to **build the guide by yourself**, you can 
 1. Download Pandoc and all necessary dependencies:
 ```
 sudo apt install pandoc
-sudo apt install texlive-full
+sudo apt install texlive texlive-xetex texlive-latex-extra
 ```
 
 2. From the source of the repository run:
