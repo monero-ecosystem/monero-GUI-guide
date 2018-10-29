@@ -1,0 +1,19 @@
+sudo: true
+
+language: minimal
+
+before_install:
+ - sudo apt-get install -y pandoc texlive texlive-xetex texlive-latex-extra
+
+env:
+   matrix:
+      - FORMAT="html"
+      - FORMAT="pdf"
+      - FORMAT="epub"
+
+matrix:
+  allow_failures:
+    - env: FORMAT="epub"
+    
+script:
+- make $FORMAT
