@@ -6,6 +6,8 @@ export TOC = --toc --toc-depth=3
 export COVER_IMAGE = media/monero-logo-1280.png
 export LATEX_CLASS = report
 export LATEX_ENGINE = xelatex
+export MARGIN = margin=1in
+export URL_COLOR = blue
 
 # The following is the list of folders containing translations of the guide
 LANGUAGES = en es
