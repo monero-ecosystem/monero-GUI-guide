@@ -37,6 +37,6 @@ $(BUILD_PATH)/html/$(BOOKNAME):  | medialink
 
 $(BUILD_PATH)/pdf/$(BOOKNAME): | medialink
 	mkdir -p ../$(BUILD_PATH)/pdf
-	pandoc $(TOC) --latex-engine=$(LATEX_ENGINE) -V documentclass=$(LATEX_CLASS) -V geometry:$(MARGIN) -V urlcolor=$(URL_COLOR) -o ../$@.pdf $(CHAPTERS)
+	pandoc $(TOC) --latex-engine=$(LATEX_ENGINE) -V documentclass=$(LATEX_CLASS) -V geometry:$(MARGIN) -V urlcolor=$(URL_COLOR) -V lang=${LANGUAGE} -o ../$@.pdf $(CHAPTERS)
 
 .PHONY: all book clean epub html pdf
