@@ -33,7 +33,7 @@ $(BUILD_PATH)/epub/$(BOOKNAME): | medialink
 $(BUILD_PATH)/html/$(BOOKNAME):  | medialink
 	mkdir -p ../$(BUILD_PATH)/html
 	ln -s ../../../media ../$(BUILD_PATH)/html/media
-	pandoc $(TOC) --standalone --to=html5 -o ../$@.html $(CHAPTERS)
+	pandoc $(TOC) --standalone -fmarkdown-implicit_figures --to=html5 -o ../$@.html $(CHAPTERS)
 
 $(BUILD_PATH)/pdf/$(BOOKNAME): | medialink
 	mkdir -p ../$(BUILD_PATH)/pdf
