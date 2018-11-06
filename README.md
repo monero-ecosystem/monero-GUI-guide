@@ -7,8 +7,26 @@ This document is meant to be updated continuously and **a new major release will
 The guide is composed by several different markdown files (see the chaper 'structure'). For simplicity, we have an easy-to-consult version:
 &nbsp;
 
-**[monero-GUI-guide.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)**    
-*(This version will be replaced soon with an HTML page and a lot of cool stuff.)*
+**[monero-GUI-guide.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)**
+&nbsp;
+
+Thanks to the work of volunteers from the Monero Localization Workgroup, it's available in different languages:
+
++ **Spanish:** [monero-GUI-guide_es.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide_es.md)
++ **Italian:** [monero-GUI-guide_it.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)
+
+### Versions and branches
+The links above are for the **upstream version of the guide**. In other words, they are synced with the *master* branch of the Monero GUI wallet.
+&nbsp;
+
+If you are looking for the guide for a specific GUI release, change the branch of this repository.    
+Branches available:
+
++ **[1.5](https://github.com/monero-ecosystem/monero-GUI-guide/tree/1.5)**: Monero GUI 0.13.0.3 and 0.13.0.4 'Beryllium Bullet'
+
+&nbsp;
+
+For **PDF** and **EPUB** versions, check out the [latest Release](https://github.com/monero-ecosystem/monero-GUI-guide/releases).
 
 ### Table Of Contents
 
@@ -115,3 +133,8 @@ If you need **help/support**, open an issue on this repository or contact ErCicc
 + By **email**: translate[at]getmonero[dot]org
 + On **reddit**: just PM /u/erciccione
 
+## Donations
+The creation and maintainment of this guide require a lot of hours of work. I think it's a very useful document and I'm happy to work on it voluntarily. The only problem is that the creation/maintainment of the guide **requires** a high consumption of beer. If you would like to help me refill my fridge and show the middle finger to my liver, consider donating to this Monero address:
+&nbsp;
+
+84fCZdZik8KauctPhh6ZQ1KgMb99zpKKQWvR6kSCedtr4L596YjLiaaFYqhUU9pV6qXWjTLoNWUVCiKinC9uFKuq8azHTit
