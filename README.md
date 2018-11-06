@@ -7,13 +7,13 @@ This document is meant to be updated continuously and **a new major release will
 The guide is composed by several different markdown files (see the chaper 'structure'). For simplicity, we have an easy-to-consult version:
 &nbsp;
 
-**[monero-GUI-guide.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)**
+**[monero-GUI-guide.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide.md)**
 &nbsp;
 
 Thanks to the work of volunteers from the Monero Localization Workgroup, it's available in different languages:
 
-+ **Spanish:** [monero-GUI-guide_es.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide_es.md)
-+ **Italian:** [monero-GUI-guide_it.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)
++ **Spanish:** [monero-GUI-guide_es.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide_es.md)
++ **Italian:** [monero-GUI-guide_it.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide.md)
 
 ### Versions and branches
 The links above are for the **upstream version of the guide**. In other words, they are synced with the *master* branch of the Monero GUI wallet.
@@ -72,20 +72,20 @@ For **PDF** and **EPUB** versions, check out the [latest Release](https://github
 
 
 ## Structure and guidelines for contributors
-The original guide can be found in the [en](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en) folder. It's divided in 9 main chapters:
+The original guide can be found in the [en](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en) folder. It's divided in 9 main chapters:
 
 **Chapter**|**Content**
 ---|--- 
-00 | [Preface](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch00.md)
-01 | [Choose a Language](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch01.md)
-02 | [Create a Wallet](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch02.md)
-03 | [Send Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch03.md)
-04 | [Receive Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch04.md)
-05 | [Advanced Features](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch05.md)
-06 | [Settings](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch06.md)
-07 | [Binaries Verification](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch07.md)
-08 | [About remote nodes](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch08.md)
-09 | [Common issues and solutions](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch09.md)
+00 | [Preface](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch00.md)
+01 | [Choose a Language](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch01.md)
+02 | [Create a Wallet](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch02.md)
+03 | [Send Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch03.md)
+04 | [Receive Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch04.md)
+05 | [Advanced Features](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch05.md)
+06 | [Settings](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch06.md)
+07 | [Binaries Verification](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch07.md)
+08 | [About remote nodes](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch08.md)
+09 | [Common issues and solutions](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/en/ch09.md)
 
 These single chapters can be built in a single file in 3 different formats: **HTML**, **PDF** and **EPUB**.    
 To do so we use pandoc. If you wish to **build the guide by yourself**, you can do it following these steps (on Linux):
@@ -113,7 +113,7 @@ Before adding a translation, please keep in mind the general guidelines for Mone
 
 - **Avoid** the use of **gender specific** terminology.
 - If available, use the **glossary** for your language. This will help to keep translations consistent across different works. You can find all glossaries [here](https://github.com/monero-ecosystem/monero-translations/tree/master/terminology-guides).
-- Read the guide '[Translation tips for Monero translators](https://github.com/monero-ecosystem/monero-translations/blob/master/translation-tips.md)'. **It cointains all the informations you need** to submit a perfect translation.
+- Read the guide '[Translation tips for Monero translators](https://github.com/monero-ecosystem/monero-translations/blob/1.5/translation-tips.md)'. **It cointains all the informations you need** to submit a perfect translation.
 - If a string contains numbers, just keep them as they are.
 
 ### Steps
