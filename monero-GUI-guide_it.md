@@ -46,6 +46,9 @@
 Prefazione
 ==========
 
+Version: 1.5
+&nbsp;
+
 Questa guida è open source e manutenuta da ErCiccione, membro della
 Comunità Monero. Se hai suggerimenti o vuoi contribuire allo sviluppo di
 questa guida, puoi aprire una pull request o Issue sul repositorio

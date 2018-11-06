@@ -47,6 +47,10 @@
 Prefacio
 ========
 
+Version: 1.5
+&nbsp;
+
+
 Esta guía es código abierto y es una traducción de la guía original en
 inglés escrita por ErCiccione, de la comunidad de Monero. Si tienes
 sugerencias o quieres contribuir al desarrollo de esta guía, siéntete
