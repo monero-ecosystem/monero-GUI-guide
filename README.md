@@ -13,7 +13,7 @@ The guide is composed by several different markdown files (see the chaper 'struc
 Thanks to the work of volunteers from the Monero Localization Workgroup, it's available in different languages:
 
 + **Spanish:** [monero-GUI-guide_es.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide_es.md)
-+ **Italian:** [monero-GUI-guide_it.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide.md)
++ **Italian:** [monero-GUI-guide_it.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/1.5/monero-GUI-guide_it.md)
 
 ### Versions and branches
 The links above are for the **upstream version of the guide**. In other words, they are synced with the *master* branch of the Monero GUI wallet.
