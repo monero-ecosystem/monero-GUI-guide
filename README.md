@@ -4,7 +4,7 @@ This repository contains the guide for the [Monero GUI Wallet](https://github.co
 This document is meant to be updated continuously and **a new major release will be available whenever Monero publishes a new version of the GUI**.
 &nbsp;
 
-The guide is composed by several different markdown files (see the chaper 'structure'). For simplicity, we have an easy-to-consult version:
+The guide is composed by several different markdown files (see the chapter 'structure'). For simplicity, we have an easy-to-consult version:
 &nbsp;
 
 **[monero-GUI-guide.md](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md)**
@@ -100,7 +100,7 @@ sudo apt install texlive texlive-xetex texlive-latex-extra
 ```
 make [format][-language]
 ```
-For example, if you wish to build only the spanish version in PDF format, you should run `make pdf-es`.    
+For example, if you wish to build only the Spanish version in PDF format, you should run `make pdf-es`.    
 If you want all languages in a single format: `make epub`- This will give you the epub version in all languages.    
 If you want to build all formats for all available languages: `make all` - This will build the guide in PDF, HTML and EPUB in all available languages.
 
@@ -113,7 +113,7 @@ Before adding a translation, please keep in mind the general guidelines for Mone
 
 - **Avoid** the use of **gender specific** terminology.
 - If available, use the **glossary** for your language. This will help to keep translations consistent across different works. You can find all glossaries [here](https://github.com/monero-ecosystem/monero-translations/tree/master/terminology-guides).
-- Read the guide '[Translation tips for Monero translators](https://github.com/monero-ecosystem/monero-translations/blob/master/translation-tips.md)'. **It cointains all the informations you need** to submit a perfect translation.
+- Read the guide '[Translation tips for Monero translators](https://github.com/monero-ecosystem/monero-translations/blob/master/translation-tips.md)'. **It contains all the information you need** to submit a perfect translation.
 - If a string contains numbers, just keep them as they are.
 
 ### Steps
@@ -124,7 +124,7 @@ Adding a translation is very easy:
 3. Edit the string `LANGUAGES =` in the main makefile, after 'en' (or the previous added language) add the name of the folder which contains your translations.
 4. Push the changes to your local branch and open a pull request.
 
-**Do not edit** the files cointained in the /translations folder. They are manually built. All changes MUST be done on the appropriate source foler (/en for english, /es for spanish, etc..).
+**Do not edit** the files contained in the /translations folder. They are manually built. All changes MUST be done on the appropriate source folder (/en for English, /es for Spanish, etc..).
 
 ### Support
 If you need **help/support**, open an issue on this repository or contact ErCiccione. You can do so:
@@ -134,7 +134,7 @@ If you need **help/support**, open an issue on this repository or contact ErCicc
 + On **reddit**: just PM /u/erciccione
 
 ## Donations
-The creation and maintainment of this guide require a lot of hours of work. I think it's a very useful document and I'm happy to work on it voluntarily. The only problem is that the creation/maintainment of the guide **requires** a high consumption of beer. If you would like to help me refill my fridge and show the middle finger to my liver, consider donating to this Monero address:
+The creation and maintainance of this guide require a lot of hours of work. I think it's a very useful document and I'm happy to work on it voluntarily. The only problem is that the creation/maintainance of the guide **requires** a high consumption of beer. If you would like to help me refill my fridge and show the middle finger to my liver, consider donating to this Monero address:
 &nbsp;
 
 84fCZdZik8KauctPhh6ZQ1KgMb99zpKKQWvR6kSCedtr4L596YjLiaaFYqhUU9pV6qXWjTLoNWUVCiKinC9uFKuq8azHTit
