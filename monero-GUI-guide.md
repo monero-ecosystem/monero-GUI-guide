@@ -79,7 +79,7 @@ Some shortcuts are available to make the user experience with the GUI
 easier:  
 
 **On all operating systems:**\
-Press `Ctrl` to view each page shortcut. Press `ctrl+"shorcut"` to go to
+Press `Ctrl` to view each page shortcut. Press `ctrl+"shortcut"` to go to
 that page  
 
 **On Linux/Windows:**\
@@ -527,7 +527,7 @@ remote nodes' section](#8-about-remote-nodes) of this guide.
 4.  **Wallet creation height:** Change the block height that a wallet
     rescan will go back to.\
 5.  **Wallet log path:** Where the logs for this wallet will be saved.\
-6.  **Copy to clipboard:** Copy all these informations to the clipboard.
+6.  **Copy to clipboard:** Copy all this information to the clipboard.
 
 Seed and keys
 -------------
@@ -597,7 +597,7 @@ If the bootstrap node feature is utilized it will always automatically
 switch to the local node when the blockchain is fully synced, regardless
 of whether the user put in the remote node themselves or the remote node
 was specified by default.\
-More infos at
+More info at
 https://getmonero.org/resources/moneropedia/bootstrap-node.html
 
 Common issues and solutions
