@@ -10,7 +10,7 @@ export MARGIN = margin=1in
 export URL_COLOR = blue
 
 # The following is the list of folders containing translations of the guide
-LANGUAGES = en es it
+LANGUAGES = en es it fr
 
 EPUB_DIRS = $(LANGUAGES:%=epub-%)
 HTML_DIRS = $(LANGUAGES:%=html-%)
