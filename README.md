@@ -77,15 +77,17 @@ The original guide can be found in the [en](https://github.com/monero-ecosystem/
 **Chapter**|**Content**
 ---|--- 
 00 | [Preface](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch00.md)
-01 | [Choose a Language](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch01.md)
+01 | [Welcome](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch01.md)
 02 | [Create a Wallet](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch02.md)
-03 | [Send Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch03.md)
-04 | [Receive Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch04.md)
-05 | [Advanced Features](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch05.md)
-06 | [Settings](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch06.md)
-07 | [Binaries Verification](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch07.md)
-08 | [About remote nodes](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch08.md)
-09 | [Common issues and solutions](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch09.md)
+03 | [Monero Account](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch03.md)
+04 | [Send Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch04.md)
+05 | [Receive Monero](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch05.md)
+06 | [Transaction History](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch06.md)
+07 | [Advanced Features](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch07.md)
+08 | [Settings](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch08.md)
+09 | [Binaries Verification](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch09.md)
+10 | [About Remote Nodes](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch10.md)
+11 | [Common Issues and Solutions](https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/en/ch11.md)
 
 These single chapters can be built in a single file in 3 different formats: **HTML**, **PDF** and **EPUB**.    
 To do so we use pandoc. If you wish to **build the guide by yourself**, you can do it following these steps (on Linux):
