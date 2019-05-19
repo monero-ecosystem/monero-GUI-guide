@@ -72,9 +72,10 @@ For the online version of this guide, click
 Translations
 ------------
 
-This document will be localized into several languages. You can find all
-available translations in the [dedicated section on
-GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations).
+This document will be localized into several languages. You will find
+all available translations in the [dedicated section on
+GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations)
+after the next version (1.6) of this guide will be released.
 
 Windows Preparation
 -------------------
