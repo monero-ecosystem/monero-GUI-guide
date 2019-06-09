@@ -1,3 +1,13 @@
+<div align="center"> 
+<img src="media/monero-symbol-480.png" width="150" height="150"> <img src="https://raw.githubusercontent.com/monero-ecosystem/meta/master/media/ecosystem-logo.png" width="150" height="150">
+</div>
+<div align="center"> 
+<h1>Guide for the Monero GUI wallet</h1>
+<i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
+</div>
+
+&nbsp;
+
 -   [Preface](#preface)
     -   [Translations](#translations)
     -   [Windows Preparation](#windows-preparation)
@@ -30,7 +40,7 @@
     -   [Address Book](#address-book)
 -   [Receive Monero](#receive-monero)
     -   [Merchant view](#merchant-view)
--   [Transaction History](#transaction-history)
+-   [Transactions History](#transactions-history)
 -   [Advanced Features](#advanced-features)
     -   [Solo mining](#solo-mining)
     -   [Prove - Check](#prove---check)
@@ -45,7 +55,7 @@
         -   [Verify](#verify-1)
 -   [Settings](#settings)
     -   [Wallet](#wallet)
-    -   [Layout](#layout)
+    -   [Interface](#interface)
     -   [Local Node](#local-node)
     -   [Remote Node](#remote-node)
     -   [Log](#log)
@@ -556,35 +566,33 @@ incoming transactions
     on the blockchain and the transaction pool, with
     associated confirmations.
 
-Transaction History
-===================
+Transactions History
+====================
 
-![history](media/black_history.png)
+![transactions](media/black_transactions-history.png)
 
-The `History` tab let you walk through the transactions sent and
+The `Transactions` tab let you walk through the transactions sent and
 received on your account.
 
-(1) **Export:** This will create a CSV file of the record in a folder of
-    your choice.\
-(2) **Search:** Quickly find a transaction using any field to look up
+(1) **Search:** Quickly find a transaction using any field to look up
     from.\
-(3) **Filters:** You can choose to filter out the transaction between
-    specific dates. This can be useful if your wallet has tons of
-    transactions.\
-(4) **Sort:** You can sort transaction by block height or date. *Those
-    methods are actually equivalent*\
-(5) **Transaction list:** Here are displayed your transactions on
+(2) **Filters:** You can choose to filter out the transaction between
+    specific dates, block height or amount. This can be useful if your
+    wallet has tons of transactions.\
+(3) **Transaction list:** Here are displayed your transactions on
     this account. Each transaction is displayed with it's informations:
-    `Amount`, `Tx ID`, `Height`, `Date`, `Fee` (for outgoing
-    transactions), and `Description` *Optional*.\
-(6) **Set description:** You can optionally click here to set a
-    description of your choice to this transaction.\
-(7) **Prove transaction:** Clicking here will generate a payment proof
+    `Amount`, `Tx ID`, `Height`, `Date`, `Confrimations`, `Fee` (for
+    outgoing transactions), and `Description` *Optional*.\
+(4) **Details:** Clicking here will show you the transaction details:
+    `Tx ID`, `Address Label`, `Address`, and `Payment ID`.\
+(5) **Prove transaction:** Clicking here will generate a payment proof
     in case of a dispute. More details on proving payments can be found
     [here](https://getmonero.org/resources/user-guides/prove-payment.html)
     *For outgoing transaction only*\
-(8) **Details:** Clicking here will show you the transaction details:
-    `Tx ID`, `Address Label`, `Address`, and `Payment ID`.
+(6) **Set description:** You can optionally click here to set a
+    description of your choice to this transaction.\
+(7) **Advanced:** Lets you choose in which formate the date should be
+    displayed (you probably want to leave this option as it is).
 
 Advanced Features
 =================
@@ -777,12 +785,12 @@ The `Settings` tab provides tools for customizing configuration options.
     keys, tx notes, etc.)*\
 (5) **Change wallet password:** Click here to change your password.
 
-### Layout
+### Interface
 
-![settings\_layout](media/black_settings-layout.png)
+![settings\_interface](media/black_settings-interface.png)
 
-The `layout` tab is where you can adjust the settings of the GUI wallet.
-The most important options are:
+The `Interface` tab is where you can adjust the settings of the GUI
+wallet. The most important options are:
 
 (1) **Hide balance:** If you are running your wallet in public, you may
     want to hide its balance. This can be useful for point of sales
@@ -793,9 +801,14 @@ The most important options are:
     time of writing). Using long payment IDs is detrimental to
     your privacy. Please ask services that still use this deprecated
     feature to use subaddresses instead.\
-(3) **Lock wallet:** Set this to automatically lock your wallet after N
+(3) **Light theme:** Switch to the light theme.\
+(4) **Lock wallet:** Set this to automatically lock your wallet after N
     minutes of inactivity. This ensures no one is able to use your
-    wallet while you are away from keyboard.
+    wallet while you are away from keyboard.\
+(5) **Enable displaying balance in other currencies:** Gives you the
+    possibility to display your balance also in other currencies. You
+    can select the price source and the currency you prefer (*USD* or
+    *EUR*).
 
 ### Local Node
 
@@ -939,6 +952,8 @@ https://getmonero.org/resources/moneropedia/bootstrap-node.html
 Common issues and solutions
 ===========================
 
+-   **[How do I generate a Ledger Monero wallet with the
+    GUI?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)**
 -   **[I am missing (not seeing) a transaction to (in) the GUI
     (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)**
 -   **[I am using the GUI and my daemon doesn't start
@@ -959,10 +974,6 @@ Common issues and solutions
 -   **[How do I change the language of the 25 word mnemonic seed in the
     GUI or
     CLI?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
--   **[My blockchain is stuck, how do I “unstuck”
-    it?](https://monero.stackexchange.com/questions/4462/my-blockchain-is-stuck-how-do-i-unstuck-it)**
--   **[I am using remote node, but the GUI still syncs
-    blockchain?](https://monero.stackexchange.com/questions/6324/using-remote-node-still-syncs-blockchain)**
 -   **I use a high resolution display and the GUI looks extremely
     small**\
     This problem will be fixed soon, but there is a workaround for
