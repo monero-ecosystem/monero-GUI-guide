@@ -17,6 +17,7 @@ If you are looking for the guide for a specific GUI release, change the branch o
 Branches available:
 
 + **[1.5](https://github.com/monero-ecosystem/monero-GUI-guide/tree/1.5)**: Monero GUI 0.13.0.3 and 0.13.0.4 'Beryllium Bullet'
++ **[1.6](https://github.com/monero-ecosystem/monero-GUI-guide/tree/1.5)**: Monero GUI wallet version 0.14.1
 
 &nbsp;
 
