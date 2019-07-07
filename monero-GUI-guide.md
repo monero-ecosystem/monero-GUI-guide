@@ -85,17 +85,17 @@ Translations
 This document will be localized into several languages. You will find
 all available translations in the [dedicated section on
 GitHub](https://github.com/monero-ecosystem/monero-GUI-guide/tree/master/translations)
-after the next version (1.6) of this guide will be released.
+after the next version (1.6) of this guide is released.
 
 Windows Preparation
 -------------------
 
 If you are on Windows:
 
--   Make sure that your antivirus does not block the program.
+-   Make sure that your antivirus software does not block the program.
 
 A miner is included in the Monero GUI software and, as a result, most
-anti virus software flags the Monero GUI files as malware and
+antivirus software flags the Monero GUI files as malware and
 subsequently quarantines them. Fortunately, however, there's a fairly
 trivial work around you can use. That is:
 
@@ -107,8 +107,8 @@ trivial work around you can use. That is:
 -   Extract the .zip file (in case of Windows) or the .tar.bz2 file (in
     case of Linux or Mac OS X) to the whitelisted directory / folder.
 
-*Note:* if you're using Windows and did not install custom anti virus
-software, Windows Defender is, most likely, acting as active anti virus
+*Note:* If you're using Windows and did not install custom antivirus
+software, most likely Windows Defender is working as your active antivirus
 software.
 
 -   The first time you start the wallet you must give permission to
