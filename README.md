@@ -44,9 +44,9 @@ The original guide can be found in the [en](https://github.com/monero-ecosystem/
 These single chapters can be built in a single file in 3 different formats: **HTML**, **PDF** and **EPUB**.  
 To do so we use pandoc. If you wish to **build the guide by yourself**, you can do it following these steps (on Linux):
 
-1. Download Pandoc and all necessary dependencies:
+1. Download Pandoc, make and all necessary dependencies:
 ```
-sudo apt install pandoc
+sudo apt install pandoc make
 sudo apt install texlive texlive-xetex texlive-latex-extra
 ```
 
