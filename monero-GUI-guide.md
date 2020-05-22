@@ -4,6 +4,7 @@
 <div align="center"> 
 <h1>Guide for the Monero GUI wallet</h1>
 <i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
+<p>v1.7</p>
 </div>
 
 &nbsp;
@@ -20,16 +21,17 @@
 -   [Create a Wallet](#create-a-wallet)
     -   [Create new wallet](#create-new-wallet)
         -   [Add a password](#add-a-password)
-        -   [Daemon settings
-            (Advanced mode)](#daemon-settings-advanced-mode)
-        -   [Run a full node](#run-a-full-node)
+        -   [Daemon settings](#daemon-settings)
+        -   [Starting a local node (full
+            node)](#starting-a-local-node-full-node)
     -   [Create new wallet from
         hardware](#create-new-wallet-from-hardware)
         -   [Create the wallet](#create-the-wallet)
         -   [Add a password](#add-a-password-1)
-        -   [Daemon settings
-            (Advanced mode)](#daemon-settings-advanced-mode-1)
-        -   [Run a full node](#run-a-full-node-1)
+        -   [Daemon settings (Advanced
+            mode)](#daemon-settings-advanced-mode)
+        -   [Starting a local node (full
+            node)](#starting-a-local-node-full-node-1)
     -   [Restore wallet from keys or mnemonic
         seed](#restore-wallet-from-keys-or-mnemonic-seed)
         -   [Restoring from seed](#restoring-from-seed)
@@ -102,14 +104,14 @@ trivial work around you can use. That is:
 -   Create a new directory / folder.
 -   Open your AV software.
 -   Add an exception for the newly created directory / folder. Put
-    differently, you have to whitelist the newly created directory
-    / folder.
+    differently, you have to whitelist the newly created directory /
+    folder.
 -   Extract the .zip file (in case of Windows) or the .tar.bz2 file (in
     case of Linux or Mac OS X) to the whitelisted directory / folder.
 
-*Note:* if you're using Windows and did not install custom anti virus
-software, Windows Defender is, most likely, acting as active anti virus
-software.
+    *Note:* if you're using Windows and did not install custom anti
+    virus software, Windows Defender is, most likely, acting as active
+    anti virus software.
 
 -   The first time you start the wallet you must give permission to
     connect to the network via a pop-up. Check the appropriate boxes and
@@ -128,12 +130,12 @@ Press `Ctrl` to view each page shortcut. Press `ctrl+"shortcut"` to go
 to that page  
 
 **On Linux/Windows:**\
-`ctrl + tab` -&gt; go to the next page\
-`ctrl + shift + tab` -&gt; go to the previous page  
+`ctrl + tab` -\> go to the next page\
+`ctrl + shift + tab` -\> go to the previous page  
 
 **On macOS:**\
-`cmd + tab` -&gt; go to the next page\
-`cmd + shift + tab` -&gt; go to the previous page
+`cmd + tab` -\> go to the next page\
+`cmd + shift + tab` -\> go to the previous page
 
 Welcome
 =======
@@ -169,24 +171,44 @@ This page lets you choose the mode that best suits your accessibility
 and privacy needs.\
 *Note:* Stagenet and Testnnet only supports *Advanced mode*.
 
-(1) **Simple mode:** This mode will connect your wallet to a
-    remote node. Please note that remote nodes may weaken your privacy.
-    Choose this if you have low privacy requirement, need to quickly
-    access the Monero network, and only intend to manage small amount of
-    Monero.\
-(2) **Simple mode (bootstrap):** This mode is similar to the previous
-    one, as it will connect you to a remote node, but will download the
-    blockchain to your local drive in the background. As soon as you
-    have a local copy of the entire blockchain, you will be connected to
-    your local node. It allows you to start using Monero immediately and
-    have a fallback option if your local blockchain needs to sync new
-    blocks while offering the privacy benefits of a full node when fully
-    synced.\
-(3) **Advanced mode:** Using this mode will let you run a full node,
-    which downloads and maintains an entire copy of the blockchain. Your
-    wallet will not be usable until your local copy of the blockchain is
-    fully synchronized. Choose this mode if the maximum privacy matters
-    to you.\
+(1) **Simple mode:** In this mode your wallet will display a simple
+    interface with easy access to basic functionality like sending,
+    receiving, transactions history, address book, accounts, and
+    merchant mode, as well as hardware wallet support. It will connect
+    to a third-party server (a remote node), and it will not start a
+    local node in your computer (the blockchain will not be downloaded).
+    Choose this option if you don't have enough space to store the
+    blockchain file (at least 90 GB), if you don't require maximum
+    privacy and you accept the privacy risks of using a remote node to
+    connect to the Monero network.\
+(2) **Simple mode (bootstrap):** In this mode your wallet will also
+    display a simple interface with easy access to basic functionality.
+    Additionaly it will start a local node in the background. This local
+    node will start the download of the blockchain file (at least 90
+    GB), which can take many hours or even days. While the blockchain
+    file is being downloaded, your local node will temporarily connect
+    to a third-party server (a remote node known as bootstrap node),
+    which will allow you to start using Monero immediately. After
+    downloading and synchronizing the blockchain and the wallet, your
+    local node will only temporarily connect to the bootstrap node when
+    your blockchain is not updated. Be aware that using a remote node
+    (including a bootstrap node) to connect to the Monero network may
+    reduce your privacy.\
+(3) **Advanced mode:** In this mode your wallet will display all
+    advanced features available, like changing fees/transaction
+    priority, solo mining, message verification, transaction
+    proof/check, offline transaction signing, key images importing,
+    custom remote node (including .onion remote nodes), custom bootstrap
+    node, starting a local node without setting a bootstrap node
+    (maximum privacy), changing blockchain location, and daemon log. In
+    this mode you can choose if you want to connect to the Monero
+    network via a remote node or a local node. If you decide to run a
+    local node, the blockchain file will be downloaded. If you want to
+    start using Monero immediately, you can also set a bootstrap node
+    (remote node) in the Settings \> Node page. To achieve maximum
+    privacy in your connection to the Monero network, it's recommended
+    to avoid using a remote/bootstrap node and instead use advanced mode
+    to start a local node without setting a bootstrap node.\
 (4) **Change language:** This will let you choose the language from the
     startup page (again).
 
@@ -218,41 +240,45 @@ Create a Wallet
 
 ![welcome](media/wizard_2-options.png)
 
-On this page you can choose how to connect to the wallet and to the
-network:
+On this page you can create a new wallet, open an existing wallet,
+change wallet mode or change choose how to connect to the wallet and to
+the network:
 
-(1) **Create a new wallet:** Start the procedure to make a new wallet.
-    Choose this option if this is your first time using Monero.\
-(2) **Create new wallet from hardware:** Create a new wallet from an
-    hardware device (like Ledger or Trezor)\
+(1) **Create a new wallet:** Start the procedure to create a new wallet
+    file. Choose this option if this is your first time using Monero.\
+(2) **Create new wallet from hardware:** Create a new wallet file from a
+    hardware wallet device (e.g., Ledger or Trezor).\
 (3) **Open a wallet from file:** Choose this option to select a
-    pre-existing wallet from your files with the extension `.keys`.\
+    pre-existing wallet file from your computer (with the extension
+    `.keys`).\
 (4) **Restore wallet from keys or mnemonic seed:** Click here if you
     want to recover a pre-existing wallet using the mnemonic seed or the
-    keys.\
-(5) **Change wallet mode:** Click here to switch between modes and
-    choose the wallet mode that best fits your needs.\
-(6) **Mainnet:** *Advanced:* Select this from the dropdown list to use
-    the main Monero network\
-(7) **Testnet:** *Advanced:* Select this from the dropdown list if you
-    would like to use a development network instead of the main network.
-    Testnet is designed to let developers test new features that are not
-    available on Mainnet or Stagenet.\
-(8) **Stagenet:** *Advanced:* Select this from the dropdown list if you
-    would like to use a network for staging instead of the main network.
-    Stagenet mimics the features of Mainnet and is designed to let end
-    users test Monero without the risk of losing funds.\
-(9) **Number of KDF rounds:** *Advanced:* Adjust the number of Key
-    Derivation Function rounds in order to enhance the overall security
-    of the generated keys. Any random large number will increase
-    the security.
+    private keys, creating a new wallet file.\
+(5) **Change wallet mode:** Click here to switch between simple, simple
+    (bootstrap), and advanced modes.
+
+Advanced options (requires wallet in advanced mode):
+
+(6) **Mainnet:** Select this from the dropdown list to use the main
+    Monero network\
+(7) **Testnet:** Select this option if you would like to use a
+    development network instead of the main network. Testnet is designed
+    to let developers test new features that are not available on
+    Mainnet or Stagenet.\
+(8) **Stagenet:** Select this option if you would like to use a network
+    for staging instead of the main network. Stagenet mimics the
+    features of Mainnet and is designed to let end users test Monero
+    without the risk of losing funds.\
+(9) **Number of KDF rounds:** Adjust the number of Key Derivation
+    Function rounds in order to enhance the overall security of the
+    generated keys. Any random large number will increase the security.
 
 Create new wallet
 -----------------
 
 ![new](media/wizard_3-create.png)
 
-Here you can create a new wallet:
+Here you can create a new wallet file:
 
 (1) **Wallet name:** Give a name for your wallet (in this example
     `testname` is used).\
@@ -269,41 +295,48 @@ Here you can create a new wallet:
 Add a strong password to protect your wallet. If you lose your password,
 then only your mnemonic seed can recover your wallet.
 
-### Daemon settings (Advanced mode)
+### Daemon settings
 
 ![daemon settings](media/wizard_5-daemon-settings.png)
 
-Here you can choose if you are going to run a full node or use a remote
-one:
+This page will open if your wallet is in advanced mode. Here you can
+choose if you are going to start a local node or connect to a remote
+node:
 
-(1) **Start node in background:** Check this box to run a full node and
-    begin blockchain sync.\
+(1) **Start node in background:** Check this box to start a local node
+    (full node) in the background and download the blockchain.\
 (2) **Blockchain location (optional):** To store the blockchain
     somewhere other than default, enter that location here.\
-(3) **Bootstrap node:** To use a bootstrap node enter the host and port.
-    A bootstrap node allows you to use your wallet while you are
-    downloading the blockchain by connecting to a remote node. For a
+(3) **Bootstrap node:** Here you can enter the host/IP address and port
+    of a bootstrap node (remote node). Your local node will temporarily
+    connect to this third-party remote node while the blockchain is
+    being downloaded, allowing you to use your wallet immediately. For a
     list of available remote nodes and info about them, check the [About
     remote nodes](#about-remote-nodes) section of this guide.\
-(4) **Connect to a remote node:** Check this box if you want to use only
-    a remote node without downloading the blockchain. You will need to
-    put the host and port of the remote node after checking the box.
+(4) **Connect to a remote node:** Check this box if you just want to use
+    a remote node without downloading the blockchain. Enter the host/IP
+    address and port of the remote node after checking the box.
 
-### Run a full node
+### Starting a local node (full node)
 
-Upon completion of the setup you will be prompted to the settings menu,
-but first you will see a window like this pop up:
+If you have selected to start a local node, every time you open your
+wallet you will see this pop up window:
 
 ![sync](media/daemon-launch.png)
 
-If you want to create a normal wallet using your personal full node, you
-don't need to do anything, let the countdown finish, then wait until
-your node is fully synced.\
-If you need some special settings, like setting up a view-only wallet or
-adding the blockchain manually, go to [Settings](#settings).
+It has a countdown that allows you to change some settings before your
+wallet connects to the local node. If you don't want to change any
+setting, just let the countdown finish and your local node will be
+started automatically.
 
 Create new wallet from hardware
 -------------------------------
+
+On this page you can create a new wallet file from your hardware wallet
+device. This wallet file will be stored in your computer and every time
+you open it you will be asked to connect and unlock your hardware
+wallet. Monero GUI currently supports the hardware wallet models Ledger
+Nano S/X and Trezor Model T.
 
 ### Create the wallet
 
@@ -328,20 +361,26 @@ Create new wallet from hardware
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
 (5) **Subaddress lookahead (optional):** pregenerate a number of
     accounts with a number of subaddresses each.\
-(6) **Device name:** Select the hardware wallet you want to use.\
+(6) **Device name:** Select the hardware wallet you want to use. Monero
+    GUI currently supports the hardware wallet models Ledger Nano S/X
+    and Trezor Model T.\
      
 
-Step by step guide on how to generate a Ledger wallet with the Monero
-GUI for all operating systems (StackExchange):\
+Step by step guides on how to generate a Monero wallet from a hardware
+wallet for all operating systems (StackExchange):\
 [How do I generate a Ledger Monero wallet with the GUI
 (monero-wallet-gui)?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)
+
+[How do I generate a Trezor Monero wallet with the GUI
+(monero-wallet-gui)?](https://monero.stackexchange.com/questions/11437/how-do-i-generate-a-trezor-monero-wallet-with-the-gui-monero-wallet-gui/)
 
 ### Add a password
 
 ![add password](media/wizard_4-pass.png)
 
-Add a strong password to protect your wallet. If you lose your password,
-then only your mnemonic seed can recover your wallet.
+Add a strong password to protect your wallet. If you forget the password
+of a wallet created from your hardware wallet, you will be able to
+create another wallet from your hardware device.
 
 ### Daemon settings (Advanced mode)
 
@@ -363,18 +402,17 @@ one:
     a remote node without downloading the blockchain. You will need to
     put the host and port of the remote node after checking the box.
 
-### Run a full node
+### Starting a local node (full node)
 
-Upon completion of the setup you will be prompted to the settings menu,
-but first you will see a window like this pop up:
+If you have selected to start a local node, every time you open your
+wallet you will see this pop up window:
 
 ![sync](media/daemon-launch.png)
 
-If you want to create a normal wallet using your personal full node, you
-don't need to do anything, let the countdown finish, then wait until
-your node is fully synced.\
-If you need some special settings, like setting up a view-only wallet or
-adding the blockchain manually, go to [Settings](#settings).
+It has a countdown that allows you to change some settings before your
+wallet connects to the local node. If you don't want to change any
+setting, just let the countdown finish and your local node will be
+started automatically.
 
 Restore wallet from keys or mnemonic seed
 -----------------------------------------
@@ -394,10 +432,9 @@ wallet. You need to put the following information:
     here so the wallet doesn't have to scan the entire blockchain
     looking for your funds. For example, if your first transaction was
     included on `2017-07-08` in block `1350000`, you should put the
-    previous day date (e.g. `2017-07-06`) or a slightly lower
-    height (e.g. `1330000`) so the wallet will start scanning from
-    there, saving you some time. More information about restore height
-    on
+    previous day date (e.g. `2017-07-06`) or a slightly lower height
+    (e.g. `1330000`) so the wallet will start scanning from there,
+    saving you some time. More information about restore height on
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
 (4) **Wallet location:** Select the destination folder of the wallet.
 
@@ -423,10 +460,9 @@ MyMonero. You need to put the following information:
     here so the wallet doesn't have to scan the entire blockchain
     looking for your funds. For example, if your first transaction was
     included on `2017-07-08` in block `1350000`, you should put the
-    previous day date (e.g. `2017-07-06`) or a slightly lower
-    height (e.g. `1330000`) so the wallet will start scanning from
-    there, saving you some time. More information about restore height
-    on
+    previous day date (e.g. `2017-07-06`) or a slightly lower height
+    (e.g. `1330000`) so the wallet will start scanning from there,
+    saving you some time. More information about restore height on
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
 (6) **Wallet location:** Select the destination folder of the wallet.
 
@@ -447,12 +483,21 @@ Monero Account
 ![account](media/black_account.png)
 
 The `Account` tab provides tool to handle your different Monero accounts
-within your wallet.
+within your wallet. Each wallet can have multiple accounts, and each
+account has its own balance. Also, each account can have multiple
+subaddresses associated with it. For convenience sake, the account
+address is considered the first address (or subaddress) generated for an
+account. Since accounts and subaddresses are deterministically derived
+from the mnemonic seed, you only need to know the seed in order to
+restore the account/subaddress structure when restoring a wallet
+(although any labels you assign to the accounts/subaddresses will need
+to be added again, since they are stored in your wallet, and not in your
+seed).
 
 (1) **Balance All:** Let you see the sum of all your accounts balances,
     unlocked or not.\
-(2) **Accounts:** This is the list of accounts already generated on your
-    wallet.\
+(2) **Accounts:** This is the list of all accounts already generated on
+    your wallet and their corresponding account addresses.\
 (3) **Create new account:** Click on this button to create a new account
     and set its *optional* label.
 
@@ -461,15 +506,17 @@ list.\
 Each of your accounts are filled with their own informations:
 
 (4) **Label:** A name or description of the account for convenience.\
-(5) **Address:** The account primary address. *Note: Primary account
-    addresses and secondary account addresses have different heading
-    numbers*\
+(5) **Account Address:** This is the public address you should give to
+    the sender when you want to receive money in this account. In
+    account \#0, it starts with 4 and corresponds to the wallet's
+    primary address. In the remaining accounts it corresponds to the
+    account's first subaddress and therefore starts with 8.\
 (6) **Balance:** The account total balance. It cumulates the main
     address and all subaddresses for this account. *Note: Subaddresses
-    are managend through the [Send](#send-monero) screen*\
-(7) **Set Label:** Click on this button to set this account label.\
-(8) **Copy Address:** Click on this button to copy this account address
-    to the clipboard
+    are managed in the [Receive](#receive-monero) screen*\
+(7) **Edit Label:** Click on this button to edit this account label.\
+(8) **Copy Address to Clipboard:** Click on this button to copy this
+    account address to the clipboard.
 
 Send Monero
 ===========
@@ -478,47 +525,65 @@ Send Monero
 
 The `Send` tab provides tools for creating outgoing transactions.
 
-(1) **Amount:** This is how much Monero you want to send.\
-(2) **Transaction priority:** This is the priority level your
-    transaction will receive in the pool of transactions waiting to
-    be confirmed. The more you pay, the higher your transactions
-    priority for inclusion in a block.\
+(1) **Address:** This is where you enter the destination address of the
+    transaction. You can either enter a Monero address (a primary
+    address starting with 4... or a subadress starting with 8...) or an
+    OpenAlias address (see [this
+    page](https://www.getmonero.org/resources/moneropedia/openalias.html)
+    for more information about OpenAlias). Best practice is to copy and
+    paste the address to prevent errors. Since there are malwares that
+    may replace the address of your clipboard with an address associated
+    with the hackers, you should always verify the destination address
+    after pasting it. Click on the *Address book* button on the right
+    side to import an address from the address book of your wallet.\
+(2) **Amount:** This is how much Monero (XMR) you want to send. Click on
+    the *All* button on the right side to create a transaction spending
+    all the spendable (unlocked) amount available in your wallet. If you
+    have enabled the option to display the balance in other currencies
+    in Settings \> Interface, your wallet will also display the amount
+    converted in fiat currency.\
+(3) **Transaction priority:** This is the priority level your
+    transaction will receive in the pool of transactions waiting to be
+    confirmed. The higher the transaction priority, the faster your
+    transaction will be confirmed (included in a block), but the higher
+    you will pay in transaction fee.\
     *Currently staying with the default or the slow option is likely to
     get you into the next block.*\
-(3) **Address:** This is where you put the Monero address that you are
-    sending to. Best practice is to copy and paste the address to
-    prevent errors, accompanied with visually checking that the pasted
-    address is correct.\
-(4) **Payment ID (optional):** The payment ID is an identifier attached
-    to the transaction you are about to send. Often when sending to an
-    exchange they will give you a payment ID that you must include here.
-    This is so they know which incoming transaction is from you.\
-    *If you forget to add your payment ID you should still be able to
-    recover your funds by contacting the party you sent Monero to.*\
-    *Long payment IDs are being deprecated. It is hidden by default. If
-    you need to specify a long payment ID, you should enable it first on
-    the [Settings &gt; Layout](#layout) tab. You should encourage
-    services to accept payments that need to be identified with unique
-    subaddresses instead*\
-(5) **Description (optional):** This is for your record keeping. You can
-    add some information regarding your transaction for future
-    reference.\
-(6) **Sweep unmixable:** This allows you to get rid of outputs in your
-    wallet which have strange amounts like `0.000006839355`. These are
-    unmovable without combining them with another output.\
-    *Most users will never need to use this feature.*\
-(7) **Sign tx file:** This button allows you to sign a transaction file
-    that was created on a view-only wallet.\
-(8) **Export key images:** This option will allow you to export your
-    key images. They are needed to get the true balance of a
-    view-only wallet.
+(4) **Description (optional):** Here you can add some information
+    regarding your transaction for future reference. This function is
+    for your record keeping only. The description text will be stored in
+    your wallet file and only you will be able to see it. It will not be
+    be sent to the receiver, nor stored on the blockchain.
+
+**Advanced options** (requires wallet in advanced mode)
+
+(5) **Key images:** This section allows you to export the key images
+    from your cold wallet into a file, as well as to import this key
+    images file into your view-only wallet. When your view-only wallet
+    has the key images for all outputs, it can display the true balance.
+    In order to import the key images into your view-only wallet, you
+    must use a local node or be connected to a trusted remote node (you
+    can set a trusted remote node in "Settings" \> "Node" page). Click
+    on the question mark icon to see step-by-step instructions.\
+(6) **Offline transaction signing:** This feature refers to the practice
+    of keeping the private keys in a cold wallet, which is a wallet
+    installed in an offline ("cold") device. Since the offline wallet
+    never gets connected to the internet, its stored private keys remain
+    secure. The cold wallet is only used to sign individual
+    transactions, which are later sent to the Monero network using a
+    view-only wallet. Click on the question mark icon to see
+    step-by-step instructions.\
+(7) **Sweep unmixable:** This allows you to get rid of outputs in your
+    wallet which have strange amounts like `0.000006839355` and can't be
+    spent without combining them with another output.\
+    *Most users will never need to use this feature.*
 
 Address Book
 ------------
 
-The `Address Book` tab lets you save addresses that you frequently
-transact with. This is a convenient place to copy addresses from when
-creating transactions.
+The `Address book` tab lets you save the name and Monero address of
+contacts that you frequently transact with. This is a convenient place
+to copy addresses from when creating transactions.
 
 Receive Monero
 ==============
@@ -527,13 +592,18 @@ Receive Monero
 
 The `Receive` tab provides tools for generating subaddresses.
 
-(1) **Addresses:** This is a list of your primary address and
-    subaddresses.\
-(2) **Create new address:** This button allows you to create
-    new subaddresses. You can create as many as you would like. *Learn
-    more about
+(1) **Addresses:** This list includes your wallet's primary address
+    (starting with 4...) and all its subaddresses (starting with 8...).\
+(2) **Create new address:** This button allows you to create as many new
+    subaddresses as you wish. Since Monero is private, you don't need to
+    create a new subaddress every time you receive a transaction.
+    However, to avoid off-chain linking, it's recommended that you
+    create a new subaddress for every person, company or exchange you
+    will receive Monero from. *Learn more about
     [subaddresses](https://monero.stackexchange.com/questions/3673/what-is-a-sub-address).*\
-(3) **Set Label:** Click on this button to set this subaddress label.\
+(3) **Set Label:** Click on this button to set this subaddress label.
+    You can use this label to store the person, company or exchange you
+    gave this subaddress.\
 (4) **QR code:** This is a QR code that has your selected address
     embedded into it. It can be used as a way to give others your Monero
     address by scanning the code.\
@@ -563,8 +633,8 @@ incoming transactions
 (4) **Tracking:** If you tick this box, you'll see a list of incoming
     transactions.\
 (5) **Incoming transaction:** Those are the transaction currently seen
-    on the blockchain and the transaction pool, with
-    associated confirmations.
+    on the blockchain and the transaction pool, with associated
+    confirmations.
 
 Transactions History
 ====================
@@ -572,27 +642,36 @@ Transactions History
 ![transactions](media/black_transactions-history.png)
 
 The `Transactions` tab let you walk through the transactions sent and
-received on your account.
+received on the currently selected account of your Monero wallet.
 
-(1) **Search:** Quickly find a transaction using any field to look up
-    from.\
-(2) **Filters:** You can choose to filter out the transaction between
-    specific dates, block height or amount. This can be useful if your
-    wallet has tons of transactions.\
-(3) **Transaction list:** Here are displayed your transactions on
-    this account. Each transaction is displayed with it's informations:
-    `Amount`, `Tx ID`, `Height`, `Date`, `Confrimations`, `Fee` (for
-    outgoing transactions), and `Description` *Optional*.\
-(4) **Details:** Clicking here will show you the transaction details:
-    `Tx ID`, `Address Label`, `Address`, and `Payment ID`.\
-(5) **Prove transaction:** Clicking here will generate a payment proof
-    in case of a dispute. More details on proving payments can be found
-    [here](https://getmonero.org/resources/user-guides/prove-payment.html)
-    *For outgoing transaction only*\
-(6) **Set description:** You can optionally click here to set a
-    description of your choice to this transaction.\
-(7) **Advanced:** Lets you choose in which formate the date should be
-    displayed (you probably want to leave this option as it is).
+(1) **Search:** Quickly filter out transactions from the list searching
+    by transaction ID, destination address, description, amount or
+    blockheight (number of the block in which the transaction was
+    mined).\
+(2) **Sort & Filter:** Here you can filter out transactions between
+    specific dates, or sort them by blockheight, date or amount.\
+(3) **Transaction list:** This area displays the sent and received
+    transactions of the currently selected account. Each transaction is
+    displayed with the following information: `Amount`, `Blockheight`,
+    `Date`, `Fee` (for outgoing transactions), `Confirmations`,
+    `Description` (optional), `Transaction ID`, `Transaction key`, and
+    `Destination address`. The transaction ID, the transaction key and
+    the destination address can be used to prove that a payment was done
+    in case of a dispute. The transaction keys and the descriptions
+    (notes) are stored in the cache of your local wallet, therefore they
+    cannot be recovered from the blockchain.\
+(4) **Details:** Clicking here will show you the following transaction
+    details, when available: `Transaction ID`, `Date`, `Amount`,
+    `Address`, `Payment ID`, `Integrated address`, `Transaction key`,
+    `Description (note)`, `Destinations` and `Rings`.\
+(5) **Prove payment (P):** Clicking here will generate a payment proof,
+    which you can use, in case of a dispute, to prove that you made a
+    payment. More details on proving payments can be found
+    [here](https://getmonero.org/resources/user-guides/prove-payment.html)\
+(6) **Set description:** Click on this icon to set a new description or
+    edit an existing one.\
+(7) **Advanced options:** Lets you choose in which format the date
+    should be displayed.
 
 Advanced Features
 =================
@@ -678,8 +757,8 @@ outputs that could not be spent in this transaction.
 (2) **Mark as spent output:** This will mark or unmark as spent a chosen
     single output. Outputs are represented by 64-character strings. The
     outputs added in this field will not be used as decoys in
-    constructed ring signatures. Unmarked outputs may (but will
-    not necessarily) by used as decoys.
+    constructed ring signatures. Unmarked outputs may (but will not
+    necessarily) by used as decoys.
 
 ![shared ringdb 2/2](media/black_sharedringdb_2.png)
 
@@ -727,10 +806,9 @@ file.
     been signed.\
 (4) **Address:** This is where you will enter the public Monero address
     of the signer.\
-(5) **Signature:** This is where you will enter the signature you
-    are verifying. Once all the required information has been entered
-    click the Verify button. A pop-up will tell you if the signature
-    is valid.
+(5) **Signature:** This is where you will enter the signature you are
+    verifying. Once all the required information has been entered click
+    the Verify button. A pop-up will tell you if the signature is valid.
 
 Sign - verify File
 ------------------
@@ -752,14 +830,13 @@ file.
 
 ### Verify
 
-(3) **File:** This is where you enter the path to a file that has
-    been signed. Click Browse to navigate the file system.\
+(3) **File:** This is where you enter the path to a file that has been
+    signed. Click Browse to navigate the file system.\
 (4) **Address:** This is where you will enter the public Monero address
     of the signer.\
-(5) **Signature:** This is where you will enter the signature you
-    are verifying. Once all the required information has been entered
-    click the Verify button. A pop-up will tell you if the signature
-    is valid.
+(5) **Signature:** This is where you will enter the signature you are
+    verifying. Once all the required information has been entered click
+    the Verify button. A pop-up will tell you if the signature is valid.
 
 Settings
 ========
@@ -770,45 +847,59 @@ The `Settings` tab provides tools for customizing configuration options.
 
 ![settings-wallet](media/black_settings-wallet.png)
 
-(1) **Close this wallet:** Click here to safely close the current
-    wallet\
+(1) **Close this wallet:** Click here to safely close the current wallet
+    and open the main menu.\
 (2) **Create a view-only wallet:** Click here to generate a view-only
-    (or audit) wallet, which is capable to see existing outgoing
-    transactions and all incoming transactions. See this
+    (or audit) wallet file, which is capable to see all incoming
+    transactions. In order to display the real balance, you must also
+    import the key images from your normal wallet into your view-only
+    wallet. The view-only wallet will be created with the same password
+    as the current wallet. See this
     [user-guide](https://getmonero.org/resources/user-guides/view_only.html)
     for more information.\
 (3) **Show seed & keys:** This button will redirect you to the [Seed and
     keys](#seed-and-keys) tab.\
-(4) **Rescan wallet balance:** Click here to rescan the blockchain for
-    all the transaction. *Note: You will lose any information not stored
-    on the blockchain (this includes destination addresses, tx secret
-    keys, tx notes, etc.)*\
-(5) **Change wallet password:** Click here to change your password.
+(4) **Rescan wallet balance:** Click here to rescan all spent outputs
+    from your wallet, updating your wallet balance. If your balance is
+    still incorrect, you probably will have to resync your wallet after
+    changing the wallet restore height to a restore height before the
+    height of the first transaction to your wallet. To do this, go to
+    the Settings \> Info page, Wallet restore height, and click on the
+    (Change) link.\
+(5) **Change wallet password:** Click here to change the password of
+    your wallet file.\
+(6) **Enter merchant mode:** Click here to open Monero GUI's
+    business-friendly mode.
 
 ### Interface
 
 ![settings\_interface](media/black_settings-interface.png)
 
-The `Interface` tab is where you can adjust the settings of the GUI
-wallet. The most important options are:
+The `Interface` tab is where you can adjust appearance and security
+settings of the GUI wallet. The options are:
 
-(1) **Hide balance:** If you are running your wallet in public, you may
-    want to hide its balance. This can be useful for point of sales
-    systems.\
-(2) **Enable Payment ID:** Long payment IDs are disabled by default.
-    Click here to enable it. This can be useful for transfers to
-    exchanges that require a long payment ID such as Binance (at the
-    time of writing). Using long payment IDs is detrimental to
-    your privacy. Please ask services that still use this deprecated
-    feature to use subaddresses instead.\
-(3) **Light theme:** Switch to the light theme.\
-(4) **Lock wallet:** Set this to automatically lock your wallet after N
-    minutes of inactivity. This ensures no one is able to use your
-    wallet while you are away from keyboard.\
-(5) **Enable displaying balance in other currencies:** Gives you the
-    possibility to display your balance also in other currencies. You
-    can select the price source and the currency you prefer (*USD* or
-    *EUR*).
+(1) **Custom decorations:** Switch custom window decorations.\
+(2) **Check for updates periodically:** Enable this option if you want
+    your wallet to periodically check if a new version is available.
+(3) **Hide balance:** Will display your balance as ?.?? in the balance
+    card. It is a useful privacy feature if you are running your wallet
+    in a public place, as a point of sales system, or if you have to
+    take a screenshot or record your screen to someone.\
+(4) **Light theme:** Switch between light and dark themes.\
+(5) **Ask for password before sending a transaction:** Disable this
+    option if you don't want to type your password every time a
+    transaction is sent. This option is enabled by default.\
+(6) **Autosave:** When enabled, your wallet file will be saved
+    automatically, every 10 minutes (default) or at an interval of your
+    choice. This option is enabled by default.\
+(7) **Lock wallet on inactivity:** Set this to automatically lock your
+    wallet after N minutes of inactivity. This ensures no one is able to
+    use your wallet while you are away from keyboard.\
+(8) **Enable displaying balance in other currencies:** Gives you the
+    possibility to also display your balance, the transaction amount and
+    transaction fee in other currencies. You can select the price source
+    and the currency you prefer (currently only *USD* and *EUR* are
+    supported).
 
 ### Local Node
 
@@ -835,13 +926,13 @@ remote nodes' section](#about-remote-nodes) of this guide.
 
 (1) **Address:** Enter the hostname or IP address of the remote node.\
 (2) **Port:** Enter the port of the remote node.\
-(3) **Daemon Username:** enter a username in case authentication to the
+(3) **Daemon Username:** Enter a username in case authentication to the
     remote node is required.\
-(4) **Daemon Password:** enter a password in case authentication to the
+(4) **Daemon Password:** Enter a password in case authentication to the
     remote node is required.\
 (5) **Trusted Daemon:** By default, data requests to remote nodes are
     obfuscated, and this process requires more resources. If your remote
-    node is under your control (i.e. a dedicated server of your own) you
+    node is under your control (i.e. a dedicated server of your own) you
     can mark it trusted so that data requests will not be obfuscated
     anymore (just like a local node).
 
@@ -861,12 +952,21 @@ remote nodes' section](#about-remote-nodes) of this guide.
 (1) **GUI Version:** Version of the GUI wallet installed.\
 (2) **Embedded Monero Version:** Version of the embedded daemon in use.\
 (3) **Wallet path:** Where the wallet is located on your computer.\
-(4) **Wallet creation height:** Change the block height that a wallet
-    rescan will go back to.\
+(4) **Wallet restore height:** Your wallet synchronization starts at the
+    block defined in wallet restore height. Therefore, you must set the
+    restore height before the height of the first incoming transaction
+    of your wallet. If you click on the (Change) link, you can set a
+    blockheight or a date. After changing it, your wallet will rescan
+    the blockchain starting from the blockheight you set. *Note: when
+    you change your wallet's restore height, you will lose all
+    information that is stored in the wallet software and cannot be
+    recovered from the blockchain, which includes destination addresses,
+    transaction keys, and descriptions (notes).*\
 (5) **Wallet log path:** Where the logs for this wallet will be saved.\
 (6) **Wallet mode:** Display the wallet mode chosen in the
     [wizard](#choose-wallet-mode).\
-(7) **Copy to clipboard:** Copy all information to clipboard.
+(7) **Graphics mode:** Display the graphics mode.\
+(8) **Copy to clipboard:** Copy all information to clipboard.
 
 Seed and keys
 -------------
@@ -882,30 +982,37 @@ spend key.
     contains all the information needed to view and spend funds. *Learn
     more about [mnemonic
     seeds](https://getmonero.org/resources/moneropedia/mnemonicseed.html).*\
-(2) **Secret view key:** Secret view keys allows the holder to view your
-    wallets incoming transactions, but not outgoing. It is sometimes
-    useful for auditing purposes to give your secret view key to a third
-    party.\
-(3) **Public view key:** The public view key is used for stealth
-    address creation. *Learn more about [view
+(2) **Wallet restore height.** This is the blockheight of the first
+    incoming transaction of your wallet. This information is useful when
+    you restore your wallet, because you will only have to synchronize
+    the blockchain for the period that is needed.\
+(3) **Primary address:** This is the main address of your wallet and
+    starts with 4. All other addresses from your wallet are
+    subaddresses, and start with 8.\
+(4) **Secret view key:** Secret (private) view keys allows the holder to
+    view your wallets incoming transactions, but not outgoing. It is
+    sometimes useful for auditing purposes to give your secret view key
+    to a third party.
+
+![seed-keys-2](media/black_seed-keys_2.png)
+
+(5) **Public view key:** The public view key is used for stealth address
+    creation. *Learn more about [view
     keys](https://getmonero.org/resources/moneropedia/viewkey.html).*\
-(4) **Secret spend key: DO NOT share your secret spend key with anyone.
-    The secret spend key is used to sign transactions and should be
-    regarded with the same security as your mnemonic seed.**\
-(5) **Public spend key:** The public spend key is used by the network to
-    verify the signature of the key image you generate when you make
-    a transaction. This is what prevents double-spends as the network
+(6) **Secret spend key: DO NOT share your secret spend key with anyone.
+    The secret (private) spend key is used to sign transactions and
+    should be regarded with the same security as your mnemonic seed.**\
+(7) **Public spend key:** The public spend key is used by the network to
+    verify the signature of the key image you generate when you make a
+    transaction. This is what prevents double-spends as the network
     enforces the rule that a key image can be spent only once. *Learn
     more about [spend
-    keys](https://getmonero.org/resources/moneropedia/spendkey.html).*
-
-![seed-keys](media/black_seed-keys_2.png)
-
-(6) **Export Spendable Wallet: DO NOT share your spendable wallet QR
+    keys](https://getmonero.org/resources/moneropedia/spendkey.html).*\
+(8) **Export Spendable Wallet: DO NOT share your spendable wallet QR
     code with anyone. This can be used like a mnemonic seed for
     recovering your wallet.** This creates a qrcode that contains all of
     your keys.\
-(7) **Export View Only Wallet:** This creates a QR code that contains
+(9) **Export View Only Wallet:** This creates a QR code that contains
     only the keys for viewing the transactions that this wallet sends or
     receives, but cannot create transactions.
 
@@ -926,44 +1033,51 @@ compromise some privacy. They may track your IP address, track your
 "restore height" and associated block request data, and send you
 inaccurate information to learn more about transactions you make. Please
 make sure to use a node you trust (hopefully your own) and remain aware
-of these limitations. Users who prioritize privacy should use a full
-node instead. A number of open nodes are listed at
+of these limitations. Users who prioritize privacy should use the wallet
+in advanced mode and start a local node without setting a bootstrap
+node. A number of public remode nodes are listed at
 [moneroworld.com](https://moneroworld.com) and
 [node-o-matic](https://node.pwned.systems)
 
 Bootstrap nodes
 ---------------
 
-A bootstrap node is a remote node to use whilst also syncing the
-blockchain. This is different than the remote node setting, since it
-will only use the specified remote node until the blockchain is fully
-synced locally. It is a reasonable tradeoff for most people who care
-about privacy but also want the convenience of an automatic fallback
-option. Be aware that when using remote nodes (including with the
-bootstrap setting), nodes may track your IP address, track your "restore
-height" and associated block request data, and send you inaccurate
-information to learn more about transactions you make. Please make sure
-to use a node you trust (hopefully your own) and remain aware of these
-limitations. Keep the Monero full node software operating on your
-computer even when you are not using the wallet to reduce the amount of
-leaked data. More information at
+Remote nodes can also be useful if you are running a local node and want
+to use Monero before the blockchain download has finished. In this
+situation, the remote node is known as a bootstrap node. Your local node
+will temporarily connect to it while the blockchain is still being
+downloaded. When the blockchain is synced locally, your local node will
+disconnect from the bootstrap node. It is a reasonable trade-off for
+most people who care about privacy but also want the convenience of an
+automatic fallback option. Be aware that when using remote nodes
+(including a local node with a bootstrap node), nodes may track your IP
+address, your "restore height", and associated block request data, as
+well as send you inaccurate information to learn more about transactions
+you make. Please make sure to use a remote node you trust (hopefully
+your own) and remain aware of these limitations. Keep the Monero full
+node software operating on your computer even when you are not using the
+wallet to reduce the amount of leaked data. More information at
 https://getmonero.org/resources/moneropedia/bootstrap-node.html
 
 Common issues and solutions
 ===========================
 
+The following are only some of the most common issues. For a more
+extensive list visit the [FAQ page on
+getmonero.org](https://web.getmonero.org/get-started/faq/).
+
 -   **[How do I generate a Ledger Monero wallet with the
     GUI?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)**
--   **[I am missing (not seeing) a transaction to (in) the GUI
-    (zero balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)**
+-   **[I am missing (not seeing) a transaction to (in) the GUI (zero
+    balance)](https://monero.stackexchange.com/questions/6640/i-am-missing-not-seeing-a-transaction-to-in-the-gui-zero-balance)**
 -   **[I am using the GUI and my daemon doesn't start
     anymore](https://monero.stackexchange.com/questions/6825/i-am-using-the-gui-and-my-daemon-doesnt-start-anymore)**
--   **[Transaction stuck as “pending” in the
+-   **[Transaction stuck as "pending" in the
     GUI](https://monero.stackexchange.com/questions/6649/transaction-stuck-as-pending-in-the-gui)**
 -   **[My GUI feels buggy / freezes all the
     time](https://monero.stackexchange.com/questions/6651/my-gui-feels-buggy-freezes-all-the-time)**
--   **[My name contains a special (non-ASCII) character (e.g. é, ø,
-    â, Ö) and I can't create a wallet with the
+-   **[My name contains a special (non-ASCII) character (e.g. é, ø, â,
+    Ö) and I can't create a wallet with the
     GUI](https://monero.stackexchange.com/questions/6823/my-name-contains-a-special-non-ascii-character-e-g-%c3%a9-%c3%b8-%c3%a2-%c3%96-and-i-cant-c)**
 -   **[The GUI uses all my bandwidth and I can't browse anymore or use
     another application that requires internet
@@ -974,9 +1088,3 @@ Common issues and solutions
 -   **[How do I change the language of the 25 word mnemonic seed in the
     GUI or
     CLI?](https://monero.stackexchange.com/questions/7373/how-do-i-change-the-language-of-the-25-word-mnemonic-seed-in-the-gui/)**
--   **I use a high resolution display and the GUI looks extremely
-    small**\
-    This problem will be fixed soon, but there is a workaround for
-    Windows: right click on monero-wallet-gui.exe, select properties
-    --&gt; compatibility. you'll find a 'high DPI' option, change value
-    there from "Application" to "System" or vice versa
