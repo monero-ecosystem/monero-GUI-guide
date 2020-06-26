@@ -4,7 +4,7 @@
 <div align="center"> 
 <h1>Guide for the Monero GUI wallet</h1>
 <i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
-<p>v1.7</p>
+<p>v1.7.1</p>
 </div>
 
 &nbsp;
