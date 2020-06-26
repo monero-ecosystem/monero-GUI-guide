@@ -41,7 +41,7 @@
 -   [Send Monero](#send-monero)
     -   [Address Book](#address-book)
 -   [Receive Monero](#receive-monero)
-    -   [Merchant view](#merchant-view)
+    -   [Merchant mode](#merchant-mode)
 -   [Transactions History](#transactions-history)
 -   [Advanced Features](#advanced-features)
     -   [Solo mining](#solo-mining)
@@ -185,15 +185,15 @@ and privacy needs.\
     display a simple interface with easy access to basic functionality.
     Additionaly it will start a local node in the background. This local
     node will start the download of the blockchain file (at least 90
-    GB), which can take many hours or even days. While the blockchain
-    file is being downloaded, your local node will temporarily connect
-    to a third-party server (a remote node known as bootstrap node),
-    which will allow you to start using Monero immediately. After
-    downloading and synchronizing the blockchain and the wallet, your
-    local node will only temporarily connect to the bootstrap node when
-    your blockchain is not updated. Be aware that using a remote node
-    (including a bootstrap node) to connect to the Monero network may
-    reduce your privacy.\
+    GB), which can take several hours or even days to complete. While
+    the blockchain file is being downloaded, your local node will
+    temporarily connect to a third-party server (a remote node known as
+    bootstrap node), which will allow you to start using Monero
+    immediately. After downloading and synchronizing the blockchain and
+    the wallet, your local node will only temporarily connect to the
+    bootstrap node when your blockchain is not updated. Be aware that
+    using a remote node (including a bootstrap node) to connect to the
+    Monero network may reduce your privacy.\
 (3) **Advanced mode:** In this mode your wallet will display all
     advanced features available, like changing fees/transaction
     priority, solo mining, message verification, transaction
@@ -491,8 +491,8 @@ account. Since accounts and subaddresses are deterministically derived
 from the mnemonic seed, you only need to know the seed in order to
 restore the account/subaddress structure when restoring a wallet
 (although any labels you assign to the accounts/subaddresses will need
-to be added again, since they are stored in your wallet, and not in your
-seed).
+to be added again, since they are stored in your wallet file, and not in
+your mnemonic seed, neither on the blockchain).
 
 (1) **Balance All:** Let you see the sum of all your accounts balances,
     unlocked or not.\
@@ -533,20 +533,20 @@ The `Send` tab provides tools for creating outgoing transactions.
     for more information about OpenAlias). Best practice is to copy and
     paste the address to prevent errors. Since there are malwares that
     may replace the address of your clipboard with an address associated
-    with the hackers, you should always verify the destination address
-    after pasting it. Click on the *Address book* button on the right
-    side to import an address from the address book of your wallet.\
+    with hackers, you should always verify the destination address after
+    pasting it. Click on the *Address book* button on the right side to
+    import an address from the address book of your wallet.\
 (2) **Amount:** This is how much Monero (XMR) you want to send. Click on
     the *All* button on the right side to create a transaction spending
-    all the spendable (unlocked) amount available in your wallet. If you
-    have enabled the option to display the balance in other currencies
-    in Settings \> Interface, your wallet will also display the amount
-    converted in fiat currency.\
-(3) **Transaction priority:** This is the priority level your
-    transaction will receive in the pool of transactions waiting to be
-    confirmed. The higher the transaction priority, the faster your
-    transaction will be confirmed (included in a block), but the higher
-    you will pay in transaction fee.\
+    all the spendable (unlocked) balance available in your selected
+    account. If you have enabled the option to display the balance in
+    other currencies in Settings \> Interface, your wallet will also
+    display the amount converted in fiat currency.\
+(3) **Transaction priority (requires wallet in advanced mode):** This is
+    the priority level your transaction will receive in the pool of
+    transactions waiting to be confirmed. The higher the transaction
+    priority, the faster your transaction will be confirmed (included in
+    a block), but the higher you will pay in transaction fee.\
     *Currently staying with the default or the slow option is likely to
     get you into the next block.*\
 (4) **Description (optional):** Here you can add some information
@@ -573,9 +573,9 @@ The `Send` tab provides tools for creating outgoing transactions.
     transactions, which are later sent to the Monero network using a
     view-only wallet. Click on the question mark icon to see
     step-by-step instructions.\
-(7) **Sweep unmixable:** This allows you to get rid of outputs in your
-    wallet which have strange amounts like `0.000006839355` and can't be
-    spent without combining them with another output.\
+(7) **Sweep unmixable:** This allows you to get rid of outputs which
+    have strange amounts like `0.000006839355` and can't be spent
+    without combining them with another output.\
     *Most users will never need to use this feature.*
 
 Address Book
@@ -613,28 +613,36 @@ The `Receive` tab provides tools for generating subaddresses.
     <address>
     -   
 
-Merchant view
+Merchant mode
 -------------
 
 ![merchant](media/merchant.png)
 
-The `Merchant` view is intending to offer professionals a nice app on
-their points of sell. It let you craft payment requests, and monitor
-incoming transactions
+The `Merchant` mode offers vendors a simple Point of Sale (PoS) to
+receive Monero (XMR). It allows you to manually generate payment
+requests, and to monitor incoming transactions (unconfirmed and
+confirmed transactions).
 
-(1) **QR code:** This is a QR code that has your selected address, and
-    optionally the amount, embedded into it. It can be used as a way to
-    give others your Monero address by scanning the code.\
-(2) **Amount:** This is for creating a payment request, enter the amount
-    of Monero you would like to receive.\
+(1) **QR code:** This is a QR code that contains your currently selected
+    address, and, optionally, the amount to receive. Display this QR
+    code to your customers, so they can scan it and pay using their
+    mobile wallets.\
+(2) **Amount to receive (XMR):** This is used to create a payment
+    request. Enter the amount of Monero (XMR) you would like to receive,
+    and the QR code will be updated.\
 (3) **Payment URL:** This is the URL corresponding to the address and
     amount you have chosen. It could be copied by clicking on it and
     sent to a customer.\
-(4) **Tracking:** If you tick this box, you'll see a list of incoming
-    transactions.\
-(5) **Incoming transaction:** Those are the transaction currently seen
-    on the blockchain and the transaction pool, with associated
-    confirmations.
+(4) **Enable sales tracker:** If you tick this box, you'll see a list of
+    incoming transactions. By enabling sales tracker, the merchant page
+    will automatically scan the blockchain and the tx pool for incoming
+    transactions using the QR code. It's up to you whether to accept
+    unconfirmed transactions or not. It is likely they'll be confirmed
+    in short order, but there is still a possibility they might not, so
+    for larger values you may want to wait for one or more
+    confirmation(s).\
+(5) **Sales:** Those are the transactions currently seen on the
+    blockchain and the transaction pool, with associated confirmations.
 
 Transactions History
 ====================
@@ -880,7 +888,7 @@ settings of the GUI wallet. The options are:
 
 (1) **Custom decorations:** Switch custom window decorations.\
 (2) **Check for updates periodically:** Enable this option if you want
-    your wallet to periodically check if a new version is available.
+    your wallet to periodically check if a new version is available.\
 (3) **Hide balance:** Will display your balance as ?.?? in the balance
     card. It is a useful privacy feature if you are running your wallet
     in a public place, as a point of sales system, or if you have to
