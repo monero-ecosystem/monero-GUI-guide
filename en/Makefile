@@ -28,7 +28,7 @@ pdf: $(BUILD_PATH)/pdf/$(BOOKNAME)
 
 $(BUILD_PATH)/epub/$(BOOKNAME): | medialink
 	mkdir -p ../$(BUILD_PATH)/epub
-	pandoc $(TOC) -S --epub-metadata=../$(METADATA) --epub-cover-image=../$(COVER_IMAGE) -o ../$@.epub $(CHAPTERS)
+	pandoc $(TOC) --epub-metadata=../$(METADATA) --epub-cover-image=../$(COVER_IMAGE) -o ../$@.epub $(CHAPTERS)
 
 $(BUILD_PATH)/html/$(BOOKNAME):  | medialink
 	mkdir -p ../$(BUILD_PATH)/html
@@ -37,6 +37,6 @@ $(BUILD_PATH)/html/$(BOOKNAME):  | medialink
 
 $(BUILD_PATH)/pdf/$(BOOKNAME): | medialink
 	mkdir -p ../$(BUILD_PATH)/pdf
-	pandoc $(TOC) --latex-engine=$(LATEX_ENGINE) -V documentclass=$(LATEX_CLASS) -V geometry:$(MARGIN) -V urlcolor=$(URL_COLOR) -V lang=${LANGUAGE} -o ../$@.pdf $(CHAPTERS)
+	pandoc $(TOC) --pdf-engine=$(LATEX_ENGINE) -V documentclass=$(LATEX_CLASS) -V geometry:$(MARGIN) -V urlcolor=$(URL_COLOR) -V lang=${LANGUAGE} -o ../$@.pdf $(CHAPTERS)
 
 .PHONY: all book clean epub html pdf
