@@ -1,10 +1,10 @@
 <div align="center"> 
-<img src="media/monero-symbol-480.png" width="150" height="150"> <img src="https://raw.githubusercontent.com/monero-ecosystem/meta/master/media/ecosystem-logo.png" width="150" height="150">
+  <img src="media/monero-symbol-480.png" width="150" height="150"> <img src="https://raw.githubusercontent.com/monero-ecosystem/meta/master/media/ecosystem-logo.png" width="150" height="150">
 </div>
 <div align="center"> 
-<h1>Guide for the Monero GUI wallet</h1>
-<i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
-<p>v1.7.1</p>
+  <h1>Guide for the Monero GUI wallet</h1>
+  <i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
+  <p>v1.8</p>
 </div>
 
 &nbsp;
@@ -26,17 +26,39 @@
             node)](#starting-a-local-node-full-node)
     -   [Create new wallet from
         hardware](#create-new-wallet-from-hardware)
-        -   [Create the wallet](#create-the-wallet)
+        -   [How hardware wallets work with Monero
+            GUI](#how-hardware-wallets-work-with-monero-gui)
+        -   [Prepare your device](#prepare-your-device)
+        -   [Create a wallet from your hardware wallet
+            device](#create-a-wallet-from-your-hardware-wallet-device)
+        -   [Ledger troubleshooting](#ledger-troubleshooting)
+        -   [Trezor troubleshooting](#trezor-troubleshooting)
         -   [Add a password](#add-a-password-1)
         -   [Daemon settings (Advanced
             mode)](#daemon-settings-advanced-mode)
         -   [Starting a local node (full
             node)](#starting-a-local-node-full-node-1)
+        -   [Receive and Send Monero with your hardware
+            wallet](#receive-and-send-monero-with-your-hardware-wallet)
     -   [Restore wallet from keys or mnemonic
         seed](#restore-wallet-from-keys-or-mnemonic-seed)
         -   [Restoring from seed](#restoring-from-seed)
         -   [Restoring from keys](#restoring-from-keys)
     -   [Open a wallet from file](#open-a-wallet-from-file)
+-   [Synchronization](#synchronization)
+    -   [Daemon synchronization](#daemon-synchronization)
+        -   [Daemon synchronization with local
+            node](#daemon-synchronization-with-local-node)
+        -   [Daemon synchronization with remote
+            node](#daemon-synchronization-with-remote-node)
+        -   [Block height](#block-height)
+    -   [Wallet synchronization](#wallet-synchronization)
+        -   [Wallet restore height](#wallet-restore-height)
+        -   [How to change Wallet restore height / Wrong or zero balance
+            after
+            synchronizing](#how-to-change-wallet-restore-height-wrong-or-zero-balance-after-synchronizing)
+        -   [How to speed up wallet initial
+            synchronization](#how-to-speed-up-wallet-initial-synchronization)
 -   [Monero Account](#monero-account)
 -   [Send Monero](#send-monero)
     -   [Address Book](#address-book)
@@ -102,10 +124,13 @@ subsequently quarantines them. Fortunately, however, there's a fairly
 trivial work around you can use. That is:
 
 -   Create a new directory / folder.
+
 -   Open your AV software.
+
 -   Add an exception for the newly created directory / folder. Put
     differently, you have to whitelist the newly created directory /
     folder.
+
 -   Extract the .zip file (in case of Windows) or the .tar.bz2 file (in
     case of Linux or Mac OS X) to the whitelisted directory / folder.
 
@@ -332,19 +357,64 @@ started automatically.
 Create new wallet from hardware
 -------------------------------
 
-On this page you can create a new wallet file from your hardware wallet
-device. This wallet file will be stored in your computer and every time
-you open it you will be asked to connect and unlock your hardware
-wallet. Monero GUI currently supports the hardware wallet models Ledger
-Nano S/X and Trezor Model T.
+Monero GUI currently supports the hardware wallet models Ledger Nano S/X
+and Trezor Model T.
 
-### Create the wallet
+### How hardware wallets work with Monero GUI
+
+-   The main function of your hardware wallet is to store your recovery
+    seed in a device that never connects to the internet.
+-   Your device has a single recovery seed, which is used to create
+    Bitcoin and altcoins wallets, like Monero.
+-   The recovery seed stored in your device will be used to generate two
+    Monero private keys: a view key and a spend key.
+-   Your private view key is exported from your hardware wallet device
+    to the Monero GUI wallet.
+-   Your private spend key never leaves your hardware wallet device. It
+    is required to sign transactions.
+-   How it works: 1) Monero GUI creates an unsigned transaction; 2) The
+    unsigned transaction is sent to your hardware wallet device; 3) Your
+    device asks if you want to confirm the transaction (sign the
+    transaction with your private spend key); 4) After confirmed, the
+    signed transaction is sent back to Monero GUI; 5) Monero GUI
+    transmits the signed transaction to the Monero network
+
+### Prepare your device
+
+If you are using a Ledger Nano S/X, please make sure: + Your device is
+plugged in and unlocked + Your device has already been initialized
+before (your device already has a recovery seed) + Your device has the
+most recent firmware version (available in Manager section of Ledger
+Live desktop app) (see instructions for [Nano
+S](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware)/[Nano
+X](https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware))
++ Your device has the Monero app installed (available in Ledger Live
+desktop app) + Your device is running the Monero app + Your computer has
+no other cryptocurrency wallet running in the background, like Ledger
+Live
+
+If you are using a Trezor Model T, please make sure: + Your device is
+plugged in and unlocked + Your device has already been initialized
+before (your device already has a recovery seed) + Your device has the
+most recent firmware version (available in Trezor Wallet) ([see
+instructions](https://wiki.trezor.io/Firmware_update)) + Your computer
+has no other cryptocurrency wallet running in the background, like
+Trezor Wallet
+
+### Create a wallet from your hardware wallet device
 
 ![2.4.1](media/create_hardware_wallet.png)
 
-(1) **Wallet name:** Give a name for your wallet (in this example
+On this page you can create a new Monero wallet file from your hardware
+wallet device. This wallet file will be stored in your computer and,
+every time you open it, Monero GUI will ask you to connect and unlock
+your hardware wallet. If your device is using a passphrase, your
+passphrase will also be requested.
+
+(1) **Wallet name:** Give a name for your wallet file (in this example
     `ledger-test` is used).\
-(2) **Wallet location:** Select the destination folder of the wallet.\
+(2) **Wallet location:** Select the destination folder of the wallet
+    file.\
 (3) **Create a new wallet from device:** Select this option if this is
     the first time you use a hardware wallet.\
 (4) **Restore a wallet from device:** Choose this option if you already
@@ -354,8 +424,8 @@ Nano S/X and Trezor Model T.
     you can specify it here so the wallet doesn't have to scan the
     entire blockchain looking for your funds. For example, if your first
     transaction was included on `2017-07-08` in block `1350000`, you
-    should put the previous day date (e.g. `2017-07-06`) or a slightly
-    lower height (e.g. `1330000`) so the wallet will start scanning from
+    should put the previous day date (e.g. `2017-07-06`) or a slightly
+    lower height (e.g. `1330000`) so the wallet will start scanning from
     there, saving you some time. More information about restore height
     on
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
@@ -363,24 +433,41 @@ Nano S/X and Trezor Model T.
     accounts with a number of subaddresses each.\
 (6) **Device name:** Select the hardware wallet you want to use. Monero
     GUI currently supports the hardware wallet models Ledger Nano S/X
-    and Trezor Model T.\
-     
+    and Trezor Model T.
 
-Step by step guides on how to generate a Monero wallet from a hardware
-wallet for all operating systems (StackExchange):\
-[How do I generate a Ledger Monero wallet with the GUI
-(monero-wallet-gui)?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)
+### Ledger troubleshooting
 
-[How do I generate a Trezor Monero wallet with the GUI
-(monero-wallet-gui)?](https://monero.stackexchange.com/questions/11437/how-do-i-generate-a-trezor-monero-wallet-with-the-gui-monero-wallet-gui/)
+-   If you can't connect to your Ledger, try restarting your computer,
+    using a different USB cable, changing the USB port, or connecting to
+    a different computer. Avoid using USB hubs.
+-   If your Monero GUI wallet is slow while using Ledger, make sure
+    you're allowing your Ledger device to export the private view key to
+    your computer. You should only export the private view key when
+    using official Monero software.
+-   Step by step guide for all operating systems (StackExchange): [How
+    do I generate a Ledger Monero wallet with the GUI
+    (monero-wallet-gui)?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)
+
+### Trezor troubleshooting
+
+-   If you can't connect to your Trezor, try restarting your computer,
+    using a different USB cable, changing the USB port, or connecting to
+    a different computer. Avoid using USB hubs.
+-   If you still can't connect, try installing [Trezor
+    Bridge](https://wiki.trezor.io/Trezor_Bridge). It's usually not
+    necessary to install Trezor Bridge, but some systems may require it
+    to communicate with Trezor.
+-   Step by step guide for all operating systems (StackExchange): [How
+    do I generate a Trezor Monero wallet with the GUI
+    (monero-wallet-gui)?](https://monero.stackexchange.com/questions/11437/how-do-i-generate-a-trezor-monero-wallet-with-the-gui-monero-wallet-gui/)
 
 ### Add a password
 
 ![add password](media/wizard_4-pass.png)
 
-Add a strong password to protect your wallet. If you forget the password
-of a wallet created from your hardware wallet, you will be able to
-create another wallet from your hardware device.
+Add a strong password to protect your wallet file. If you forget the
+password of a wallet created from your hardware wallet, you will be able
+to create another wallet from your hardware device.
 
 ### Daemon settings (Advanced mode)
 
@@ -414,6 +501,24 @@ wallet connects to the local node. If you don't want to change any
 setting, just let the countdown finish and your local node will be
 started automatically.
 
+### Receive and Send Monero with your hardware wallet
+
+When using Monero GUI with a hardware wallet, every time you click on
+the send button, you will first have to confirm your transaction in your
+hardware wallet device, and then you will have to confirm it a second
+time in Monero GUI.
+
+Sometimes you will also have to confirm in your device that you accept
+exporting the private view key (Ledger and Trezor) and key images
+(Trezor).
+
+When using a hardware wallet, Monero GUI Receive page will display an
+additional "Show on device" button. By clicking this button, the address
+being displayed in Monero GUI should be displayed in your device. If
+both addresses match, you can be sure that the receiving address being
+displayed in Monero GUI was indeed created by your hardware wallet, and
+that it has not been changed by a virus infecting your computer.
+
 Restore wallet from keys or mnemonic seed
 -----------------------------------------
 
@@ -432,8 +537,8 @@ wallet. You need to put the following information:
     here so the wallet doesn't have to scan the entire blockchain
     looking for your funds. For example, if your first transaction was
     included on `2017-07-08` in block `1350000`, you should put the
-    previous day date (e.g. `2017-07-06`) or a slightly lower height
-    (e.g. `1330000`) so the wallet will start scanning from there,
+    previous day date (e.g. `2017-07-06`) or a slightly lower height
+    (e.g. `1330000`) so the wallet will start scanning from there,
     saving you some time. More information about restore height on
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
 (4) **Wallet location:** Select the destination folder of the wallet.
@@ -460,8 +565,8 @@ MyMonero. You need to put the following information:
     here so the wallet doesn't have to scan the entire blockchain
     looking for your funds. For example, if your first transaction was
     included on `2017-07-08` in block `1350000`, you should put the
-    previous day date (e.g. `2017-07-06`) or a slightly lower height
-    (e.g. `1330000`) so the wallet will start scanning from there,
+    previous day date (e.g. `2017-07-06`) or a slightly lower height
+    (e.g. `1330000`) so the wallet will start scanning from there,
     saving you some time. More information about restore height on
     [StackExchange](https://monero.stackexchange.com/questions/7581/what-is-the-relevance-of-the-restore-height).\
 (6) **Wallet location:** Select the destination folder of the wallet.
@@ -476,6 +581,135 @@ Open a wallet from file
 
 After clicking this option a window will pop up. Navigate to your file
 with the extension `.keys`, select it and click the right arrow.
+
+Synchronization
+===============
+
+![sync\_remotenode](media/sync_remotenode.png)
+
+After creating and opening a wallet file, Monero GUI will start
+synchronizing. This process is required to know your balance, receive
+and send transactions.
+
+Monero GUI's synchronization is composed of two parts: 1) Daemon
+synchronization 2) Wallet synchronization
+
+Daemon synchronization
+----------------------
+
+Monero GUI wallet uses a daemon (monerod), which is a program running in
+the background that synchronizes with the Monero network to scan for
+incoming transactions and to send new transactions.
+
+Your daemon must have access to the Monero blockchain, which is a very
+large file (more than 100 GB) which contains all transactions that have
+been made since the beginning of Monero in 2014. The blockchain file can
+be stored in your computer (if your daemon run a local node) or in a
+computer of another person (if your daemon connect to a third-party
+remote node). If you decide to run a local node, you can run it as a
+full node, that has the whole blockchain file (more than 100 GB) or as a
+prunned node, that has a light version of the blockchain file (1/3 of
+the size, aproximatedly 35 GB).
+
+The best way to contribute to Monero's security and decentralization is
+running a local node as a full node. Even though local nodes running as
+pruned nodes also contribute to Monero's security and decentralization,
+they are still less comprehensive than full nodes. However, pruned nodes
+are better for your privacy and to the Monero network than connecting to
+someone else's remote node.
+
+### Daemon synchronization with local node
+
+If you run a local node as a full node (requires wallet in "advanced
+mode" with local node selected in Setings \> Node), your wallet daemon
+will download the blockchain file into your computer. Since it's a very
+large file (more than 100 GB), this can take a long time, even days,
+depending on your internet speed and storage unit (HDD or SSD).
+
+If you run a local node as a full node with a bootstrap node (requires
+wallet in "simple mode (bootstrap)"), your wallet daemon will also
+download the blockchain file into your computer, but it will connect to
+a remote node (a bootstrap node) while the download is not finished,
+allowing you to immediately send/receive a transaction.
+
+If you want to run a local node as a pruned node, see [this
+guide](https://monero.stackexchange.com/questions/11454/how-do-i-utilize-blockchain-pruning-in-the-gui-monero-wallet-gui).
+
+### Daemon synchronization with remote node
+
+If you want to connect to a remote node (requires wallet in "simple
+mode" or in "advanced mode" with remote node selected in Settings \>
+Node), your daemon will use the blockchain of a third party remote note.
+Since it will not have to download the whole blockchain file, your
+synchronization will be faster.
+
+### Block height
+
+After your daemon and your wallet are synchronized, your daemon progress
+bar will display "Daemon is synchronized (number)", see below:
+
+![sync\_remotenode](media/sync_remotenode.png)
+
+This number between parenthesis is the current block height, which is
+the latest block received by your daemon. In average, this number wil
+increase +1 every 2 minutes, when a new block is found by a miner.
+
+Wallet synchronization
+----------------------
+
+After synchronizing the daemon, your wallet will scan the blockchain
+file, searching for past transactions. Once a previous transaction is
+detected and retrieved by your wallet, your balance and your transaction
+history will be updated.
+
+Since all transactions are encrypted in Monero, your wallet will have to
+decrypt a lot of transactions. This process places very high demands on
+your computer's resources, including CPU processing and many readings
+and writings in your hard disk. Depending on your system configuration,
+this can take a long time, even days, so please be patient. Be aware
+that the synchronization speed is not always constant. Some blocks can
+have more transactions and/or use different technologies, therefore they
+may take longer to verify.
+
+### Wallet restore height
+
+The wallet restore height is the block number (block height) where your
+wallet will start searching for transactions. This number should be a
+block height before the block that included your first incoming
+transaction. For example, if your wallet received Monero for the first
+time in 2020-09-20, your wallet restore height must be a block number
+before the block height of this date. Monero wallets usually ask you to
+write down your wallet restore height together with your restore seed
+when you are creating a wallet. You should never set your wallet restore
+height to 0, otherwise your wallet will scan all transactions in the
+whole blockchain (since 2014), which takes a lot of time.
+
+### How to change Wallet restore height / Wrong or zero balance after synchronizing
+
+In order to see the correct balance, your wallet must be fully
+synchronized AND using a correct restore height. If your wallet is fully
+synchronized but your balance is still wrong, you're probably using a
+wallet restore height that is higher than the block height of your first
+incoming transaction. To solve this, you have to set a new wallet
+restore height. Go to Settings \> Info page, Wallet restore height and
+click on "(Change)".
+
+![change\_wallet\_restore\_height](media/change_wallet_restore_height.png)
+
+Next, enter a new restore height or an estimate date before your first
+incoming transaction, and then click on "Ok".
+
+![set\_new\_restore\_height](media/set_new_restore_height.png)
+
+Your wallet will now rescan the blockchain starting from the new restore
+height.
+
+### How to speed up wallet initial synchronization
+
+Some factors that can increase the speed of your initial synchronization
+are: \* Broadband internet connection \* Using a SSD (solid state disk
+drive) instead of an HDD (hard disk drive) \* Having a faster CPU \*
+Connecting to a remote node will avoid downloading the blockchain.
 
 Monero Account
 ==============
@@ -611,6 +845,7 @@ The `Receive` tab provides tools for generating subaddresses.
 (6) **Copy:** Click here to copy the QR code corresponding URL formated
     as \*monero:
     <address>
+
     -   
 
 Merchant mode
@@ -1074,6 +1309,8 @@ The following are only some of the most common issues. For a more
 extensive list visit the [FAQ page on
 getmonero.org](https://web.getmonero.org/get-started/faq/).
 
+-   **[How to change Wallet restore height / Wrong or zero balance after
+    synchronizing?](#how-to-change-wallet-restore-height-wrong-or-zero-balance-after-synchronizing)**
 -   **[How do I generate a Ledger Monero wallet with the
     GUI?](https://monero.stackexchange.com/questions/9901/how-do-i-generate-a-ledger-monero-wallet-with-the-gui-monero-wallet-gui)**
 -   **[I am missing (not seeing) a transaction to (in) the GUI (zero
