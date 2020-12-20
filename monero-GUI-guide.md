@@ -199,24 +199,23 @@ and privacy needs.\
 (1) **Simple mode:** In this mode your wallet will display a simple
     interface with easy access to basic functionality like sending,
     receiving, transactions history, address book, accounts, and
-    merchant mode, as well as hardware wallet support. It will connect
-    to a third-party server (a remote node), and it will not start a
-    local node in your computer (the blockchain will not be downloaded).
-    Choose this option if you don't have enough space to store the
-    blockchain file (at least 90 GB), if you don't require maximum
-    privacy and you accept the privacy risks of using a remote node to
-    connect to the Monero network.\
+    merchant mode, as well as hardware wallet support. It will start a
+    local node on your computer, but the blockchain will not be downloaded
+    Instead, the local node will forward requests to a user-run remote
+    node known as a bootstrap node. Choose this option if you don't have
+    enough space to store the blockchain file (more than 100 GB), if you
+    don't require maximum privacy, and you accept the privacy risks of 
+    relaying on remote nodes to connect to the Monero network.\
 (2) **Simple mode (bootstrap):** In this mode your wallet will also
     display a simple interface with easy access to basic functionality.
-    Additionaly it will start a local node in the background. This local
-    node will start the download of the blockchain file (at least 90
-    GB), which can take several hours or even days to complete. While
-    the blockchain file is being downloaded, your local node will
-    temporarily connect to a third-party server (a remote node known as
-    bootstrap node), which will allow you to start using Monero
+    Additionaly, the local node will start downloading of the blockchain
+    file (more than 100 GB), which can take several hours or even days to
+    complete. While the blockchain file is being downloaded, your local
+    node will temporarily connect to a user-run remote node known as
+    bootstrap node, which will allow you to start using Monero
     immediately. After downloading and synchronizing the blockchain and
     the wallet, your local node will only temporarily connect to the
-    bootstrap node when your blockchain is not updated. Be aware that
+    bootstrap node when your blockchain is out of date. Be aware that
     using a remote node (including a bootstrap node) to connect to the
     Monero network may reduce your privacy.\
 (3) **Advanced mode:** In this mode your wallet will display all
