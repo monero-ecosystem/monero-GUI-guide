@@ -200,7 +200,7 @@ and privacy needs.\
     interface with easy access to basic functionality like sending,
     receiving, transactions history, address book, accounts, and
     merchant mode, as well as hardware wallet support. It will start a
-    local node on your computer, but the blockchain will not be downloaded
+    local node on your computer, but the blockchain will not be downloaded.
     Instead, the local node will forward requests to a user-run remote
     node known as a bootstrap node. Choose this option if you don't have
     enough space to store the blockchain file (more than 100 GB), if you
