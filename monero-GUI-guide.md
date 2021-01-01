@@ -4,7 +4,7 @@
 <div align="center"> 
   <h1>Guide for the Monero GUI wallet</h1>
   <i>All you need to understand every single part of your Monero wallet, plus some useful tips</i>
-  <p>v1.8</p>
+  <p>v1.9</p>
 </div>
 
 &nbsp;
@@ -165,15 +165,26 @@ to that page  
 Welcome
 =======
 
-![Welcome](media/wizard_0-welcome.png)
+Extract the package and click on `monero-wallet-gui`. The following
+window should open:
 
-Extract the package and click on `monero-wallet-gui`.
+![Welcome](media/wizard_0-welcome.png)
 
 Welcome to Monero GUI Wallet.
 
-(1) **Language:** Click here to see a list of available languages.\
-(2) **Continue:** If you are satisfied with the current language,
-    continue to the next screen.
+(1) **Language:** Click here to open a list of available languages.
+    Select your desired language from the list.\
+(2) **Continue:** Click here to continue to the next screen.
+
+If Monero GUI isn't displaying graphics correctly, you can try starting
+it in low graphics mode. If you're using Windows, please open
+`start-low-graphics-mode.bat` file located in your Monero GUI folder.
+You can find it in `C:\Program Files\Monero GUI Wallet` or you can find
+a shortcut for it in `Start Menu > Monero GUI Wallet > Utilities`. If
+you're using Linux, please try using the command
+`QMLSCENE_DEVICE=softwarecontext ./monero-wallet-gui`. Most macOS users
+shouldn't have graphic problems with Monero GUI, since it comes with
+OpenGL installed.
 
 Choose a Language
 -----------------
@@ -199,39 +210,41 @@ and privacy needs.\
 (1) **Simple mode:** In this mode your wallet will display a simple
     interface with easy access to basic functionality like sending,
     receiving, transactions history, address book, accounts, and
-    merchant mode, as well as hardware wallet support. It will start a
-    local node on your computer, but the blockchain will not be downloaded.
-    Instead, the local node will forward requests to a user-run remote
-    node. Choose this option if you don't have enough space to store the
-    blockchain file (more than 100 GB), if you don't require maximum
-    privacy, and you accept the privacy risks of relaying on remote nodes
-    to connect to the Monero network.\
+    merchant mode, as well as hardware wallet support. It will connect
+    to a third-party server (a remote node), and it will not start a
+    local node in your computer (the blockchain will not be downloaded).
+    Choose this option if you don't have enough space to store the
+    blockchain file (at least 90 GB), if you don't require maximum
+    privacy and you accept the privacy risks of using a remote node to
+    connect to the Monero network.\
 (2) **Simple mode (bootstrap):** In this mode your wallet will also
     display a simple interface with easy access to basic functionality.
-    Additionaly, the local node will start downloading of the blockchain
-    file (more than 100 GB), which can take several hours or even days to
-    complete. While the blockchain file is being downloaded, your local
-    node will temporarily connect to a user-run remote node, which will 
-    allow you to start using Monero immediately. After downloading and
-    synchronizing the blockchain and the wallet, your local node will only 
-    temporarily connect to a remote node when your blockchain is out of
-    date. Be aware that using a remote node (including in bootstrap mode)
-    to connect to the Monero network may reduce your privacy.\
+    Additionaly it will start a local node in the background. This local
+    node will start the download of the blockchain file (at least 90
+    GB), which can take several hours or even days to complete. While
+    the blockchain file is being downloaded, your local node will
+    temporarily connect to a third-party server (a remote node known as
+    bootstrap node), which will allow you to start using Monero
+    immediately. After downloading and synchronizing the blockchain and
+    the wallet, your local node will only temporarily connect to the
+    bootstrap node when your blockchain is not updated. Be aware that
+    using a remote node (including a bootstrap node) to connect to the
+    Monero network may reduce your privacy.\
 (3) **Advanced mode:** In this mode your wallet will display all
     advanced features available, like changing fees/transaction
     priority, solo mining, message verification, transaction
     proof/check, offline transaction signing, key images importing,
     custom remote node (including .onion remote nodes), custom bootstrap
-    remote node, starting a local node without setting a bootstrap remote
-    node (maximum privacy), changing blockchain location, and daemon log.
-    In this mode you can choose if you want to connect to the Monero
+    node, starting a local node without setting a bootstrap node
+    (maximum privacy), changing blockchain location, and daemon log. In
+    this mode you can choose if you want to connect to the Monero
     network via a remote node or a local node. If you decide to run a
     local node, the blockchain file will be downloaded. If you want to
-    start using Monero immediately, you can also set a bootstrap remote
-    node in the Settings \> Node page. To achieve maximum
+    start using Monero immediately, you can also set a bootstrap node
+    (remote node) in the Settings \> Node page. To achieve maximum
     privacy in your connection to the Monero network, it's recommended
-    to avoid using a remote nodes altogether and instead use advanced
-    mode to start a local node without setting a bootstrap remote node.\
+    to avoid using a remote/bootstrap node and instead use advanced mode
+    to start a local node without setting a bootstrap node.\
 (4) **Change language:** This will let you choose the language from the
     startup page (again).
 
@@ -892,15 +905,26 @@ received on the currently selected account of your Monero wallet.
 (2) **Sort & Filter:** Here you can filter out transactions between
     specific dates, or sort them by blockheight, date or amount.\
 (3) **Transaction list:** This area displays the sent and received
-    transactions of the currently selected account. Each transaction is
-    displayed with the following information: `Amount`, `Blockheight`,
-    `Date`, `Fee` (for outgoing transactions), `Confirmations`,
+    transactions of the currently selected account.\
+    For incoming transactions you will see: `Transaction type`
+    (Received), `Amount`, `In` (your wallet's address which received
+    this transaction and its label), and `Date`. Because of Monero's
+    privacy-preserving technology, it's not possible to know the
+    sender's address. Therefore, in order to know from who you are
+    receiving each transaction, you should always remember to create and
+    give a new subaddress for every person you will receive Monero
+    from.\
+    For outgoing transactions you will see: `Transaction type` (Sent),
+    `Amount`, `To` (the destination address or its Address Book name),
+    and `Date`.\
+    By clicking on a transaction, you will see the following additional
+    information: `Fee` (outgoing transactions), `Confirmations`,
     `Description` (optional), `Transaction ID`, `Transaction key`, and
-    `Destination address`. The transaction ID, the transaction key and
-    the destination address can be used to prove that a payment was done
-    in case of a dispute. The transaction keys and the descriptions
-    (notes) are stored in the cache of your local wallet, therefore they
-    cannot be recovered from the blockchain.\
+    `Blockheight`. The transaction ID, the transaction key and the
+    destination address can be used to prove that a payment was done in
+    case of a dispute. The transaction keys and the descriptions (notes)
+    are stored in the cache of your local wallet, therefore they cannot
+    be recovered from the blockchain.\
 (4) **Details:** Clicking here will show you the following transaction
     details, when available: `Transaction ID`, `Date`, `Amount`,
     `Address`, `Payment ID`, `Integrated address`, `Transaction key`,
